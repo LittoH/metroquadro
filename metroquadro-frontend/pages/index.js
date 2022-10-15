@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Navbar } from '../components/navbar'
-import { Herosection } from '../components/heroSection'
+import { Herosection } from '../components/herosection'
 import { useRouter } from 'next/router';
 import { FeaturedHouseContainer } from '../components/featuredhousecontainer'
 
