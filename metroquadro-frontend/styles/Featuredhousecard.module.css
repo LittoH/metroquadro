@@ -1,0 +1,40 @@
+div.featuredHouseCard {
+    min-width: 400px;
+    width: 400px;
+    background: var(--mqWhite);
+    border-radius: 20px;
+    margin-right: 50px;
+    /*
+    filter: drop-shadow(0 0 0.75rem rgba(53, 53, 53, 0.2));
+    */
+}
+
+img.featuredHouseImg {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+}
+
+div.featuredHouseDescriptionContainer {
+    padding: 15px 30px 20px 30px;
+}
+
+div.featuredHousePrice {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    background: var(--mqWhite);
+    width: fit-content;
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    top: -50px;
+    left: 30px;
+    margin-bottom: -20px;
+}
+
+h1.featuredHouseTitle {
+    font-family: 'Inter', sans-serif;
+}
+
+p.featuredHouseBriefDescription {
+    font-family: 'Inter', sans-serif;
+}

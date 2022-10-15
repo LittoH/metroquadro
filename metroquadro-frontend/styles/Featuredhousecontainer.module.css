@@ -1,0 +1,8 @@
+div.multiFeaturedHouseContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+    overflow: auto;
+    padding-bottom: 30px;
+}
