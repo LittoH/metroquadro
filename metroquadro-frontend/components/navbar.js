@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import styles from '../styles/Navbar.module.css';
+import styles from '../styles/Navbar.module.scss';
 import { Navlink } from '../components/navlink';
 
 export const Navbar = () => {
@@ -7,7 +7,7 @@ export const Navbar = () => {
     const router = useRouter();
 
     return (
-        <div className={styles.container}>
+        <div id="navbarContainer" className={styles.container}>
             <div className={styles.customContainer}>
                 <div className={styles.navbarSection}>
                     <img className={styles.logo} src="logo6.png" />

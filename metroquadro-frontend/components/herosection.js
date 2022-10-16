@@ -4,7 +4,10 @@ export const Herosection = () => {
 
     return (
         <div className={styles.herocontent}>
+            
+            {/*
             <img className={styles.heroimage} src="./casa.jpg" />
+            */}
 
             <div className={styles.wrapperProperties}>
                 <div className={styles.customContainer}>
