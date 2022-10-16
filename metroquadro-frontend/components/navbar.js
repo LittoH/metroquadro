@@ -8,10 +8,17 @@ export const Navbar = () => {
 
     return (
         <div className={styles.container}>
-            <Navlink title="HOME" path=""/>
-            <Navlink title="VENDI" path=""/>
-            <Navlink title="COMPRA" path=""/>
-            <Navlink title="AFFITTA" path=""/>
+            <div className={styles.customContainer}>
+                <div className={styles.navbarSection}>
+                    <img className={styles.logo} src="logo6.png" />
+                </div>
+                <div className={styles.navbarSection}>
+                    <Navlink title="HOME" path=""/>
+                    <Navlink title="VENDI" path=""/>
+                    <Navlink title="COMPRA" path=""/>
+                    <Navlink title="AFFITTA" path=""/>
+                </div>
+            </div>
         </div>
     );
 };

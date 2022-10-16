@@ -11,3 +11,20 @@ div.container {
     z-index: 100;
     border-bottom: 3px solid green;
 }
+
+div.customContainer {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.navbarSection {
+    display: flex;
+    flex-direction: row;
+}
+
+img.logo {
+    width: 250px;
+    height: auto;
+    padding: 10px;
+}
