@@ -35,7 +35,7 @@ export const Navbar = () => {
         <div id="navbarContainer" className={styles.container}>
             <div className={styles.customContainer}>
                 <div className={styles.navbarSection}>
-                    <img className={styles.logo} src="logo6.png" />
+                    <img className={styles.logo} src="logo7.png" />
                 </div>
                 <div className={styles.navbarSection}>
                     <Navlink title="HOME" path=""/>

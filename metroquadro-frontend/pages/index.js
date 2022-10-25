@@ -94,6 +94,30 @@ export default function Home() {
           </div>
         </section>
 
+        <section>
+          <div className={styles.contactUsTwoSquaresWrapper}>
+            <div className={`${styles.squareContainer} ${styles.leftContactUsSquare}`}>
+            </div>
+
+            <div className={`${styles.squareContainer} ${styles.rightContactUsSquare}`}>
+              <h1>CONTATTACI</h1>
+              <p>Usa il form che segue per contattarci. Risponderemo in tempo record!</p>
+              <form className={styles.formContactUs} action="/" method="post">
+                <label for="mail">Mail</label><br />
+                <input type="text" id="mail" name="mail" /><br />
+                <label for="nome">Nome</label><br />
+                <input type="text" id="nome" name="nome" /><br />
+                <label for="cognome">Cognome</label><br />
+                <input type="text" id="cognome" name="cognome" /><br />
+                <label for="messaggio">Inserisci qui il tuo messaggio</label><br />
+                <input type="text" id="messaggio" name="messaggio" style={{height: "200px"}} /><br />
+                <button type="submit">Invia</button>
+              </form>
+              
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <footer className={styles.footer}>

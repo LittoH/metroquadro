@@ -112,7 +112,7 @@ img.ditone {
     right: -550px;
     width: 800px;
     height: auto;
-    margin-bottom: -800px;
+    margin-bottom: -700px;
 }
 
 div.footerContent {
@@ -122,3 +122,64 @@ div.footerContent {
     color: white;
 }
 
+div.contactUsTwoSquaresWrapper {
+    height: 840px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+div.squareContainer {
+    width: 50%;
+    height: auto;
+
+}
+
+div.leftContactUsSquare {
+    object-fit: cover;
+    background-image: url("../public/interno_casa.png");
+    background-size: cover;
+}
+
+div.rightContactUsSquare {
+    background: var(--mqGreen);
+    color: var(--mqWhite);
+    padding: 50px;
+}
+
+div.rightContactUsSquare > h1 {
+    background: var(--mqGreen);
+    color: var(--mqWhite);
+    font-size: 30pt;
+    margin-bottom: 30px;
+}
+
+div.rightContactUsSquare > p {
+    margin-bottom: 30px;
+}
+
+form.formContactUs > label {
+    color: var(--mqWhite);
+    font-weight: bold;
+}
+
+form.formContactUs > input{
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form.formContactUs > button {
+    padding: 15px;
+    width: 100%;
+    background-color: var(--mqBlack);
+    color: var(--mqWhite);
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    
+    font-weight: bold;
+}
