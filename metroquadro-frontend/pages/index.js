@@ -26,7 +26,7 @@ export default function Home() {
         <Herosection />
 
         <section className={styles.postHeroContent}>
-          <div className={styles.customContainer}>
+          <div className={styles.customContainer} style={{width: "90%"}}>
             <h1 className={styles.featuredHouseSectionTitle}>IN PRIMO PIANO</h1>
             <FeaturedHouseContainer />
           </div>
@@ -89,7 +89,6 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            
             <img src="ill_3.png" className={styles.ditone} />
           </div>
         </section>
@@ -102,7 +101,7 @@ export default function Home() {
             <div className={`${styles.squareContainer} ${styles.rightContactUsSquare}`}>
               <h1>CONTATTACI</h1>
               <p>Usa il form che segue per contattarci. Risponderemo in tempo record!</p>
-              <form className={styles.formContactUs} action="/" method="post">
+              <form className={styles.formContactUs} name="contactUs" data-netlify="true" method="post">
                 <label for="mail">Mail</label><br />
                 <input type="text" id="mail" name="mail" /><br />
                 <label for="nome">Nome</label><br />
@@ -113,8 +112,23 @@ export default function Home() {
                 <input type="text" id="messaggio" name="messaggio" style={{height: "200px"}} /><br />
                 <button type="submit">Invia</button>
               </form>
-              
             </div>
+          </div>
+        </section>
+
+        <section>
+          <div className={styles.greyWrapperProperties}>
+            <div className={styles.customContainer}>
+              <div className={styles.greenBubble} style={{padding: "70px 70px 70px 280px"}}>
+                <h1>La nostra sede di Ostiglia</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. Ut finibus risus lacus, eget fringilla massa tempor at. Mauris in libero dolor. Etiam cursus, arcu vel vestibulum cursus, ex sapien vehicula tellus, dignissim consequat sem augue sit amet neque. Pellentesque auctor eu orci et porttitor. Duis at ipsum nec tortor mattis scelerisque a sed massa. Cras congue fringilla volutpat. Aliquam aliquam, lacus et eleifend euismod, tortor ipsum imperdiet ex, sit amet interdum elit neque nec augue. Mauris malesuada elit tincidunt, porta lorem sit amet, tristique augue.
+
+                  Praesent vitae odio et massa suscipit posuere. In commodo dui non sapien accumsan commodo. Sed eget metus quis urna pellentesque fermentum non ac quam. Nam non finibus ex. Sed convallis lacinia diam sit amet fermentum. Nullam sed urna vel velit rhoncus egestas nec id tellus. Pellentesque interdum tristique elit, vel tincidunt lacus sollicitudin in. Vestibulum quis laoreet augue, in lobortis tortor. Ut lorem eros, efficitur in libero et, dapibus iaculis dui. Mauris lorem ex, viverra quis hendrerit ac, fringilla in ex. Integer sed tincidunt dui, quis lobortis odio. Donec quis iaculis ipsum.
+                </p>
+              </div>
+            </div>
+            <img src="ill_7.png" className={styles.renderNostraSede} />
           </div>
         </section>
 

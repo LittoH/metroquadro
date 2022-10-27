@@ -38,7 +38,7 @@ export const Navbar = () => {
                     <img className={styles.logo} src="logo7.png" />
                 </div>
                 <div className={styles.navbarSection}>
-                    <Navlink title="HOME" path=""/>
+                    <Navlink title="CASE" path=""/>
                     <Navlink title="VENDI" path=""/>
                     <Navlink title="COMPRA" path=""/>
                     <Navlink title="AFFITTA" path=""/>
