@@ -101,7 +101,7 @@ export default function Home() {
             <div className={`${styles.squareContainer} ${styles.rightContactUsSquare}`}>
               <h1>CONTATTACI</h1>
               <p>Usa il form che segue per contattarci. Risponderemo in tempo record!</p>
-              <form className={styles.formContactUs} name="contactUs" data-netlify="true" method="post">
+              <form className={styles.formContactUs} name="contactUs" data-netlify="true" method="POST">
                 <label for="mail">Mail</label><br />
                 <input type="text" id="mail" name="mail" /><br />
                 <label for="nome">Nome</label><br />
