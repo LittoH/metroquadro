@@ -12,9 +12,7 @@ export const Herosection = () => {
             <div className={styles.wrapperProperties}>
                 <div className={styles.customContainer}>
                     <div className={styles.herodescription}>
-                        <h1>IN OFFERTA</h1>
-                        
-                        <p>€340.000<br />Ostiglia, in Via San Romano Casetto 36B</p>
+                        SFOGLIA TUTTE LE CASE
                     </div>
                 </div>
             </div>

@@ -1,0 +1,188 @@
+
+div.greenWrapperProperties {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--mqGreen);
+    padding: 100px 0 100px 0;
+}
+
+div.greyWrapperProperties {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--mqGrey);
+    padding: 100px 0 100px 0;
+    
+}
+
+div.customContainer {
+    width: 1200px;
+}
+
+section.postHeroContent {
+    clear: both;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.featuredHouseSectionTitle {
+    color: var(--mqBlack);
+    font-size: 30pt;
+    margin-bottom: 30px;
+}
+
+div.multicardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+@keyframes hoverOnCard {
+    from {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));}
+    to {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));}
+}
+
+@keyframes outHoverOnCard {
+    from {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));}
+    to {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));}
+}
+
+div.smallCard {
+    background-color: var(--mqGrey);
+    padding: 40px;
+    border-radius: 30px;
+    width: 350px;
+    text-align: justify;
+    
+    animation-name: outHoverOnCard;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+div.smallCard:hover {
+    animation-name: hoverOnCard;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+div.cardButton {
+    background: var(--mqBlack);
+    color: var(--mqWhite);
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cardButton:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+div.postCardsSection {
+    margin-top: 50px;
+    color: white;
+}
+
+div.greenBubble {
+    background: var(--mqGreen);
+    border-radius: 30px;
+    padding: 70px 200px 70px 70px;
+    color: var(--mqWhite);
+    text-align: justify;
+}
+
+img.ditone {
+    position: relative;
+    bottom: 600px;
+    right: -550px;
+    width: 800px;
+    height: auto;
+    margin-bottom: -700px;
+}
+
+img.renderNostraSede {
+    position: relative;
+    bottom: 535px;
+    left: -550px;
+    width: 800px;
+    height: auto;
+    margin-bottom: -700px;
+}
+
+div.footerContent {
+    padding: 40px;
+    border-radius: 30px;
+    background: var(--mqGreen);
+    color: white;
+}
+
+div.contactUsTwoSquaresWrapper {
+    height: 840px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+div.squareContainer {
+    width: 50%;
+    height: auto;
+
+}
+
+div.leftContactUsSquare {
+    object-fit: cover;
+    background-image: url("../public/interno_casa.png");
+    background-size: cover;
+}
+
+div.rightContactUsSquare {
+    background: var(--mqGreen);
+    color: var(--mqWhite);
+    padding: 50px;
+}
+
+div.rightContactUsSquare > h1 {
+    background: var(--mqGreen);
+    color: var(--mqWhite);
+    font-size: 30pt;
+    margin-bottom: 30px;
+}
+
+div.rightContactUsSquare > p {
+    margin-bottom: 30px;
+}
+
+form.formContactUs > label {
+    color: var(--mqWhite);
+    font-weight: bold;
+}
+
+form.formContactUs > input{
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form.formContactUs > button {
+    padding: 15px;
+    width: 100%;
+    background-color: var(--mqBlack);
+    color: var(--mqWhite);
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    
+    font-weight: bold;
+}

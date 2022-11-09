@@ -1,0 +1,90 @@
+div.featuredHouseCard {
+    min-width: 600px;
+    width: 600px;
+    height: 400px;
+    border-radius: 30px;
+    margin-right: 50px;
+    padding: 80px 105px 25px 35px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+div.priceAndFeaturesContainer {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.featuredHousePrice {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18pt;
+    background: var(--mqGreen);
+    color: var(--mqWhite);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 3px;
+}
+
+div.features {
+    color: var(--mqGrey);
+    font-size: 15pt;
+    margin-left: 15px;
+}
+
+h1.featuredHouseTitle {
+    font-family: 'Inter', sans-serif;
+    color: var(--mqWhite);
+    margin: 0;
+}
+
+p.featuredHouseBriefDescription {
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    color: var(--mqGrey);
+    margin-top: 10px;
+}
+
+/* Backup versione precedente
+div.featuredHouseCard {
+    min-width: 400px;
+    width: 400px;
+    background: var(--mqWhite);
+    border-radius: 20px;
+    margin-right: 50px;
+}
+
+img.featuredHouseImg {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+}
+
+div.featuredHouseDescriptionContainer {
+    padding: 15px 30px 20px 30px;
+}
+
+div.featuredHousePrice {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    background: var(--mqWhite);
+    width: fit-content;
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    top: -50px;
+    left: 30px;
+    margin-bottom: -20px;
+}
+
+h1.featuredHouseTitle {
+    font-family: 'Inter', sans-serif;
+}
+
+p.featuredHouseBriefDescription {
+    font-family: 'Inter', sans-serif;
+}
+
+*/

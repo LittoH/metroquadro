@@ -24,15 +24,24 @@ img.heroimage {
 }
 
 div.herodescription {
-    background: var(--mqGreen);
-    color: white;
+    background-color: var(--mqWhite);
+    color: var(--mqBlack);
+    border: solid 10px var(--mqWhite);
+    width: fit-content;
     opacity: 100%;
-    width: 300px;
+    font-weight: bold;
     position: relative;
-    border-radius: 30px;
-    padding: 30px;
-    float: left;
-    top: -350px;
-    left: 10px;
-    margin-bottom: -226px;
+    border-radius: 10px;
+    top: 650px;
+    padding: 10px 50px 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+div.herodescription:hover {
+    background-color: var(--mqWhite);
+    color: var(--mqBlack);
+    border: solid 10px var(--mqWhite);
+    box-shadow: 0 0 100px 5px var(--mqWhite);
+    transition: .4s;
 }

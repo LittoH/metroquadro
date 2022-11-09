@@ -1,0 +1,42 @@
+div.container {
+    height: fit-content;
+    background: rgba(235, 235, 235, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 3px solid rgba(0, 128, 0, 0);
+    transition: .4s;
+}
+
+html:not([data-scroll='0']) div.container {   
+    background: rgb(235, 235, 235);
+    border-bottom: 3px solid var(--mqGreen);
+    transition: .4s;
+}
+
+div.container {
+    background: rgba(235, 235, 235, 0);
+    border-bottom: 3px solid rgba(0, 128, 0, 0);
+}
+
+div.customContainer {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.navbarSection {
+    display: flex;
+    flex-direction: row;
+}
+
+img.logo {
+    width: 250px;
+    height: auto;
+    padding: 10px;
+}
