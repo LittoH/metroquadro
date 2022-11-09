@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = ".next && ./pocketbase.exe serve"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
