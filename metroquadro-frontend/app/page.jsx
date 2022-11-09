@@ -11,7 +11,7 @@ export default function Home() {
                 <section className={styles.postHeroContent}>
                     <div className={styles.customContainer} style={{width: "90%"}}>
                         <h1 className={styles.featuredHouseSectionTitle}>IN PRIMO PIANO</h1>
-                        <FeaturedHouseContainer />
+                        
                     </div>
                 </section>
 

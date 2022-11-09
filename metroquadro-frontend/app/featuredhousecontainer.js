@@ -21,7 +21,7 @@ export default async function FeaturedHouseContainer() {
                                         m2={house.metriquadri} 
                                         bathrooms={house.bagni}
                                         floors={house.piani} 
-                                        description={house.descrizione}
+                                        description={house.annuncio}
                     />
                 </>
             ))}
