@@ -1,5 +1,5 @@
 [build]
-  command = "./pocketbase serve"
+  command = "npm run build"
   publish = ".next"
 
 [[plugins]]
