@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {appDir: true},
   reactStrictMode: false,
+  future: {webpack5: true},
 }
 
 module.exports = nextConfig
