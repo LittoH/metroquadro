@@ -3,7 +3,9 @@ import FeaturedHouseCard from './featuredhousecard'
 
 export default async function FeaturedHouseContainer() {
     
-    const res = await fetch('https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records?page=1&perPage=30');
+    const res = await fetch('https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records?page=1&perPage=30',
+        { cache: 'no-store' }
+    );
     const data = await res.json();
     
     let houses = data.items;

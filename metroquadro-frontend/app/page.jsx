@@ -32,7 +32,7 @@ export default function Home() {
                             <div className={styles.smallCard}>
                                 <h1>Vendi</h1>
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus.
+                                    Affidati alla nostra esperienza e preparazione per vendere il tuo immobile attraverso i nostri canali dedicati e alla migliore esposizione che possiamo garantire.
                                 </p>
                                 <div className={styles.cardButton}>
                                 VENDI
