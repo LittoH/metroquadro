@@ -1,13 +1,13 @@
-//'use client';
+'use client';
 
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/navigation';
 import styles from '../styles/Navbar.module.css';
 import { Navlink } from '../components/navlink';
 import { useEffect } from 'react';
 
 export const Navbar = () => {
 
-    const router = useRouter();
+    //const router = useRouter();
 
     // Parte necessaria per il cambio di sfondo della navbar
     const debounce = (fn) => {

@@ -1,5 +1,5 @@
 import styles from '../styles/Navlink.module.css';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Navlink({ title, path }) {
 
