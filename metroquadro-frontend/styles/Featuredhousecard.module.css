@@ -9,6 +9,7 @@ div.featuredHouseCard {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transition: .4s;
 }
 
 div.featuredHouseCard:hover {
