@@ -11,6 +11,12 @@ div.featuredHouseCard {
     justify-content: flex-end;
 }
 
+div.featuredHouseCard:hover {
+    cursor: pointer;
+    -webkit-filter: brightness(120%);
+    transition: .4s;
+}
+
 div.priceAndFeaturesContainer {
     margin-top: 5px;
     display: flex;
@@ -46,6 +52,11 @@ p.featuredHouseBriefDescription {
     font-size: 11pt;
     color: var(--mqGrey);
     margin-top: 10px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Backup versione precedente

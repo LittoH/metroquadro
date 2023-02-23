@@ -1,0 +1,19 @@
+div.customContainer {
+    width: 1200px;
+}
+
+section.postHeroContent {
+    clear: both;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.featuredHouseSectionTitle {
+    color: var(--mqBlack);
+    font-size: 30pt;
+    margin-bottom: 30px;
+}

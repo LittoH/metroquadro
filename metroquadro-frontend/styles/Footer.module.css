@@ -1,0 +1,18 @@
+div.footerContent {
+    padding: 40px;
+    border-radius: 30px;
+    background: var(--mqGreen);
+    color: white;
+}
+
+div.greenWrapperProperties {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--mqGreen);
+    padding: 100px 0 100px 0;
+}
+
+div.customContainer {
+    width: 1200px;
+}

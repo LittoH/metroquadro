@@ -88,8 +88,36 @@ div.cardButton {
 }
 
 div.postCardsSection {
-    margin-top: 50px;
-    color: white;
+    text-align: justify;
+    margin-top: 100px;
+    color: var(--mqWhite);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.postCardsContent {
+    width: 60%;
+}
+
+div.postCardsButton {
+    margin-top: 20px;
+    color: var(--mqWhite);
+    padding: 0px 30px 0px 30px; 
+    border-style: solid;
+    border-radius: 30px;
+    width: fit-content;
+    transition: .4s;
+}
+
+div.postCardsButton:hover {
+    cursor: pointer;
+    color: var(--mqBlack);
+    background-color: var(--mqWhite);
+    border: solid var(--mqWhite);
+    transition: .4s;
 }
 
 div.greenBubble {

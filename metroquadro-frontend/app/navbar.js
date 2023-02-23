@@ -37,10 +37,10 @@ export default function Navbar() {
                     <img className={styles.logo} src="logo7.png" />
                 </div>
                 <div className={styles.navbarSection}>
-                    <Navlink title="CASE" path=""/>
-                    <Navlink title="VENDI" path=""/>
-                    <Navlink title="COMPRA" path=""/>
-                    <Navlink title="AFFITTA" path=""/>
+                    <Navlink title="COMPRA" path="./immobili"/>
+                    <Navlink title="AFFITTA" path="./immobili"/>
+                    <Navlink title="VENDI" path="./"/>
+                    <Navlink title="SEDE OSTIGLIA" path="./"/>
                 </div>
             </div>
         </div>

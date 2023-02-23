@@ -10,51 +10,61 @@ export default function Home() {
                 <Herosection />
                 <section className={styles.postHeroContent}>
                     <div className={styles.customContainer} style={{width: "90%"}}>
-                        <h1 className={styles.featuredHouseSectionTitle}>IN PRIMO PIANO</h1>
+                        <h1 className={styles.featuredHouseSectionTitle}>In evidenza</h1>
                         <FeaturedHouseContainer />
                     </div>
                 </section>
 
                 <section>
-                    <div className={styles.greenWrapperProperties}>
+                    <div className={styles.greenWrapperProperties} style={{backgroundImage: "linear-gradient(to top, rgb(55, 103, 72), var(--mqGreen))"}}>
                         <div className={styles.customContainer}>
-                        <div className={styles.multicardContainer}>
-                            <div className={styles.smallCard}>
-                                <h1>Compra</h1>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. 
-                                </p>
-                                <div className={styles.cardButton}>
-                                COMPRA
+                            <div className={styles.multicardContainer}>
+                                <div className={styles.smallCard}>
+                                    <h1>Compra</h1>
+                                    <p>
+                                        Sfoglia il catalogo degli immobili attualmente in vendita curato con immagini e planimetrie.
+                                    </p>
+                                    <div className={styles.cardButton}>
+                                        COMPRA
+                                    </div>
                                 </div>
+
+                                <div className={styles.smallCard}>
+                                    <h1>Affitta</h1>
+                                    <p>
+                                        Sfoglia il catalogo in costante aggiornamento degli immobili attualmente disponibili per l'affitto.
+                                    </p>
+                                    <div className={styles.cardButton}>
+                                        AFFITTA
+                                    </div>
+                                </div>
+
+                                <div className={styles.smallCard}>
+                                    <h1>Vendi</h1>
+                                    <p>
+                                        Affidati alla noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
+                                    </p>
+                                    <div className={styles.cardButton}>
+                                        VENDI
+                                    </div>
+                                </div>
+
+                                
                             </div>
 
-                            <div className={styles.smallCard}>
-                                <h1>Vendi</h1>
-                                <p>
-                                    Affidati alla nostra esperienza e preparazione per vendere il tuo immobile attraverso i nostri canali dedicati e alla migliore esposizione che possiamo garantire.
-                                </p>
-                                <div className={styles.cardButton}>
-                                VENDI
+                            <div className={styles.postCardsSection}>
+                                <div className={styles.postCardsContent}>
+                                    <p>
+                                        La nostra copertura del territorio varia da caso a caso, ma prevalente trattiamo di case in vendita e in affitto nel territorio di Ostiglia, Revere, Correggioli, Melara, Serravalle a Po e tutte le zone limitrofe.
+                                    </p>
+                                    <p>
+                                        Siamo comunque sempre alla ricerca di immobili anche al di fuori delle zone indicate, sia per acquisti, vendite e affitti.
+                                    </p>
+                                </div>
+                                <div className={styles.postCardsButton}>
+                                    <h3>Contattaci per altre zone</h3>
                                 </div>
                             </div>
-
-                            <div className={styles.smallCard}>
-                                <h1>Affitta</h1>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus.
-                                </p>
-                                <div className={styles.cardButton}>
-                                AFFITTA
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.postCardsSection}>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. Ut finibus risus lacus, eget fringilla massa tempor at. Mauris in libero dolor. Etiam cursus, arcu vel vestibulum cursus, ex sapien vehicula tellus, dignissim consequat sem augue sit amet neque. Pellentesque auctor eu orci et porttitor. Duis at ipsum nec tortor mattis scelerisque a sed massa. Cras congue fringilla volutpat. Aliquam aliquam, lacus et eleifend euismod, tortor ipsum imperdiet ex, sit amet interdum elit neque nec augue. Mauris malesuada elit tincidunt, porta lorem sit amet, tristique augue.
-                            </p>
-                        </div>
 
                         </div>
                     </div>
@@ -64,11 +74,12 @@ export default function Home() {
                 <div className={styles.greyWrapperProperties}>
                     <div className={styles.customContainer}>
                     <div className={styles.greenBubble}>
-                        <h1>Una storia lunga 30 anni</h1>
+                        <h1>La nostra sede di Ostiglia</h1>
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. Ut finibus risus lacus, eget fringilla massa tempor at. Mauris in libero dolor. Etiam cursus, arcu vel vestibulum cursus, ex sapien vehicula tellus, dignissim consequat sem augue sit amet neque. Pellentesque auctor eu orci et porttitor. Duis at ipsum nec tortor mattis scelerisque a sed massa. Cras congue fringilla volutpat. Aliquam aliquam, lacus et eleifend euismod, tortor ipsum imperdiet ex, sit amet interdum elit neque nec augue. Mauris malesuada elit tincidunt, porta lorem sit amet, tristique augue.
+                            L'Agenzia Immobiliare Metroquadro è situata nel centro di Ostiglia MN in Via Vittorio Veneto 6.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. Ut finibus risus lacus, eget fringilla massa tempor at. Mauris in libero dolor. Etiam cursus, arcu vel vestibulum cursus, ex sapien vehicula tellus, dignissim consequat sem augue sit amet neque. Pellentesque auctor eu orci et porttitor. Duis at ipsum nec tortor mattis scelerisque a sed massa. Cras congue fringilla volutpat. Aliquam aliquam, lacus et eleifend euismod, tortor ipsum imperdiet ex, sit amet interdum elit neque nec augue. Mauris malesuada elit tincidunt, porta lorem sit amet, tristique augue.
 
-                        Praesent vitae odio et massa suscipit posuere. In commodo dui non sapien accumsan commodo. Sed eget metus quis urna pellentesque fermentum non ac quam. Nam non finibus ex. Sed convallis lacinia diam sit amet fermentum. Nullam sed urna vel velit rhoncus egestas nec id tellus. Pellentesque interdum tristique elit, vel tincidunt lacus sollicitudin in. Vestibulum quis laoreet augue, in lobortis tortor. Ut lorem eros, efficitur in libero et, dapibus iaculis dui. Mauris lorem ex, viverra quis hendrerit ac, fringilla in ex. Integer sed tincidunt dui, quis lobortis odio. Donec quis iaculis ipsum.
+                            Praesent vitae odio et massa suscipit posuere. In commodo dui non sapien accumsan commodo. Sed eget metus quis urna pellentesque fermentum non ac quam. Nam non finibus ex. Sed convallis lacinia diam sit amet fermentum. Nullam sed urna vel velit rhoncus egestas nec id tellus. Pellentesque interdum tristique elit, vel tincidunt lacus sollicitudin in. Vestibulum quis laoreet augue, in lobortis tortor. Ut lorem eros, efficitur in libero et, dapibus iaculis dui. Mauris lorem ex, viverra quis hendrerit ac, fringilla in ex. Integer sed tincidunt dui, quis lobortis odio. Donec quis iaculis ipsum.
                         </p>
                     </div>
                     </div>
@@ -103,7 +114,7 @@ export default function Home() {
                 <div className={styles.greyWrapperProperties}>
                     <div className={styles.customContainer}>
                     <div className={styles.greenBubble} style={{padding: "70px 70px 70px 280px"}}>
-                        <h1>La nostra sede di Ostiglia</h1>
+                        <h1>Collabora con noi</h1>
                         <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. Ut finibus risus lacus, eget fringilla massa tempor at. Mauris in libero dolor. Etiam cursus, arcu vel vestibulum cursus, ex sapien vehicula tellus, dignissim consequat sem augue sit amet neque. Pellentesque auctor eu orci et porttitor. Duis at ipsum nec tortor mattis scelerisque a sed massa. Cras congue fringilla volutpat. Aliquam aliquam, lacus et eleifend euismod, tortor ipsum imperdiet ex, sit amet interdum elit neque nec augue. Mauris malesuada elit tincidunt, porta lorem sit amet, tristique augue.
 
@@ -116,15 +127,6 @@ export default function Home() {
                 </section>
 
             </main>
-
-            <footer className={styles.footer}>
-                <div className={styles.greenWrapperProperties}>
-                    <div className={styles.customContainer}>
-                    <h1>Link utili</h1>
-                    <p>Footer del sito internet in cui vengono elencati i link per accedere facilmente al contenuto disponibile nelle varie pagine.</p>
-                </div>
-                </div>
-            </footer>
         </div>
     )
 }
