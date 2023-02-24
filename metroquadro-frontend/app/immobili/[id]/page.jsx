@@ -13,18 +13,18 @@ export default async function ImmobilePage({ params }) {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-                <section className={styles.postHeroContent}>
+                <section className={styles.houseInfoSection}>
                     <div className={styles.customContainer}>
-                        <h1>Sono dentro alla pagina di uno specifico immobile</h1>
-                        <h1>Titolo: {immobile.titolo}</h1>
-                        <h1>Prezzo: {immobile.prezzo}</h1>
-                        <h1>Numero locali: {immobile.locali}</h1>
-                        <h1>Metriquadri: {immobile.metriquadri}</h1>
-                        <h1>Bagni: {immobile.bagni}</h1>
-                        <h1>Piani: {immobile.piani}</h1>
-                        <h1>Annuncio: {immobile.annuncio}</h1>
-                        <h1>Descrizione: {immobile.descrizione}</h1>
-                        <h1>Certificazione energetica: {immobile.certificazione_energetica}</h1>
+                        <div className={styles.housePhotosCarousel}></div>
+                        <div className={styles.houseDetailItem}><h1>Titolo:</h1><h3>{immobile.titolo}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Prezzo:</h1><h3>{immobile.prezzo}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Numero locali:</h1><h3>{immobile.locali}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Metriquadri:</h1><h3>{immobile.metriquadri}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Bagni:</h1><h3>{immobile.bagni}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Piani:</h1><h3>{immobile.piani}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Annuncio:</h1><h3>{immobile.annuncio}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Descrizione:</h1><h3>{immobile.descrizione}</h3></div>
+                        <div className={styles.houseDetailItem}><h1>Certificazione energetica:</h1><h3>{immobile.certificazione_energetica}</h3></div>
                     </div>
                 </section>
             </main>
