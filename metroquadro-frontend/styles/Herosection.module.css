@@ -36,6 +36,7 @@ div.herodescription {
     padding: 10px 50px 10px 50px;
     cursor: pointer;
     transition: .4s;
+    display: none;
 }
 
 div.herodescription:hover {
@@ -44,4 +45,10 @@ div.herodescription:hover {
     border: solid 10px var(--mqWhite);
     box-shadow: 0 0 100px 5px var(--mqWhite);
     transition: .4s;
+}
+
+@media screen and (max-width: 991px) {
+    div.herodescription {
+        display: none;
+    }
 }

@@ -41,7 +41,6 @@ div.multicardContainer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 @keyframes hoverOnCard {
@@ -213,4 +212,31 @@ form.formContactUs > button {
     margin-top: 40px;
     
     font-weight: bold;
+}
+
+@media screen and (max-width: 991px) {
+    div.multicardContainer {
+        flex-direction: column;
+    }
+
+    div.smallCard {
+        margin-bottom: 30px;
+    }
+
+    div.postCardsSection {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div.postCardsContent {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 479px) {
+
 }
