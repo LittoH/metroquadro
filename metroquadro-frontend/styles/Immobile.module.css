@@ -14,12 +14,30 @@ section.houseInfoSection {
 
 div.housePhotosCarousel {
     background-image: linear-gradient(to top, rgb(55, 103, 72), var(--mqGreen));
+    background-size: cover;
     width: 100%;
     height: 700px;
     border-radius: 30px;
 }
 
+div.houseInfoOuterBriefDetailsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+div.houseInfoInnerBriefDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
 div.houseDetailItem {
     display: flex;
     justify-content: space-between;
+}
+
+div.houseBigDetailItem {
+    display: block;
 }

@@ -11,6 +11,7 @@ export default function Footer() {
                     <p>+393408960518</p>
                     <p>info@metroquadroostiglia.it</p>
                     <p>Agenzia Immobiliare Metroquadro Ostiglia</p>
+                    <p>P.IVA 00000000000000000000000000</p>
                 </div>
             </div>
         </footer>

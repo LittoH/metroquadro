@@ -10,21 +10,38 @@ async function getImmobile(immobileId) {
 export default async function ImmobilePage({ params }) {
     const immobile = await getImmobile(params.id);
 
+    const imgSrc = immobile.immagine;
+    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";
+    const imgPath = "url(" + imgSrcFromServer + imgSrc + ")";
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
                     <div className={styles.customContainer}>
-                        <div className={styles.housePhotosCarousel}></div>
-                        <div className={styles.houseDetailItem}><h1>Titolo:</h1><h3>{immobile.titolo}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Prezzo:</h1><h3>{immobile.prezzo}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Numero locali:</h1><h3>{immobile.locali}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Metriquadri:</h1><h3>{immobile.metriquadri}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Bagni:</h1><h3>{immobile.bagni}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Piani:</h1><h3>{immobile.piani}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Annuncio:</h1><h3>{immobile.annuncio}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Descrizione:</h1><h3>{immobile.descrizione}</h3></div>
-                        <div className={styles.houseDetailItem}><h1>Certificazione energetica:</h1><h3>{immobile.certificazione_energetica}</h3></div>
+                        <div className={styles.housePhotosCarousel} style={{backgroundImage: imgPath }}></div>
+
+                        <div className={styles.houseInfoOuterBriefDetailsContainer}>
+                            <div className={styles.houseInfoInnerBriefDetailsContainer} style={{paddingRight: "30px"}}>
+                                <div className={styles.houseDetailItem}><h3>Immobile</h3><p>{immobile.titolo}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Prezzo</h3><p>{immobile.prezzo}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Numero locali</h3><p>{immobile.locali}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Indirizzo(NOT_DB)</h3><p>Ostiglia, Strada test 123, 1A</p></div>
+                                <div className={styles.houseDetailItem}><h3>Item non definito</h3><p>test test test</p></div>
+                            </div>
+
+                            <div className={styles.houseInfoInnerBriefDetailsContainer} style={{paddingLeft: "30px"}}>
+                                <div className={styles.houseDetailItem}><h3>Metriquadri:</h3><p>{immobile.metriquadri}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Bagni:</h3><p>{immobile.bagni}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Piani:</h3><p>{immobile.piani}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Certificazione energetica:</h3><p>{immobile.certificazione_energetica}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Item non definito: </h3><p>test test test</p></div>
+                            </div>
+                        </div>
+
+                        <div className={styles.houseBigDetailItem}><h3>Annuncio</h3><p>{immobile.annuncio}</p></div>
+                        <div className={styles.houseBigDetailItem}><h3>Descrizione</h3><p>{immobile.descrizione}</p></div>
+                        
                     </div>
                 </section>
             </main>
