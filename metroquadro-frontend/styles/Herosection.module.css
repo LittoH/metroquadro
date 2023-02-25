@@ -14,6 +14,7 @@ div.herocontent {
     /* Contenuto trovato in una guida online */
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.285), rgba(255, 255, 255, 0)), url("../public/heroContentHouse.png");
     background-size: cover;
+    background-position: center;
 }
 
 
