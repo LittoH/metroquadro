@@ -8,7 +8,7 @@ export default function Immobili() {
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.postHeroContent}>
-                    <div className={styles.customContainer} style={{width: "90%"}}>
+                    <div className={styles.customContainer}>
                         <h1 className={styles.featuredHouseSectionTitle}>Sfoglia</h1>
                         <FeaturedHouseContainer />
                     </div>

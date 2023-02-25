@@ -162,7 +162,6 @@ div.contactUsTwoSquaresWrapper {
 div.squareContainer {
     width: 50%;
     height: auto;
-
 }
 
 div.leftContactUsSquare {
@@ -215,6 +214,12 @@ form.formContactUs > button {
 }
 
 @media screen and (max-width: 991px) {
+
+
+    div.customContainer {
+        width: 700px;
+    }
+
     div.multicardContainer {
         flex-direction: column;
     }
@@ -232,12 +237,33 @@ form.formContactUs > button {
     div.postCardsContent {
         width: 300px;
     }
+
+    img.ditone {
+        display: none;
+    }
+
+    img.renderNostraSede {
+        display: none;
+    }
+
+    div.squareContainer {
+        width: 100%;
+        height: auto;
+    }
+
+    div.leftContactUsSquare {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px) {
-
+    div.customContainer {
+        width: 500px;
+    }
 }
 
 @media screen and (max-width: 479px) {
-
+    div.customContainer {
+        width: 300px;
+    }
 }
