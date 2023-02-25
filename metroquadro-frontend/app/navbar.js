@@ -3,8 +3,11 @@
 import styles from '../styles/Navbar.module.css'
 import Navlink from './navlink'
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
+
+    const router = useRouter();
 
     // Parte necessaria per il cambio di sfondo della navbar
     const debounce = (fn) => {
@@ -33,7 +36,7 @@ export default function Navbar() {
     return (
         <div id="navbarContainer" className={styles.container}>
             <div className={styles.customContainer}>
-                <div className={styles.navbarSection}>
+                <div className={styles.navbarSectionLogo} onClick={ () => router.push('./') }>
                     <img className={styles.logo} src="logo7.png" />
                 </div>
                 <div className={styles.navbarSection}>

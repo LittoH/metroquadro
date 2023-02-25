@@ -30,6 +30,11 @@ div.customContainer {
     justify-content: space-between;
 }
 
+div.navbarSectionLogo {
+    display: flex;
+    flex-direction: row;
+}
+
 div.navbarSection {
     display: flex;
     flex-direction: row;
@@ -39,4 +44,18 @@ img.logo {
     width: 250px;
     height: auto;
     padding: 10px;
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+    div.navbarSection {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 479px) {
+
 }
