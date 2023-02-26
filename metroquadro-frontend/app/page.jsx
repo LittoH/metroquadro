@@ -1,8 +1,12 @@
 import styles from '../styles/Home.module.css'
 import Herosection from './herosection' 
 import FeaturedHouseContainer from './featuredhousecontainer'
+import CustomButton from './customButton'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+
+    //const router = useRouter();
 
     return(
         <div className={styles.container}>
@@ -12,6 +16,13 @@ export default function Home() {
                     <div className={styles.customContainer} style={{width: "90%"}}>
                         <h1 className={styles.featuredHouseSectionTitle}>In evidenza</h1>
                         <FeaturedHouseContainer />
+                        <div className={styles.featuredHouseButtonContainer}>
+                            <CustomButton 
+                                text="Sfoglia tutti gli immobili"
+                                path="./immobili"
+                                theme="dark"
+                            />
+                        </div>
                     </div>
                 </section>
 
@@ -61,9 +72,11 @@ export default function Home() {
                                         Siamo comunque sempre alla ricerca di immobili anche al di fuori delle zone indicate, sia per acquisti, vendite e affitti.
                                     </p>
                                 </div>
-                                <div className={styles.postCardsButton}>
-                                    <h3>Contattaci per altre zone</h3>
-                                </div>
+                                <CustomButton 
+                                    text="Contattaci per altre zone"
+                                    path="./"
+                                    theme="light"
+                                />
                             </div>
 
                         </div>

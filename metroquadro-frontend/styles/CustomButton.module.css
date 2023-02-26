@@ -1,0 +1,35 @@
+div.featuredHouseButtonLight {
+    margin-top: 20px;
+    color: var(--mqWhite);
+    padding: 0px 30px 0px 30px; 
+    border-style: solid;
+    border-radius: 30px;
+    width: fit-content;
+    transition: .4s;
+}
+
+div.featuredHouseButtonLight:hover {
+    cursor: pointer;
+    color: var(--mqBlack);
+    background-color: var(--mqWhite);
+    border: solid var(--mqWhite);
+    transition: .4s;
+}
+
+div.featuredHouseButtonDark {
+    margin-top: 20px;
+    color: var(--mqBlack);
+    padding: 0px 30px 0px 30px; 
+    border-style: solid;
+    border-radius: 30px;
+    width: fit-content;
+    transition: .4s;
+}
+
+div.featuredHouseButtonDark:hover {
+    cursor: pointer;
+    color: var(--mqWhite);
+    background-color: var(--mqBlack);
+    border: solid var(--mqBlack);
+    transition: .4s;
+}

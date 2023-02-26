@@ -3,6 +3,7 @@
 import styles from '../styles/Featuredhousecard.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function FeaturedHouseCard({ id, imgSrc, price, title, numLocales, m2, bathrooms, floors, description }) {
 
@@ -17,8 +18,8 @@ export default function FeaturedHouseCard({ id, imgSrc, price, title, numLocales
     const parsedPath = "/immobili/" + path;
 
     return (
-        <>
-            <div className={styles.featuredHouseCard} style={{backgroundImage: imgPath }} onClick={ () => router.push('' + parsedPath) }>
+        <Link href={parsedPath}>
+            <div className={styles.featuredHouseCard} style={{backgroundImage: imgPath }} >
                 <h1 className={styles.featuredHouseTitle}>{title}</h1>
                 <div className={styles.priceAndFeaturesContainer}>
                     <div className={styles.featuredHousePrice}>{price}</div>
@@ -28,6 +29,6 @@ export default function FeaturedHouseCard({ id, imgSrc, price, title, numLocales
                 </div>
                 <p className={styles.featuredHouseBriefDescription}>{description}</p>
             </div>
-        </>
+        </Link>
     );
 };

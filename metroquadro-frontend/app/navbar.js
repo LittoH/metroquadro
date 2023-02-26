@@ -3,6 +3,7 @@
 import styles from '../styles/Navbar.module.css'
 import Navlink from './navlink'
 import { useEffect } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
@@ -36,9 +37,11 @@ export default function Navbar() {
     return (
         <div id="navbarContainer" className={styles.container}>
             <div className={styles.customContainer}>
-                <div className={styles.navbarSectionLogo} onClick={ () => router.push('./') }>
-                    <img className={styles.logo} src="logo7.png" />
-                </div>
+                <Link href="/" onClick={() => router.reload()}>
+                    <div className={styles.navbarSectionLogo}>
+                        <img className={styles.logo} src="logo7.png" />
+                    </div>
+                </Link>
                 <div className={styles.navbarSection}>
                     <Navlink title="COMPRA" path="./immobili"/>
                     <Navlink title="AFFITTA" path="./immobili"/>
