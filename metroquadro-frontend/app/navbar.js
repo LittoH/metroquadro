@@ -46,7 +46,7 @@ export default function Navbar() {
                     <Navlink title="COMPRA" path="./immobili"/>
                     <Navlink title="AFFITTA" path="./immobili"/>
                     <Navlink title="VENDI" path="./"/>
-                    <Navlink title="SEDE OSTIGLIA" path="./"/>
+                    <Navlink title="AGENZIA" path="./"/>
                 </div>
             </div>
         </div>
