@@ -229,8 +229,6 @@ form.formContactUs > button {
 }
 
 @media screen and (max-width: 991px) {
-
-
     div.customContainer {
         width: 700px;
     }
@@ -254,11 +252,11 @@ form.formContactUs > button {
     }
 
     div.greenBubble {
-        padding: 70px 70px 70px 70px;
+        padding: 40px;
     }
 
     div.greenBubble2 {
-        padding: 70px 70px 70px 70px;
+        padding: 40px;
     }
 
     img.ditone {
