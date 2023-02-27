@@ -134,13 +134,37 @@ div.greenBubble {
     text-align: justify;
 }
 
-div.greenBubble2 {
-    background: var(--mqGreen);
-    border-radius: 30px;
-    padding: 70px 70px 70px 280px;
-    color: var(--mqWhite);
-    text-align: justify;
+div.sedeSectionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+div.sedeMapSection {
+    object-fit: cover;
+    background-image: url("/mappa_agenzia.png");
+    background-size: cover;
+    height: 300px;
+    width: 50%;
+}
+
+div.sedeOrariSection {
+    padding: 0 30px 0 30px;
+    width: 50%;
+}
+
+div.tabellaOrari {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.orarioItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 
 img.ditone {
     position: relative;
@@ -150,6 +174,15 @@ img.ditone {
     height: auto;
     margin-bottom: -700px;
 }
+
+div.greenBubble2 {
+    background: var(--mqGreen);
+    border-radius: 30px;
+    padding: 70px 70px 70px 280px;
+    color: var(--mqWhite);
+    text-align: justify;
+}
+
 
 img.renderNostraSede {
     position: relative;
@@ -253,6 +286,20 @@ form.formContactUs > button {
 
     div.greenBubble {
         padding: 40px;
+    }
+
+    div.sedeSectionContainer {
+        flex-direction: column;
+    }
+
+    div.sedeMapSection {
+        height: 300px;
+        width: 100%;
+    }
+    
+    div.sedeOrariSection {
+        padding: 0 30px 0 30px;
+        width: 100%;
     }
 
     div.greenBubble2 {

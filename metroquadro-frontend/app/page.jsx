@@ -2,11 +2,9 @@ import styles from '../styles/Home.module.css'
 import Herosection from './herosection' 
 import FeaturedHouseContainer from './featuredhousecontainer'
 import CustomButton from './customButton'
-import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function Home() {
-
-    //const router = useRouter();
 
     return(
         <div className={styles.container}>
@@ -88,13 +86,40 @@ export default function Home() {
                     <div className={styles.customContainer}>
                         <div className={styles.greenBubble}>
                             <h1>La nostra sede di Ostiglia</h1>
-                            <p>
-                                L'Agenzia Immobiliare Metroquadro è situata nel centro di Ostiglia MN in Via Vittorio Veneto 6.
-                                Siamo aperti dal lunedì al sabato, dalle 09:00 alle 12:30 e dalle 15:30 alle 18:30. È caldamnete consigliato fissare un appuntamento per essere certi di trovarci in agenzia.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo lectus orci, vitae tincidunt augue tincidunt at. Praesent a placerat nunc. Quisque vitae accumsan lacus. Ut finibus risus lacus, eget fringilla massa tempor at. Mauris in libero dolor. Etiam cursus, arcu vel vestibulum cursus, ex sapien vehicula tellus, dignissim consequat sem augue sit amet neque. Pellentesque auctor eu orci et porttitor. Duis at ipsum nec tortor mattis scelerisque a sed massa. Cras congue fringilla volutpat. Aliquam aliquam, lacus et eleifend euismod, tortor ipsum imperdiet ex, sit amet interdum elit neque nec augue. Mauris malesuada elit tincidunt, porta lorem sit amet, tristique augue.
+                            <div className={styles.sedeSectionContainer}>
+                                <div className={styles.sedeMapSection}>
+                                </div>
+                                <div className={styles.sedeOrariSection}>
+                                    <div className={styles.tabellaOrari}>
+                                        <div className={styles.orarioItem}>
+                                            <p>Lunedì</p>
+                                            <p>09:00 - 12:30 | 15:30 - 18:30</p>
+                                        </div>
+                                        <div className={styles.orarioItem}>
+                                            <p>Martedì</p>
+                                            <p>09:00 - 12:30 | 15:30 - 18:30</p>
+                                        </div>
+                                        <div className={styles.orarioItem}>
+                                            <p>Mercoledì</p>
+                                            <p>09:00 - 12:30 | 15:30 - 18:30</p>
+                                        </div>
+                                        <div className={styles.orarioItem}>
+                                            <p>Giovedì</p>
+                                            <p>09:00 - 12:30 | 15:30 - 18:30</p>
+                                        </div>
+                                        <div className={styles.orarioItem}>
+                                            <p>Venerdì</p>
+                                            <p>09:00 - 12:30 | 15:30 - 18:30</p>
+                                        </div>
+                                        <div className={styles.orarioItem}>
+                                            <p>Sabato</p>
+                                            <p>09:00 - 12:30 | 15:30 - 18:30</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                Praesent vitae odio et massa suscipit posuere. In commodo dui non sapien accumsan commodo. Sed eget metus quis urna pellentesque fermentum non ac quam. Nam non finibus ex. Sed convallis lacinia diam sit amet fermentum. Nullam sed urna vel velit rhoncus egestas nec id tellus. Pellentesque interdum tristique elit, vel tincidunt lacus sollicitudin in. Vestibulum quis laoreet augue, in lobortis tortor. Ut lorem eros, efficitur in libero et, dapibus iaculis dui. Mauris lorem ex, viverra quis hendrerit ac, fringilla in ex. Integer sed tincidunt dui, quis lobortis odio. Donec quis iaculis ipsum.
-                            </p>
+                            
                         </div>
                     </div>
                     <img src="ill_3.png" className={styles.ditone} />
