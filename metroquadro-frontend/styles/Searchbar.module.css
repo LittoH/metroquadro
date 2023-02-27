@@ -1,5 +1,16 @@
 
-div.barBackground {
+div.greenBarWrapper {
+    background-color: var(--mqGreen);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+div.searchBar {
     width: 800px;
     height: 50px;
     border-style: solid;
@@ -8,7 +19,7 @@ div.barBackground {
     padding: 10px;
 }
 
-input.barBackground {
+input.searchBar {
     width: 800px;
     height: 50px;
     border-style: solid;
