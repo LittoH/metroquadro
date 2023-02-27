@@ -2,6 +2,24 @@ div.customContainer {
     width: 1200px;
 }
 
+div.seCustomContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 1200px;
+}
+
+section.searchEngineSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
 section.postHeroContent {
     clear: both;
     display: flex;
