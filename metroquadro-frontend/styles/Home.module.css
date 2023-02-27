@@ -134,6 +134,14 @@ div.greenBubble {
     text-align: justify;
 }
 
+div.greenBubble2 {
+    background: var(--mqGreen);
+    border-radius: 30px;
+    padding: 70px 70px 70px 280px;
+    color: var(--mqWhite);
+    text-align: justify;
+}
+
 img.ditone {
     position: relative;
     bottom: 600px;
@@ -243,6 +251,14 @@ form.formContactUs > button {
 
     div.postCardsContent {
         width: 300px;
+    }
+
+    div.greenBubble {
+        padding: 70px 70px 70px 70px;
+    }
+
+    div.greenBubble2 {
+        padding: 70px 70px 70px 70px;
     }
 
     img.ditone {

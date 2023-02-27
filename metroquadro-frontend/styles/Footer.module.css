@@ -16,3 +16,21 @@ div.greenWrapperProperties {
 div.customContainer {
     width: 1200px;
 }
+
+@media screen and (max-width: 991px) {
+    div.customContainer {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div.customContainer {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    div.customContainer {
+        width: 200px;
+    }
+}
