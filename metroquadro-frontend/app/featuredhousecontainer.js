@@ -15,15 +15,15 @@ export default async function FeaturedHouseContainer() {
             {houses.map((house) => (
                 <>
                     <FeaturedHouseCard 
-                                        id={house.id}
-                                        imgSrc={house.immagine} 
-                                        price={house.prezzo} 
-                                        title={house.titolo} 
-                                        numLocales={house.locali} 
-                                        m2={house.metriquadri} 
-                                        bathrooms={house.bagni}
-                                        floors={house.piani} 
-                                        description={house.annuncio}
+                        id={house.id}
+                        imgSrc={house.immagine} 
+                        price={house.prezzo} 
+                        title={house.titolo} 
+                        numLocales={house.locali} 
+                        m2={house.metriquadri} 
+                        bathrooms={house.bagni}
+                        floors={house.piani} 
+                        description={house.annuncio}
                     />
                 </>
             ))}

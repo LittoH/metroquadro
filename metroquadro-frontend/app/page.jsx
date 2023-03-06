@@ -3,6 +3,8 @@ import Herosection from './herosection'
 import FeaturedHouseContainer from './featuredhousecontainer'
 import CustomButton from './customButton'
 import Image from 'next/image'
+import { FadeInWhenVisible } from './fade-in-when-visible'
+import { FadeInWhenVisibleStagger } from './fade-in-when-visible-stagger'
 
 export default function Home() {
 
@@ -24,9 +26,11 @@ export default function Home() {
                     </div>
                 </section>
 
+                
                 <section>
                     <div className={styles.greenWrapperProperties} style={{backgroundImage: "linear-gradient(to top, rgb(55, 103, 72), var(--mqGreen))"}}>
                         <div className={styles.customContainer}>
+                            <FadeInWhenVisible>
                             <div className={styles.multicardContainer}>
                                 <div className={styles.smallCard}>
                                     <h1>Compra</h1>
@@ -57,10 +61,11 @@ export default function Home() {
                                         VENDI
                                     </div>
                                 </div>
-
                                 
                             </div>
+                            </FadeInWhenVisible>
 
+                            <FadeInWhenVisible>
                             <div className={styles.postCardsSection}>
                                 <div className={styles.postCardsContent}>
                                     <p>
@@ -76,13 +81,17 @@ export default function Home() {
                                     theme="light"
                                 />
                             </div>
+                            </FadeInWhenVisible>
 
                         </div>
+                        
+                        
                     </div>
                 </section>
 
                 <section className={styles.aboutUsSection}>
                 <div className={styles.greyWrapperProperties}>
+                    <FadeInWhenVisible>
                     <div className={styles.customContainer}>
                         <div className={styles.greenBubble}>
                             <h1>La nostra sede di Ostiglia</h1>
@@ -120,8 +129,10 @@ export default function Home() {
                             </div>
 
                             
+                        
                         </div>
                     </div>
+                    </FadeInWhenVisible>
                     <img src="ill_3.png" className={styles.ditone} />
                 </div>
                 </section>

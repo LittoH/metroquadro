@@ -4,6 +4,7 @@ import { Abyssinica } from '@next/font/google'
 import Navbar from './navbar'
 import styles from '../styles/Navbar.module.css'
 import Footer from './footer'
+import { PageWrapper } from './page-wrapper'
 
 export default function RootLayout({ children }) {
     return (
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
 
         <body>
             <Navbar />
-            {children}
+            <PageWrapper>
+              {children}
+            </PageWrapper>
             <Footer />
         </body>        
       </html>
