@@ -52,6 +52,21 @@ div.houseBigDetailItem {
     div.customContainer {
         width: 500px;
     }
+
+    div.housePhotosCarousel {
+        width: 100%;
+        height: 700px;
+        border-radius: 0;
+    }
+
+    div.houseInfoOuterBriefDetailsContainer {
+        flex-direction: column;
+    }
+
+    div.houseInfoInnerBriefDetailsContainer {
+        width: 100%;
+        padding: 0 !important;
+    }
 }
 
 @media screen and (max-width: 479px) {
