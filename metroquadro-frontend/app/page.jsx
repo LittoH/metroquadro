@@ -4,7 +4,6 @@ import FeaturedHouseContainer from './featuredhousecontainer'
 import CustomButton from './customButton'
 import Image from 'next/image'
 import { FadeInWhenVisible } from './fade-in-when-visible'
-import { FadeInWhenVisibleStagger } from './fade-in-when-visible-stagger'
 
 export default function Home() {
 

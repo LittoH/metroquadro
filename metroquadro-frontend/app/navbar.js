@@ -5,10 +5,13 @@ import Navlink from './navlink'
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { motion, useAnimationControls } from "framer-motion";
 
 export default function Navbar() {
 
     const router = useRouter();
+    const controls = useAnimationControls()
 
     // Parte necessaria per il cambio di sfondo della navbar
     const debounce = (fn) => {
@@ -34,7 +37,22 @@ export default function Navbar() {
 
     // Fine parte necessaria per il cambio di sfondo della navbar
 
+    function OpenMenu() {
+        controls.start({
+                left : "0vw",
+                transition: { duration: .3 },
+            });
+    }
+
+    function CloseMenu() {
+        controls.start({
+            left : "100vw",
+            transition: { duration: .3 },
+        });
+    }
+
     return (
+        <>
         <div id="navbarContainer" className={styles.container}>
             <div className={styles.customContainer}>
                 <Link href="/" onClick={() => router.reload()}>
@@ -48,7 +66,33 @@ export default function Navbar() {
                     <Navlink title="VENDI" path="./"/>
                     <Navlink title="AGENZIA" path="./"/>
                 </div>
+                <div className={styles.navbarSectionMobile}>
+                    <Image
+                        src="menu-burger.svg"
+                        alt="burger menu"
+                        width={30}
+                        height={30}
+                        onClick={() => OpenMenu()}
+                    />
+                </div>
             </div>
         </div>
+
+        <motion.div animate={controls} className={styles.mobileMenu}>
+            <div className={styles.crossButtonContainer}>
+                <Image
+                    src="cross.svg"
+                    alt="cross button"
+                    width={30}
+                    height={30}
+                    onClick={() => CloseMenu()}
+                />
+            </div>
+            <Navlink title="COMPRA" path="./immobili"/>
+            <Navlink title="AFFITTA" path="./immobili"/>
+            <Navlink title="VENDI" path="./"/>
+            <Navlink title="AGENZIA" path="./"/>
+        </motion.div>
+        </>
     );
 };
