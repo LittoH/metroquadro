@@ -40,7 +40,7 @@ export default function Navbar() {
     function OpenMenu() {
         controls.start({
                 left : "0vw",
-                transition: { duration: .3 },
+                transition: { duration: .3},
             });
     }
 
@@ -88,10 +88,10 @@ export default function Navbar() {
                     onClick={() => CloseMenu()}
                 />
             </div>
-            <Navlink title="COMPRA" path="./immobili"/>
-            <Navlink title="AFFITTA" path="./immobili"/>
-            <Navlink title="VENDI" path="./"/>
-            <Navlink title="AGENZIA" path="./"/>
+            <Navlink passedDownFunction={CloseMenu} title="COMPRA" path="./immobili"/>
+            <Navlink passedDownFunction={CloseMenu} title="AFFITTA" path="./immobili"/>
+            <Navlink passedDownFunction={CloseMenu} title="VENDI" path="./"/>
+            <Navlink passedDownFunction={CloseMenu} title="AGENZIA" path="./"/>
         </motion.div>
         </>
     );
