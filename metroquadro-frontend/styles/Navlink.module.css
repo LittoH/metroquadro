@@ -1,7 +1,7 @@
 .link {
     padding: 10px 20px 10px 20px;
     cursor: pointer;
-    color: rgb(45, 45, 45);
+    color: var(--mqBlack);
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -13,6 +13,25 @@
     background-color: rgb(210, 210, 210);
 }
 
+div.mobileButton {
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    color: var(--mqWhite);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div.mobileButton:hover {
+    cursor: pointer;
+    background-color: rgba(210, 210, 210, .3);
+}
+
 .title {
     font-size: 10pt;
+}
+
+.mobileTitle {
+    font-size: 15pt;
 }
