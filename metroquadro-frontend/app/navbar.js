@@ -57,7 +57,7 @@ export default function Navbar() {
             <div className={styles.customContainer}>
                 <Link href="/" onClick={() => router.reload()}>
                     <div className={styles.navbarSectionLogo}>
-                        <img className={styles.logo} src="logo7.png" />
+                        <img className={styles.logo} src="/logo7.png" />
                     </div>
                 </Link>
                 <div className={styles.navbarSection}>
@@ -68,7 +68,7 @@ export default function Navbar() {
                 </div>
                 <div className={styles.navbarSectionMobile}>
                     <Image
-                        src="menu-burger.svg"
+                        src="/menu-burger.svg"
                         alt="burger menu"
                         width={30}
                         height={30}
@@ -81,7 +81,7 @@ export default function Navbar() {
         <motion.div animate={controls} className={styles.mobileMenu}>
             <div className={styles.crossButtonContainer}>
                 <Image
-                    src="cross.svg"
+                    src="/cross.svg"
                     alt="cross button"
                     width={30}
                     height={30}

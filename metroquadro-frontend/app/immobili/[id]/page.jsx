@@ -26,8 +26,8 @@ export default async function ImmobilePage({ params }) {
                                 <div className={styles.houseDetailItem}><h3>Immobile</h3><p>{immobile.titolo}</p></div>
                                 <div className={styles.houseDetailItem}><h3>Prezzo</h3><p>{immobile.prezzo}</p></div>
                                 <div className={styles.houseDetailItem}><h3>Numero locali</h3><p>{immobile.locali}</p></div>
-                                <div className={styles.houseDetailItem}><h3>Indirizzo(NOT_DB)</h3><p>Ostiglia, Strada test 123, 1A</p></div>
-                                <div className={styles.houseDetailItem}><h3>Item non definito</h3><p>test test test</p></div>
+                                <div className={styles.houseDetailItem}><h3>Comune</h3><p>{immobile.comune}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Indirizzo</h3><p>{immobile.indirizzo}</p></div>
                             </div>
 
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{paddingLeft: "30px"}}>

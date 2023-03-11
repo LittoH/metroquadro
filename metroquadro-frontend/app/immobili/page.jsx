@@ -9,7 +9,6 @@ export default function Immobili() {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-
                 <section className={styles.searchEngineSection}>
                     <div className={styles.seCustomContainer}>
                         <SearchBar />

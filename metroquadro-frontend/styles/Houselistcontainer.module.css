@@ -3,7 +3,7 @@ div.houseListContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 50px;
     overflow: auto;
     padding-bottom: 30px;
@@ -29,3 +29,17 @@ div.houseListContainer {
     padding-bottom: 30px;
 }
 */
+
+@media screen and (max-width: 991px) {
+    div.houseListContainer {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+}
+
+@media screen and (max-width: 479px) {
+    
+}

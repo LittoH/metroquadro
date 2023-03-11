@@ -71,6 +71,6 @@ div.houseBigDetailItem {
 
 @media screen and (max-width: 479px) {
     div.customContainer {
-        width: 300px;
+        width: 90%;
     }
 }
