@@ -36,10 +36,21 @@ div.houseInfoInnerBriefDetailsContainer {
 div.houseDetailItem {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 div.houseBigDetailItem {
     display: block;
+}
+
+section.linkedFeaturedHouses {
+    clear: both;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 @media screen and (max-width: 991px) {

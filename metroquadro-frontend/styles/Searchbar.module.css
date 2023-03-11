@@ -4,9 +4,8 @@ div.greenBarWrapper {
     padding: 10px;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
     border-radius: 10px;
 }
 
@@ -20,7 +19,7 @@ div.searchBar {
 }
 
 input.searchBar {
-    width: 800px;
+    width: 100%;
     height: 50px;
     border-style: solid;
     border-color: var(--mqBlack);
@@ -35,6 +34,7 @@ div.searchBarButton {
     background-color: var(--mqBlack);
     color: var(--mqWhite);
     border-radius: 10px;
+    margin-right: 10px;
 }
 
 div.searchBarButton {
@@ -48,4 +48,12 @@ div.searchBarButton {
 
 div.searchBarButton:hover {
     cursor: pointer;
+}
+
+div.buttonsWrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-items: right;
+    align-items: right;
 }

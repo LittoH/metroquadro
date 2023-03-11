@@ -132,7 +132,7 @@ export default function Home() {
                         </div>
                     </div>
                     </FadeInWhenVisible>
-                    <img src="ill_3.png" className={styles.ditone} />
+                    <img src="/ill_3.png" className={styles.ditone} />
                 </div>
                 </section>
 
@@ -171,7 +171,7 @@ export default function Home() {
                         </p>
                     </div>
                     </div>
-                    <img src="ill_7.png" className={styles.renderNostraSede} />
+                    <img src="/ill_7.png" className={styles.renderNostraSede} />
                 </div>
                 </section>
 

@@ -55,7 +55,7 @@ export default function Navbar() {
         <>
         <div id="navbarContainer" className={styles.container}>
             <div className={styles.customContainer}>
-                <Link href="/" onClick={() => router.reload()}>
+                <Link href="/">
                     <div className={styles.navbarSectionLogo}>
                         <img className={styles.logo} src="/logo7.png" />
                     </div>
