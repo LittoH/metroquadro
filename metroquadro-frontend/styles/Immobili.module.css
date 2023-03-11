@@ -35,3 +35,33 @@ section.postHeroContent {
     font-size: 30pt;
     margin-bottom: 30px;
 }
+
+@media screen and (max-width: 991px) {
+    div.seCustomContainer {
+        width: 700px;
+    }
+    
+    div.customContainer {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div.seCustomContainer {
+        width: 500px;
+    }
+
+    div.customContainer {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    div.seCustomContainer {
+        width: 300px;
+    }
+
+    div.customContainer {
+        width: 300px;
+    }
+}

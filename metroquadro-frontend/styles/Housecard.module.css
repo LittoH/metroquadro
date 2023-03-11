@@ -1,7 +1,29 @@
+div.houseCardContainer {
+    width: 382.5px;
+    height: 255px;
+    border-radius: 30px;
+}
+
+div.houseCardV2 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: .4s;
+}
+
+div.houseCardV2:hover {
+    cursor: pointer;
+    -webkit-filter: brightness(120%);
+    transition: .4s;
+}
+
 div.houseCard {
-    min-width: 450px;
-    width: 450px;
-    height: 300px;
+    min-width: 382.5px;
+    width: 382.5px;
+    height: 255px;
     border-radius: 30px;
     padding: 80px 105px 25px 35px;
     background-size: cover;
@@ -39,6 +61,10 @@ div.features {
     color: var(--mqGrey);
     font-size: 15pt;
     margin-left: 15px;
+}
+
+div.whiteContainer {
+    background-color: var(--mqWhite);
 }
 
 h1.houseTitle {

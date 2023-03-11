@@ -1,5 +1,6 @@
 import styles from '../styles/Houselistcontainer.module.css'
 import HouseCard from './housecard';
+import HouseCardV2 from './housecardv2';
 
 
 export default async function HouseListContainer() {
@@ -15,7 +16,7 @@ export default async function HouseListContainer() {
         <div className={styles.houseListContainer}>
             {houses.map((house) => (
                 <>
-                    <HouseCard 
+                    <HouseCardV2 
                         id={house.id}
                         imgSrc={house.immagine} 
                         price={house.prezzo} 
