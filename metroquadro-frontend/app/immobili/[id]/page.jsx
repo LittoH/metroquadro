@@ -18,9 +18,10 @@ export default async function ImmobilePage({ params }) {
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
-                    <div className={styles.customContainer}>
+                    <div className={styles.photoCarouselContainer}>
                         <div className={styles.housePhotosCarousel} style={{backgroundImage: imgPath }}></div>
-
+                    </div>
+                    <div className={styles.customContainer}>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{paddingRight: "30px"}}>
                                 <div className={styles.houseDetailItem}><h3>Immobile</h3><p>{immobile.titolo}</p></div>

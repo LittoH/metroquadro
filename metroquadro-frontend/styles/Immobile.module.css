@@ -54,8 +54,8 @@ div.houseBigDetailItem {
     }
 
     div.housePhotosCarousel {
-        width: 100%;
-        height: 700px;
+        width: 100vw;
+        height: 300px;
         border-radius: 0;
     }
 
