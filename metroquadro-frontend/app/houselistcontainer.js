@@ -3,11 +3,11 @@ import HouseCard from './housecard';
 import HouseCardV2 from './housecardv2';
 
 
-export default async function HouseListContainer({ numberOfItems = 30 }) {
+export default async function HouseListContainer({ numberOfItems = 30, filter = "" }) {
 
     let numberOfHousesToFetch = numberOfItems;
 
-    const res = await fetch('https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records?page=1&perPage=' + numberOfHousesToFetch,
+    const res = await fetch("https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records?page=1&perPage=" + numberOfHousesToFetch + filter,
         { cache: 'no-store' }
     );
     const data = await res.json();
