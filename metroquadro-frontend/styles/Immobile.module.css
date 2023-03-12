@@ -68,7 +68,16 @@ section.linkedFeaturedHouses {
     }
 
     div.photoCarouselContainer {
-        width: 700px;
+        width: 80%;
+    }
+
+    div.housePhotosCarousel {
+        height: 45vw;
+    }
+
+    .carouselPhoto {
+        height: auto;
+        width: 100%;
     }
 }
 

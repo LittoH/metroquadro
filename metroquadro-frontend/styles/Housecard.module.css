@@ -70,6 +70,14 @@ p.featuredHouseBriefDescriptionV2 {
 }
 
 @media screen and (max-width: 991px) {
+    
+}
+
+@media screen and (max-width: 767px) {
+    
+}
+
+@media screen and (max-width: 479px) {
     div.houseCardContainer {
         width: 340px;
     }
@@ -85,14 +93,6 @@ p.featuredHouseBriefDescriptionV2 {
     div.featuresV2 {
         font-size: 10pt;
     }
-}
-
-@media screen and (max-width: 767px) {
-    
-}
-
-@media screen and (max-width: 479px) {
-    
 }
 
 
