@@ -21,7 +21,9 @@ export default async function ImmobilePage({ params }) {
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
                     <div className={styles.photoCarouselContainer}>
-                        <div className={styles.housePhotosCarousel} style={{ backgroundImage: imgPath }}></div>
+                        <div className={styles.housePhotosCarousel}>
+                            <Image className={styles.carouselPhoto} src={imgSrcFromServer + imgSrc} fill />
+                        </div>
                     </div>
                     <div className={styles.customContainer}>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
@@ -44,7 +46,7 @@ export default async function ImmobilePage({ params }) {
 
                         <div className={styles.houseBigDetailItem}><h3>Annuncio</h3><p>{immobile.annuncio}</p></div>
                         <div className={styles.houseBigDetailItem}><h3>Descrizione</h3><p>{immobile.descrizione}</p></div>
-                        
+
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
@@ -68,7 +70,7 @@ export default async function ImmobilePage({ params }) {
 
                 <section className={styles.linkedFeaturedHouses}>
                     <div className={styles.customContainer}>
-                        <h1>Potrebbe interessarti anche</h1>
+                        <h1 style={{ marginBottom: "50px" }}>Potrebbe interessarti anche</h1>
                         <HouseListContainer numberOfItems={3} />
                     </div>
                 </section>
