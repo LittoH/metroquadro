@@ -29,8 +29,7 @@ export default async function ImmobilePage({ params }) {
                         </div>
                     </div>
                     <div className={styles.customContainer}>
-
-                        <div className={styles.houseBigDetailItem}><h1>{immobile.titolo}</h1></div>
+                        <div className={styles.houseBigDetailItem} style={{marginTop: "50px"}}><h1>{immobile.titolo}</h1></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
                                 <div className={styles.houseDetailItem}><h3>Contratto</h3><p>{immobile.contratto}</p></div>
