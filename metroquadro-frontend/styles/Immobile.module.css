@@ -54,6 +54,13 @@ div.houseBigDetailItem {
     display: block;
 }
 
+div.planimetriaContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
 section.linkedFeaturedHouses {
     clear: both;
     display: flex;
@@ -80,6 +87,11 @@ section.linkedFeaturedHouses {
     .carouselPhoto {
         height: auto;
         width: 100%;
+    }
+
+    .immaginePlanimetria {
+        width: 100%;
+        height: auto;
     }
 }
 

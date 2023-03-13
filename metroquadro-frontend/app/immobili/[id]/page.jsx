@@ -29,7 +29,7 @@ export default async function ImmobilePage({ params }) {
                         </div>
                     </div>
                     <div className={styles.customContainer}>
-                        <div className={styles.houseBigDetailItem} style={{marginTop: "50px"}}><h1>{immobile.titolo}</h1></div>
+                        <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h1>{immobile.titolo}</h1></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
                                 <div className={styles.houseDetailItem}><h3>Contratto</h3><p>{immobile.contratto}</p></div>
@@ -50,6 +50,17 @@ export default async function ImmobilePage({ params }) {
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Annuncio</h3><p>{immobile.annuncio}</p></div>
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Descrizione</h3><p>{immobile.descrizione}</p></div>
+
+                        <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Planimetria</h3></div>
+                        <div className={styles.planimetriaContainer}>
+                            <Image
+                                className={styles.immaginePlanimetria}
+                                src="/planimetria.jpg"
+                                width="675"
+                                height="1013"
+
+                            />
+                        </div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
@@ -79,7 +90,7 @@ export default async function ImmobilePage({ params }) {
                     </div>
                 </section>
             </main>
-        </div>
+        </div >
 
     );
 }
