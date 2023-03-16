@@ -63,6 +63,7 @@ div.planimetriaContainer {
     flex-direction: row;
     justify-content: center;
     position: relative;
+    background-color: var(--mqBlack);
 }
 
 section.linkedFeaturedHouses {
