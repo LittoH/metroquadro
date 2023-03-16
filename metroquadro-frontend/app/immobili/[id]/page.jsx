@@ -2,6 +2,8 @@ import styles from '../../../styles/Immobile.module.css';
 import HouseListContainer from '../../houselistcontainer';
 import Image from 'next/image';
 
+import PhotoCarouselLightbox from '../../photocarousellightbox';
+
 async function getImmobile(immobileId) {
     const res = await fetch(`https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records/${immobileId}`);
 
@@ -10,6 +12,7 @@ async function getImmobile(immobileId) {
 }
 
 export default async function ImmobilePage({ params }) {
+
     const immobile = await getImmobile(params.id);
 
     const imgSrc = immobile.immagine;
@@ -17,17 +20,21 @@ export default async function ImmobilePage({ params }) {
     const imgPath = "url(" + imgSrcFromServer + imgSrc + ")";
 
     const relatedContentFilter = "&filter=(titolo!='" + immobile.titolo + "')&filter=(comune='" + immobile.comune + "')";
-    console.log(relatedContentFilter);
+    //console.log(relatedContentFilter);
+
+    let openCarouselTrigger = false;
+
+    function OpenPhotosCarouselTrigger() {
+        openCarouselTrigger = true;
+    }
 
     return (
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
-                    <div className={styles.photoCarouselContainer}>
-                        <div className={styles.housePhotosCarousel}>
-                            <Image className={styles.carouselPhoto} src={imgSrcFromServer + imgSrc} fill />
-                        </div>
-                    </div>
+
+                    <PhotoCarouselLightbox frontFaceImage={imgSrcFromServer + imgSrc} openTrigger={openCarouselTrigger} />
+
                     <div className={styles.customContainer}>
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h1>{immobile.titolo}</h1></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>

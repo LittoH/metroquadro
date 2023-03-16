@@ -16,6 +16,10 @@ div.photoCarouselContainer {
     width: 1200px;
 }
 
+div.photoCarouselContainer:hover {
+    cursor: pointer;
+}
+
 div.housePhotosCarousel {
     background-image: linear-gradient(to top, rgb(55, 103, 72), var(--mqGreen));
     background-size: cover;
