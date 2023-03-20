@@ -1,7 +1,9 @@
 'use client';
 
 import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import * as React from "react";
 
 import styles from '../styles/Immobile.module.css';
@@ -31,6 +33,7 @@ export default function PhotoCarouselLightbox({ frontFaceImage }) {
                     { src: "/ill_2.png" },
                     { src: "/ill_3.png" },
                 ]}
+                plugins={[Thumbnails]}
             />
         </>
     );

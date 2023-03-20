@@ -57,7 +57,7 @@ export default function Navbar() {
             <div className={styles.customContainer}>
                 <Link href="/">
                     <div className={styles.navbarSectionLogo}>
-                        <img className={styles.logo} src="/logo7.png" />
+                        <Image className={styles.logo} src="/logo_test.svg" width={250} height={80.53} />
                     </div>
                 </Link>
                 <div className={styles.navbarSection}>
