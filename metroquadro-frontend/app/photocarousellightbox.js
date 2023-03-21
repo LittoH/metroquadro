@@ -7,6 +7,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import * as React from "react";
+import { useMediaQuery } from 'react-responsive';
 
 import styles from '../styles/Immobile.module.css';
 import Image from 'next/image';
@@ -15,19 +16,26 @@ export default function PhotoCarouselLightbox({ carouselImages, carouselImagePat
 
     let slidesToRender = [];
 
-    carouselImages.forEach((image) => {        
+    carouselImages.forEach((image) => {
         slidesToRender.push(carouselImagePath + image);
     });
 
     // creo un array di slides da passare successivamente alla Lightbox (CODICE GENERATO DA GPT-4 IN DATA 22/03/2023 alle 00:02)
     const lightboxSlides = slidesToRender.map((slide) => ({ src: slide }));
 
+    // verifica se la larghezza dello schermo è inferiore o uguale a 767px
+    const isMobile = useMediaQuery({ maxWidth: '767px' });
+
+    // imposta i plugin in base al valore di isMobile
+    const plugins = isMobile ? [Inline, Zoom] : [Inline, Thumbnails, Zoom];
+
+
     return (
         <>
             <Lightbox
                 inline={{ style: { width: "100%", maxHeight: "75vh", aspectRatio: "16 / 9" } }}
                 slides={lightboxSlides}
-                plugins={[Inline, Thumbnails, Zoom]}
+                plugins={plugins}
             />
         </>
     );
