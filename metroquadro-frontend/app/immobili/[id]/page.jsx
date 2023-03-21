@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import PhotoCarouselLightbox from '../../photocarousellightbox';
 
+//import PocketBase from 'pocketbase';
+
 async function getImmobile(immobileId) {
     const res = await fetch(`https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records/${immobileId}`);
 
@@ -11,16 +13,43 @@ async function getImmobile(immobileId) {
     return data;
 }
 
+async function getPhotos(id) {
+
+    // Questa funzione è separata da getImmobile() perché esegue una fetch su una collezione totalmente diversa
+
+    //const res = await fetch(`https://metroquadro-backend-production.up.railway.app/api/collections/immagini_immobili/records?filter=(immobile_id='${immobileId}'`);
+
+    const fetchString = "https://metroquadro-backend-production.up.railway.app/api/collections/immagini_immobili/records?filter=(immobile_id='" + id + "')";
+
+    const res = await fetch(fetchString);
+    const data = await res.json();
+
+    return data;
+}
+
 export default async function ImmobilePage({ params }) {
 
     const immobile = await getImmobile(params.id);
+
+    /* Inizio partee legata all'ottenimento delle immagini per il carosello */
+    const photos = await getPhotos(params.id);
+    const photosItems = photos.items;
+    let photosList; // array di foto che passo al carosello
+    let imagesPath; // path per risalire alle immagini nel database
+
+    // ciclo ogni oggetto di photosItem e lo passo nell'array photosToRender, prima di passarlo al component, nel return
+    photosItems.forEach((photo) => {        
+        photosList = photo.immagini;
+        imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + photo.id + "/"; 
+    });
+
+    /*Fine parte legata all'ottenimento delle immagini per il carosello */
 
     const imgSrc = immobile.immagine;
     const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";
     const imgPath = "url(" + imgSrcFromServer + imgSrc + ")";
 
     const relatedContentFilter = "&filter=(titolo!='" + immobile.titolo + "')&filter=(comune='" + immobile.comune + "')";
-    //console.log(relatedContentFilter);
 
     let openCarouselTrigger = false;
 
@@ -33,7 +62,7 @@ export default async function ImmobilePage({ params }) {
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
 
-                    <PhotoCarouselLightbox frontFaceImage={imgSrcFromServer + imgSrc} openTrigger={openCarouselTrigger} />
+                    <PhotoCarouselLightbox carouselImages={photosList} carouselImagePath={imagesPath} />
 
                     <div className={styles.customContainer}>
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h1>{immobile.titolo}</h1></div>
@@ -43,15 +72,15 @@ export default async function ImmobilePage({ params }) {
                                 <div className={styles.houseDetailItem}><h3>Prezzo</h3><p>{immobile.prezzo}</p></div>
                                 <div className={styles.houseDetailItem}><h3>Tipologia</h3><p>{immobile.tipologia_immobile}</p></div>
                                 <div className={styles.houseDetailItem}><h3>Comune</h3><p>{immobile.comune}</p></div>
-                                <div className={styles.houseDetailItem}><h3>Indirizzo</h3><p>{immobile.indirizzo}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Certificazione energetica</h3><p>{immobile.certificazione_energetica}</p></div>
                             </div>
 
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingLeft: "30px" }}>
                                 <div className={styles.houseDetailItem}><h3>Metriquadri:</h3><p>{immobile.metriquadri}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Numero locali: </h3><p>{immobile.locali}</p></div>
                                 <div className={styles.houseDetailItem}><h3>Bagni:</h3><p>{immobile.bagni}</p></div>
                                 <div className={styles.houseDetailItem}><h3>Piani:</h3><p>{immobile.piani}</p></div>
-                                <div className={styles.houseDetailItem}><h3>Certificazione energetica:</h3><p>{immobile.certificazione_energetica}</p></div>
-                                <div className={styles.houseDetailItem}><h3>Numero locali: </h3><p>{immobile.locali}</p></div>
+                                <div className={styles.houseDetailItem}><h3>Garage:</h3><p>{immobile.garage}</p></div>
                             </div>
                         </div>
 
