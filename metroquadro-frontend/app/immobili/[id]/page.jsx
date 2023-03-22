@@ -59,9 +59,9 @@ export default async function ImmobilePage({ params }) {
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
-
-                    
-
+                    {photosList && (
+                        <PhotoCarouselLightbox carouselImages={photosList} carouselImagePath={imagesPath} />
+                    )}
                     <div className={styles.customContainer}>
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h1>{immobile.titolo}</h1></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
