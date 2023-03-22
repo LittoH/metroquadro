@@ -17,8 +17,6 @@ async function getPhotos(id) {
 
     // Questa funzione è separata da getImmobile() perché esegue una fetch su una collezione totalmente diversa
 
-    //const res = await fetch(`https://metroquadro-backend-production.up.railway.app/api/collections/immagini_immobili/records?filter=(immobile_id='${immobileId}'`);
-
     const fetchString = "https://metroquadro-backend-production.up.railway.app/api/collections/immagini_immobili/records?filter=(immobile_id='" + id + "')";
 
     const res = await fetch(fetchString);

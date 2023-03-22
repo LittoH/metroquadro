@@ -17,7 +17,7 @@ export default function PhotoCarouselLightbox({ carouselImages, carouselImagePat
     let slidesToRender = [];
     let lightboxSlides;
 
-    if (carouselImages != 'undefined') {
+    if (carouselImages) {
         carouselImages.forEach((image) => {
             slidesToRender.push(carouselImagePath + image);
         });
