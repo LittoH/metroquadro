@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 import styles from '../styles/Immobile.module.css';
 import Image from 'next/image';
 
-export default function PhotoCarouselLightbox({ carouselImages, carouselImagePath }) {
+export default function PhotoCarouselLightbox({ carouselImages, carouselImagePath, carouselWidth, carouselMaxHeight, carouselAspectRatio }) {
 
     let slidesToRender = [];
     let lightboxSlides;
@@ -32,11 +32,10 @@ export default function PhotoCarouselLightbox({ carouselImages, carouselImagePat
     // imposta i plugin in base al valore di isMobile
     const plugins = isMobile ? [Inline, Zoom] : [Inline, Thumbnails, Zoom];
 
-
     return (
         <>
             <Lightbox
-                inline={{ style: { width: "100%", maxHeight: "75vh", aspectRatio: "16 / 9" } }}
+                inline={{ style: { width: carouselWidth, maxHeight: carouselMaxHeight, aspectRatio: carouselAspectRatio } }}
                 slides={lightboxSlides}
                 plugins={plugins}
             />

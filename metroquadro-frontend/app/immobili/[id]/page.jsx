@@ -22,11 +22,20 @@ async function getPhotos(id) {
     return data;
 }
 
+async function getPlanimetrie(id) {
+    // Questa funzione è separata da getImmobile() perché esegue una fetch su una collezione totalmente diversa
+    const fetchString = "https://metroquadro-backend-production.up.railway.app/api/collections/immagini_immobili/records?filter=(immobile_id='" + id + "')";
+    const res = await fetch(fetchString);
+    const data = await res.json();
+
+    return data;
+}
+
 export default async function ImmobilePage({ params }) {
 
     const immobile = await getImmobile(params.id);
 
-    /* Inizio partee legata all'ottenimento delle immagini per il carosello */
+    // Inizio partee legata all'ottenimento delle immagini per il carosello delle foto
     const photos = await getPhotos(params.id);
     let photosItems;
     let photosList; // array di foto che passo al carosello
@@ -41,7 +50,25 @@ export default async function ImmobilePage({ params }) {
         });
     }
 
-    /*Fine parte legata all'ottenimento delle immagini per il carosello */
+    // Fine parte legata all'ottenimento delle immagini per il carosello delle foto
+
+    // Inizio parte legata all'ottenimento delle immagini per il carosello delle planimetrie
+    const planimetrie = await getPlanimetrie(params.id);
+    let planimetrieItems;
+    let planimetrieList;
+    let planimetriePath;
+
+    if (planimetrie) {
+        planimetrieItems = planimetrie.items;
+        // ciclo ogni oggetto di photosItem e lo passo nell'array photosToRender, prima di passarlo al component, nel return
+        planimetrieItems.forEach((planimetria) => {
+            planimetrieList = planimetria.planimetrie;
+            planimetriePath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + planimetria.id + "/";
+        });
+    }
+
+    // Fine parte legata alle planimetrie
+
 
     const imgSrc = immobile.immagine;
     const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";
@@ -60,7 +87,7 @@ export default async function ImmobilePage({ params }) {
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
                     {photosList && (
-                        <PhotoCarouselLightbox carouselImages={photosList} carouselImagePath={imagesPath} />
+                        <PhotoCarouselLightbox carouselImages={photosList} carouselImagePath={imagesPath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
                     )}
                     <div className={styles.customContainer}>
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h1>{immobile.titolo}</h1></div>
@@ -86,14 +113,12 @@ export default async function ImmobilePage({ params }) {
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Descrizione</h3><p>{immobile.descrizione}</p></div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Planimetria</h3></div>
-                        <div className={styles.planimetriaContainer}>
-                            <Image
-                                className={styles.immaginePlanimetria}
-                                src="/planimetria.jpg"
-                                width="675"
-                                height="1013"
 
-                            />
+                        {planimetrieList && (
+                            <PhotoCarouselLightbox carouselImages={planimetrieList} carouselImagePath={planimetriePath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
+                        )}
+
+                        <div className={styles.planimetriaContainer}>
                         </div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
