@@ -14,11 +14,8 @@ async function getImmobile(immobileId) {
 }
 
 async function getPhotos(id) {
-
     // Questa funzione è separata da getImmobile() perché esegue una fetch su una collezione totalmente diversa
-
     const fetchString = "https://metroquadro-backend-production.up.railway.app/api/collections/immagini_immobili/records?filter=(immobile_id='" + id + "')";
-
     const res = await fetch(fetchString);
     const data = await res.json();
 
@@ -31,15 +28,19 @@ export default async function ImmobilePage({ params }) {
 
     /* Inizio partee legata all'ottenimento delle immagini per il carosello */
     const photos = await getPhotos(params.id);
-    const photosItems = photos.items;
+    let photosItems;
     let photosList; // array di foto che passo al carosello
     let imagesPath; // path per risalire alle immagini nel database
 
-    // ciclo ogni oggetto di photosItem e lo passo nell'array photosToRender, prima di passarlo al component, nel return
-    photosItems.forEach((photo) => {        
-        photosList = photo.immagini;
-        imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + photo.id + "/"; 
-    });
+    if (photos) {
+        photosItems = photos.items;
+        // ciclo ogni oggetto di photosItem e lo passo nell'array photosToRender, prima di passarlo al component, nel return
+        photosItems.forEach((photo) => {
+            photosList = photo.immagini;
+            imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + photo.id + "/";
+        });
+
+    }
 
     /*Fine parte legata all'ottenimento delle immagini per il carosello */
 
