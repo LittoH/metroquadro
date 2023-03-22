@@ -15,13 +15,16 @@ import Image from 'next/image';
 export default function PhotoCarouselLightbox({ carouselImages, carouselImagePath }) {
 
     let slidesToRender = [];
+    let lightboxSlides;
 
-    carouselImages.forEach((image) => {
-        slidesToRender.push(carouselImagePath + image);
-    });
+    if (carouselImages != 'undefined') {
+        carouselImages.forEach((image) => {
+            slidesToRender.push(carouselImagePath + image);
+        });
 
-    // creo un array di slides da passare successivamente alla Lightbox (CODICE GENERATO DA GPT-4 IN DATA 22/03/2023 alle 00:02)
-    const lightboxSlides = slidesToRender.map((slide) => ({ src: slide }));
+        // creo un array di slides da passare successivamente alla Lightbox (CODICE GENERATO DA GPT-4 IN DATA 22/03/2023 alle 00:02)
+        lightboxSlides = slidesToRender.map((slide) => ({ src: slide }));
+    }
 
     // verifica se la larghezza dello schermo è inferiore o uguale a 767px
     const isMobile = useMediaQuery({ maxWidth: '767px' });
