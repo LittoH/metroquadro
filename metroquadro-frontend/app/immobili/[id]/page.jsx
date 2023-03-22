@@ -39,7 +39,6 @@ export default async function ImmobilePage({ params }) {
             photosList = photo.immagini;
             imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + photo.id + "/";
         });
-
     }
 
     /*Fine parte legata all'ottenimento delle immagini per il carosello */
@@ -61,7 +60,7 @@ export default async function ImmobilePage({ params }) {
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
 
-                    <PhotoCarouselLightbox carouselImages={photosList} carouselImagePath={imagesPath} />
+                    
 
                     <div className={styles.customContainer}>
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h1>{immobile.titolo}</h1></div>
