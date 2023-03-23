@@ -35,6 +35,17 @@ export default async function ImmobilePage({ params }) {
 
     const immobile = await getImmobile(params.id);
 
+    // Inizio parte relativa al recupero dei dati della voce "nelle vicinanze" da renderizzare in fondo alla pagina
+    let vicinanzeData, nelleVicinanze;
+
+    if (immobile) {
+        vicinanzeData = immobile.nelle_vicinanze;
+        nelleVicinanze = { ...vicinanzeData.nelle_vicinanze };
+        console.log(nelleVicinanze.mezziditrasporto);
+    }
+
+    // Fine parte relativa a "nelle vicinanze"
+
     // Inizio partee legata all'ottenimento delle immagini per il carosello delle foto
     const photos = await getPhotos(params.id);
     let photosItems;
@@ -124,19 +135,89 @@ export default async function ImmobilePage({ params }) {
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
-                                <div className={styles.houseDetailItem}><p>Piscine</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Scuole</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Mezzi di trasporto</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Palestra</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Cibo da asporto</p><Image src={"/check.svg"} width={20} height={20} /></div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Piscine</p>
+                                    {nelleVicinanze.piscine ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Scuole</p>
+                                    {nelleVicinanze.scuole ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Mezzi di trasporto</p>
+                                    {nelleVicinanze.mezzi_di_trasporto ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Palestra</p>
+                                    {nelleVicinanze.palestra ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Cibo da asporto</p>
+                                    {nelleVicinanze.cibo_da_asporto ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
                             </div>
 
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingLeft: "30px" }}>
-                                <div className={styles.houseDetailItem}><p>Biblioteca</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Supermercati</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Parchi</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Campo sportivo</p><Image src={"/check.svg"} width={20} height={20} /></div>
-                                <div className={styles.houseDetailItem}><p>Luoghi di culto</p><Image src={"/check.svg"} width={20} height={20} /></div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Biblioteca</p>
+                                    {nelleVicinanze.biblioteca ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Supermercati</p>
+                                    {nelleVicinanze.supermercati ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Parchi</p>
+                                    {nelleVicinanze.parchi ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Campo sportivo</p>
+                                    {nelleVicinanze.campo_sportivo ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
+                                <div className={styles.houseDetailItem}>
+                                    <p>Luoghi di culto</p>
+                                    {nelleVicinanze.luoghi_di_culto ? (
+                                        <Image src={"/check.svg"} width={20} height={20} />
+                                    ) : (
+                                        <Image src={"/cross.svg"} width={20} height={20} />
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>

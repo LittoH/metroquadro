@@ -60,8 +60,6 @@ DENTRO AL RETURN
 </div>
 */
 
-
-
 /* BACKUP LIGHTBOX 
 
 <Lightbox
