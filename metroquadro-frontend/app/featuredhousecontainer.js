@@ -12,7 +12,7 @@ export default async function FeaturedHouseContainer() {
 
     return (
         <div className={styles.multiFeaturedHouseContainer}>
-            {houses.map((house) => (
+            {houses.filter(house => house.attivo && house.in_evidenza).map((house) => (
                 <>
                     <FeaturedHouseCard 
                         id={house.id}

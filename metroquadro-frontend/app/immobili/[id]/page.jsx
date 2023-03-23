@@ -124,11 +124,9 @@ export default async function ImmobilePage({ params }) {
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Descrizione</h3><p>{immobile.descrizione}</p></div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Planimetria</h3></div>
-
-                        {planimetrieList && (
-                            <PhotoCarouselLightbox carouselImages={planimetrieList} carouselImagePath={planimetriePath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
-                        )}
-
+                            {planimetrieList && (
+                                <PhotoCarouselLightbox carouselImages={planimetrieList} carouselImagePath={planimetriePath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
+                            )}
                         <div className={styles.planimetriaContainer}>
                         </div>
 

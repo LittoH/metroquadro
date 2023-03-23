@@ -16,7 +16,7 @@ export default async function HouseListContainer({ numberOfItems = 30, filter = 
 
     return (
         <div className={styles.houseListContainer}>
-            {houses.map((house) => (
+            {houses.filter(house => house.attivo).map((house) => (
                 <>
                     <HouseCardV2
                         id={house.id}
