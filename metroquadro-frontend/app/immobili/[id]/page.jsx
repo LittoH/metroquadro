@@ -41,7 +41,6 @@ export default async function ImmobilePage({ params }) {
     if (immobile) {
         vicinanzeData = immobile.nelle_vicinanze;
         nelleVicinanze = { ...vicinanzeData.nelle_vicinanze };
-        console.log(nelleVicinanze.mezziditrasporto);
     }
 
     // Fine parte relativa a "nelle vicinanze"
@@ -124,14 +123,16 @@ export default async function ImmobilePage({ params }) {
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Descrizione</h3><p>{immobile.descrizione}</p></div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Planimetria</h3></div>
-                            {planimetrieList && (
-                                <PhotoCarouselLightbox carouselImages={planimetrieList} carouselImagePath={planimetriePath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
-                            )}
+                        {planimetrieList && (
+                            <PhotoCarouselLightbox carouselImages={planimetrieList} carouselImagePath={planimetriePath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
+                        )}
                         <div className={styles.planimetriaContainer}>
                         </div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
+                        {nelleVicinanze && (
                         <div className={styles.houseInfoOuterBriefDetailsContainer}>
+                            
                             <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
                                 <div className={styles.houseDetailItem}>
                                     <p>Piscine</p>
@@ -218,6 +219,7 @@ export default async function ImmobilePage({ params }) {
                                 </div>
                             </div>
                         </div>
+                        )}
                     </div>
                 </section>
 
