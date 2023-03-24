@@ -1,13 +1,20 @@
+
+
 import styles from '../../styles/Immobili.module.css'
 import CustomButton from '../customButton';
 import HouseListContainer from '../houselistcontainer';
 import SearchBar from '../searchbar';
 
+import BottoneDebug from '../bottoneDebug';
+import ImmobiliList from '../immobiliList';
+
+
 export default function Immobili() {
 
-    let filterToApply = "";
+    let numberOfHousesToFetch = 30;
+    let filter = "";
 
-    // Funzione puramente di debug e niente di più
+    
     function LoadCaseMantova() {
         filterToApply = "&filter=(comune='Mantova')";
     }
@@ -24,7 +31,9 @@ export default function Immobili() {
                 <section className={styles.postHeroContent}>
                     <div className={styles.customContainer}>
                         <h1 className={styles.featuredHouseSectionTitle}>Sfoglia</h1>
-                        <HouseListContainer filter={filterToApply} />
+
+                        <ImmobiliList />
+
                         <CustomButton
                             text="Clicca per caricare altri immobili"
                             path="./"
@@ -37,4 +46,5 @@ export default function Immobili() {
     );
 };
 
+// <HouseListContainer filter={filterToApply} />
 

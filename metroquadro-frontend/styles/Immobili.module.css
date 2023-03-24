@@ -13,11 +13,12 @@ div.seCustomContainer {
 section.searchEngineSection {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
-
-    margin-top: 200px;
+    margin-top: 80px;
     margin-bottom: 50px;
+    background-color: var(--mqBlack);
+    height: 200px;
 }
 
 section.postHeroContent {

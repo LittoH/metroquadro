@@ -1,0 +1,28 @@
+.immobiliList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.immobiliListRow {
+    height: 400px;
+    
+    display: flex;
+    flex-direction: row;
+    border: solid 2px rgb(165, 165, 165);
+    border-width: 0 0 1px 0;
+
+    padding: 20px;
+}
+
+.immobileThumbnail {
+    border-radius: 10px 10px 10px 10px;
+}
+
+.immobileItemColumn {
+    width: 50%;
+}
+
+.immobileItemColumnContentContainer {
+    padding: 20px;
+}
