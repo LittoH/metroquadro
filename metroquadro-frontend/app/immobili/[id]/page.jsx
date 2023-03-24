@@ -40,7 +40,9 @@ export default async function ImmobilePage({ params }) {
 
     if (immobile) {
         vicinanzeData = immobile.nelle_vicinanze;
-        nelleVicinanze = { ...vicinanzeData.n_vicinanze };
+        if (vicinanzeData) {
+            nelleVicinanze = { ...vicinanzeData.n_vicinanze };
+        }
     }
 
     // Fine parte relativa a "nelle vicinanze"
@@ -131,94 +133,94 @@ export default async function ImmobilePage({ params }) {
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
                         {nelleVicinanze && (
-                        <div className={styles.houseInfoOuterBriefDetailsContainer}>
-                            
-                            <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Piscine</p>
-                                    {nelleVicinanze.piscine ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Scuole</p>
-                                    {nelleVicinanze.scuole ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Mezzi di trasporto</p>
-                                    {nelleVicinanze.mezzi_di_trasporto ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Palestra</p>
-                                    {nelleVicinanze.palestra ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Cibo da asporto</p>
-                                    {nelleVicinanze.cibo_da_asporto ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                            </div>
+                            <div className={styles.houseInfoOuterBriefDetailsContainer}>
 
-                            <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingLeft: "30px" }}>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Biblioteca</p>
-                                    {nelleVicinanze.biblioteca ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
+                                <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Piscine</p>
+                                        {nelleVicinanze.piscine ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Scuole</p>
+                                        {nelleVicinanze.scuole ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Mezzi di trasporto</p>
+                                        {nelleVicinanze.mezzi_di_trasporto ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Palestra</p>
+                                        {nelleVicinanze.palestra ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Cibo da asporto</p>
+                                        {nelleVicinanze.cibo_da_asporto ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
                                 </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Supermercati</p>
-                                    {nelleVicinanze.supermercati ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Parchi</p>
-                                    {nelleVicinanze.parchi ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Campo sportivo</p>
-                                    {nelleVicinanze.campo_sportivo ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
-                                </div>
-                                <div className={styles.houseDetailItem}>
-                                    <p>Luoghi di culto</p>
-                                    {nelleVicinanze.luoghi_di_culto ? (
-                                        <Image src={"/check.svg"} width={20} height={20} />
-                                    ) : (
-                                        <Image src={"/cross.svg"} width={20} height={20} />
-                                    )}
+
+                                <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingLeft: "30px" }}>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Biblioteca</p>
+                                        {nelleVicinanze.biblioteca ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Supermercati</p>
+                                        {nelleVicinanze.supermercati ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Parchi</p>
+                                        {nelleVicinanze.parchi ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Campo sportivo</p>
+                                        {nelleVicinanze.campo_sportivo ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
+                                    <div className={styles.houseDetailItem}>
+                                        <p>Luoghi di culto</p>
+                                        {nelleVicinanze.luoghi_di_culto ? (
+                                            <Image src={"/check.svg"} width={20} height={20} />
+                                        ) : (
+                                            <Image src={"/cross.svg"} width={20} height={20} />
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         )}
                     </div>
                 </section>
