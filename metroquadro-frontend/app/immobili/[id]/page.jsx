@@ -6,10 +6,13 @@ import PhotoCarouselLightbox from '../../photocarousellightbox';
 
 //import PocketBase from 'pocketbase';
 
+let immobileRetrievedCallBack = false;
+
 async function getImmobile(immobileId) {
     const res = await fetch(`https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records/${immobileId}`);
 
     const data = await res.json();
+    immobileRetrievedCallBack = true;
     return data;
 }
 
@@ -38,7 +41,7 @@ export default async function ImmobilePage({ params }) {
     // Inizio parte relativa al recupero dei dati della voce "nelle vicinanze" da renderizzare in fondo alla pagina
     let vicinanzeData, nelleVicinanze;
 
-    if (immobile) {
+    if (immobileRetrievedCallBack) {
         vicinanzeData = immobile.nelle_vicinanze;
         nelleVicinanze = { ...vicinanzeData.nelle_vicinanze };
     }
