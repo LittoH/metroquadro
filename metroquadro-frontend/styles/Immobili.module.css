@@ -17,8 +17,7 @@ section.searchEngineSection {
     flex-direction: column;
     margin-top: 80px;
     margin-bottom: 50px;
-    background-color: var(--mqBlack);
-    height: 200px;
+    background-color: var(--mqGreen);
 }
 
 section.postHeroContent {
@@ -27,7 +26,6 @@ section.postHeroContent {
     align-items: center;
     flex-direction: column;
 
-    margin-top: 50px;
     margin-bottom: 100px;
 }
 
