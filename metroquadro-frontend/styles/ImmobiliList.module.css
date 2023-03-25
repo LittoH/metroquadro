@@ -5,7 +5,7 @@
 }
 
 .immobiliListRow {
-    height: 400px;
+    height: 300px;
     
     display: flex;
     flex-direction: row;
@@ -19,10 +19,57 @@
     border-radius: 10px 10px 10px 10px;
 }
 
+.immobileItemColumnThumb {
+    width: 35%;
+}
+
 .immobileItemColumn {
-    width: 50%;
+    width: 65%;
 }
 
 .immobileItemColumnContentContainer {
     padding: 20px;
+}
+
+h1.houseTitleV2 {
+    font-family: 'Inter', sans-serif;
+    color: var(--mqBlack);
+    margin: 40px 0 0 0;
+    font-size: 17pt;
+}
+
+div.priceAndFeaturesContainerV2 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.featuredHousePriceV2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 15pt;
+    background: var(--mqGreen);
+    color: var(--mqWhite);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 3px;
+}
+
+div.featuresV2 {
+    color: var(--mqBlack);
+    font-size: 12pt;
+    margin-left: 15px;
+}
+
+p.featuredHouseBriefDescriptionV2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11pt;
+    color: var(--mqBlack);
+    margin-top: 10px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

@@ -14,7 +14,7 @@ div.container {
 }
 
 html:not([data-scroll='0']) div.container {   
-    background: rgb(235, 235, 235);
+    background: rgb(255, 255, 255);
     border-bottom: 3px solid var(--mqGreen);
     transition: .4s;
 }
