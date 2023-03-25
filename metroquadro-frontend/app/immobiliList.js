@@ -41,7 +41,7 @@ export default function ImmobiliList({ searchFilter }) {
                                         <div className={styles.priceAndFeaturesContainerV2}>
                                             <div className={styles.featuredHousePriceV2}>{house.prezzo}</div>
                                             <div className={styles.featuresV2}>
-                                                {house.locali} locali | {house.metriquadri}m² | {house.bagni} bagni | {house.piani} piani
+                                                <p style={{ color: "var(--mqBlack)" }}>{house.locali} locali | {house.metriquadri}m² | {house.bagni} bagni | {house.piani} piani</p>
                                             </div>
                                         </div>
                                         <p className={styles.featuredHouseBriefDescriptionV2}>{house.descrizione}</p>

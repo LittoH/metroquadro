@@ -31,15 +31,17 @@ export default function Immobili() {
                     <div className={styles.customContainer}>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                             <Link className={styles.navigationLinks} href={"/immobili"}><h3>Immobili</h3></Link>
-                            <h3 style={{marginLeft: "5px", marginRight: "5px"}}>&gt;</h3>
+                            <h3 style={{ marginLeft: "5px", marginRight: "5px" }}>&gt;</h3>
                             <Link className={styles.navigationLinks} href={"/immobili"}><h3>Tutte le case</h3></Link>
                         </div>
                         <ImmobiliList searchFilter={searchFilter} />
-                        <CustomButton
-                            text="Clicca per caricare altri immobili"
-                            path="./"
-                            theme="dark"
-                        />
+                        <div style={{ display: "flex", justifyContent: "center" }}>
+                            <CustomButton
+                                text="Clicca per caricare altri immobili"
+                                path="./"
+                                theme="dark"
+                            />
+                        </div>
                     </div>
                 </section>
             </main>
