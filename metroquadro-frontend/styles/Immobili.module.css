@@ -31,6 +31,10 @@ section.postHeroContent {
     margin-bottom: 100px;
 }
 
+.navigationLinks:hover {
+    text-decoration: underline;
+}
+
 .featuredHouseSectionTitle {
     color: var(--mqBlack);
     font-size: 30pt;

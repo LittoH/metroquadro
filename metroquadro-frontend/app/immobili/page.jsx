@@ -30,9 +30,9 @@ export default function Immobili() {
                 <section className={styles.postHeroContent}>
                     <div className={styles.customContainer}>
                         <div style={{ display: "flex", flexDirection: "row" }}>
-                            <Link href={"/immobili"}><h3>Immobili</h3></Link>
+                            <Link className={styles.navigationLinks} href={"/immobili"}><h3>Immobili</h3></Link>
                             <h3 style={{marginLeft: "5px", marginRight: "5px"}}>&gt;</h3>
-                            <Link href={"/immobili"}><h3>Tutte le case</h3></Link>
+                            <Link className={styles.navigationLinks} href={"/immobili"}><h3>Tutte le case</h3></Link>
                         </div>
                         <ImmobiliList searchFilter={searchFilter} />
                         <CustomButton

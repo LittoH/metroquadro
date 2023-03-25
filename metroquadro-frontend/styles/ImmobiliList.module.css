@@ -17,10 +17,12 @@
 
 .immobileThumbnail {
     border-radius: 10px 10px 10px 10px;
+    object-fit: cover;
 }
 
 .immobileItemColumnThumb {
     width: 35%;
+    position: relative;
 }
 
 .immobileItemColumn {

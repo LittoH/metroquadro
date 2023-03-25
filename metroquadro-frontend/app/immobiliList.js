@@ -32,7 +32,7 @@ export default function ImmobiliList({ searchFilter }) {
                     <>
                         <Link href={parsedPath + house.id}>
                             <div className={styles.immobiliListRow}>
-                                <div className={styles.immobileItemColumnThumb} style={{ position: "relative" }}>
+                                <div className={styles.immobileItemColumnThumb}>
                                     <Image className={styles.immobileThumbnail} fill src={imgSrcFromServer + house.id + "/" + house.immagine} />
                                 </div>
                                 <div className={styles.immobileItemColumn}>
