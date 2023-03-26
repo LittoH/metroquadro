@@ -8,6 +8,7 @@ div.seCustomContainer {
     justify-content: space-between;
     flex-direction: column;
     width: 1200px;
+    
 }
 
 section.searchEngineSection {
@@ -18,6 +19,12 @@ section.searchEngineSection {
     margin-top: 80px;
     margin-bottom: 50px;
     background-color: var(--mqGreen);
+    width: 100%;
+    
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 3;
 }
 
 section.postHeroContent {
@@ -26,6 +33,7 @@ section.postHeroContent {
     align-items: center;
     flex-direction: column;
 
+    margin-top: 150px;
     margin-bottom: 100px;
 }
 
