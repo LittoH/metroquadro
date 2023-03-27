@@ -78,7 +78,7 @@ export default function SearchBar({ searchFilter, setSearchFilter }) {
     const [selectedOptionSuperficie, setSelectedOptionSuperficie] = useState(null);
 
     function LoadCaseWithFilter() {
-        const filter = "&filter=(comune='" + selectedOption.value + "')";
+        const filter = 'comune="' + selectedOption.value + '"';
         console.log(filter);
         setSearchFilter(filter);
     }

@@ -2,9 +2,7 @@
 
 import styles from '../../styles/Immobili.module.css'
 import CustomButton from '../customButton';
-import HouseListContainer from '../houselistcontainer';
 import SearchBar from '../searchbar';
-import BottoneDebug from '../bottoneDebug';
 import ImmobiliList from '../immobiliList';
 
 import { useState } from 'react';
@@ -13,8 +11,6 @@ import Link from 'next/link';
 
 export default function Immobili() {
 
-    let numberOfHousesToFetch = 30;
-    //let immobiliListFilter = "";
     const [searchFilter, setSearchFilter] = useState('');
 
     return (
