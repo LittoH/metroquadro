@@ -7,34 +7,21 @@ import Image from 'next/image';
 import useSWR from 'swr';
 import { useState, useEffect } from 'react';
 
-const fetcher = (...args) => fetch(...args).then(res => res.json());
+//const fetcher = (...args) => fetch(...args).then(res => res.json());
 
-
-// Inizio parte nuova
 import PocketBase from 'pocketbase';
-//Fine parte nuova
 
 export default function ImmobiliList({ searchFilter }) {
 
-    console.log("searchFilter is: " + searchFilter);
-
     const [houses, setHouses] = useState('');
 
-    //let houses;
     let numberOfHousesToFetch = 30;
     
-    /* LEGACY FETCH
-    let fetchString = "https://metroquadro-backend-production.up.railway.app/api/collections/immobili_vendita/records?page=1&perPage=" + numberOfHousesToFetch + searchFilter;
-    const { data } = useSWR(fetchString, fetcher);
-    */
-
-    // Inizio parte nuova
     const client = new PocketBase('https://metroquadro-backend-production.up.railway.app');
     let fetchedItems;
 
     const fetchFilteredImmobili = async () => {
         const response = await client.collection('immobili_vendita').getList(1, 50, {
-            //filter: 'comune = "Ostiglia" && garage = "Non disponibile"',
             filter: '' + searchFilter,
         });
         setHouses(response.items);
@@ -44,16 +31,6 @@ export default function ImmobiliList({ searchFilter }) {
     useEffect(() => {
         fetchFilteredImmobili();
     }, [searchFilter])
-
-
-    // Fine parte nuova
-
-    /* LEGACY FETCH
-    if (data) {
-        houses = data.items;
-        console.log("Metodo 1: \n" + houses);
-    }
-    */
 
     const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/";
     const parsedPath = "/immobili/";
@@ -66,7 +43,7 @@ export default function ImmobiliList({ searchFilter }) {
                         <Link href={parsedPath + house.id}>
                             <div className={styles.immobiliListRow}>
                                 <div className={styles.immobileItemColumnThumb}>
-                                    <Image className={styles.immobileThumbnail} fill src={imgSrcFromServer + house.id + "/" + house.immagine} />
+                                    <Image alt="Immagine immobile" className={styles.immobileThumbnail} fill src={imgSrcFromServer + house.id + "/" + house.immagine} />
                                 </div>
                                 <div className={styles.immobileItemColumn}>
                                     <div className={styles.immobileItemColumnContentContainer}>

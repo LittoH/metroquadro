@@ -57,7 +57,7 @@ export default function Navbar() {
             <div className={styles.customContainer}>
                 <Link href="/">
                     <div className={styles.navbarSectionLogo}>
-                        <Image className={styles.logo} src="/logo_test.svg" width={250} height={80.53} />
+                        <Image alt="logo metro quadro" className={styles.logo} src="/logo_test.svg" width={250} height={80.53} />
                     </div>
                 </Link>
                 <div className={styles.navbarSection}>

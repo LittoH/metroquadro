@@ -50,6 +50,23 @@ div.searchBarButton:hover {
     cursor: pointer;
 }
 
+div.searchBarButton2 {
+    color: var(--mqWhite);
+    padding: 5px 10px; 
+    border-style: solid;
+    border-radius: 10px;
+    width: fit-content;
+    transition: .4s;
+}
+
+div.searchBarButton2:hover {
+    cursor: pointer;
+    color: var(--mqBlack);
+    background-color: var(--mqWhite);
+    border: solid var(--mqWhite);
+    transition: .4s;
+}
+
 div.buttonsWrapper {
     margin-top: 10px;
     display: flex;

@@ -1,5 +1,5 @@
 import styles from '../styles/Searchbar.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Select from 'react-select';
 
 const optionsComuni = [
@@ -71,6 +71,13 @@ const optionsSuperficie = [
 
 export default function SearchBar({ searchFilter, setSearchFilter }) {
 
+    const [numberActiveFilters, setNumberActiveFilters] = useState(0);
+    const [selectedOptionIsSet, setSelectedOptionIsSet] = useState(false);
+    const [selectedOptionContrattoIsSet, setSelectedOptionContrattoIsSet] = useState(false);
+    const [selectedOptionTipologiaIsSet, setSelectedOptionTipologiaIsSet] = useState(false);
+    const [selectedOptionPrezzoIsSet, setSelectedOptionPrezzoIsSet] = useState(false);
+    const [selectedOptionSuperficieIsSet, setSelectedOptionSuperficieIsSet] = useState(false);
+
     const [selectedOption, setSelectedOption] = useState(null);
     const [selectedOptionContratto, setSelectedOptionContratto] = useState(null);
     const [selectedOptionTipologia, setSelectedOptionTipologia] = useState(null);
@@ -78,14 +85,75 @@ export default function SearchBar({ searchFilter, setSearchFilter }) {
     const [selectedOptionSuperficie, setSelectedOptionSuperficie] = useState(null);
 
     function LoadCaseWithFilter() {
-        const filter = 'comune="' + selectedOption.value + '"';
-        console.log(filter);
+        //const filter = 'comune="' + selectedOption.value + '" && contratto="' + selectedOptionContratto.value + '" && tipologia_immobile="' + selectedOptionTipologia.value + '"';
+
+        let filter = '';
+        if (selectedOptionIsSet) {
+            filter += 'comune="' + selectedOption.value + '"';
+        }
+        if (selectedOptionContrattoIsSet) {
+            if (filter !== '') {
+                filter += ' && ';
+            }
+            filter += 'contratto="' + selectedOptionContratto.value + '"';
+        }
+        if (selectedOptionTipologiaIsSet) {
+            if (filter !== '') {
+                filter += ' && ';
+            }
+            filter += 'tipologia_immobile="' + selectedOptionTipologia.value + '"';
+        }
+        if (selectedOptionPrezzoIsSet) {
+            if (filter !== '') {
+                filter += ' && ';
+            }
+            filter += 'prezzo_nf<=' + selectedOptionPrezzo.value + '';
+        }
+        if (selectedOptionSuperficieIsSet) {
+            if (filter !== '') {
+                filter += ' && ';
+            }
+            filter += 'metriquadri<=' + selectedOptionSuperficie.value + '';
+        }
+
+        console.log("Filtro completo di ricerca: " + filter);
         setSearchFilter(filter);
     }
 
-    function LoadTutteCaseAttive() {
+    function FiltersReset() {
         setSearchFilter('');
     }
+
+    useEffect(() => {
+        if (selectedOption) {
+            setSelectedOptionIsSet(true);
+        }
+    }, [selectedOption])
+
+
+    useEffect(() => {
+        if (selectedOptionContratto) {
+            setSelectedOptionContrattoIsSet(true);
+        }
+    }, [selectedOptionContratto])
+
+    useEffect(() => {
+        if (selectedOptionTipologia) {
+            setSelectedOptionTipologiaIsSet(true);
+        }
+    }, [selectedOptionTipologia])
+
+    useEffect(() => {
+        if (selectedOptionPrezzo) {
+            setSelectedOptionPrezzoIsSet(true);
+        }
+    }, [selectedOptionPrezzo])
+
+    useEffect(() => {
+        if (selectedOptionSuperficie) {
+            setSelectedOptionSuperficieIsSet(true);
+        }
+    }, [selectedOptionSuperficie])
 
     return (
         <>
@@ -121,10 +189,10 @@ export default function SearchBar({ searchFilter, setSearchFilter }) {
                         options={optionsSuperficie}
                         placeholder={"Superficie"}
                     />
-                    <div className={styles.searchBarButton} onClick={() => LoadCaseWithFilter()}>Cerca</div>
-                    <div className={styles.searchBarButton} onClick={() => LoadTutteCaseAttive()}>Reset filtri</div>
+                    <div className={styles.searchBarButton2} onClick={() => LoadCaseWithFilter()}>Cerca</div>
+                    <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Reset filtri</div>
                 </div>
-                
+
             </div>
         </>
     )
