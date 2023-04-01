@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 65vh;
 }
 
 .immobiliListRow {
@@ -74,4 +75,46 @@ p.featuredHouseBriefDescriptionV2 {
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+@media screen and (max-width: 991px) {
+    
+}
+
+@media screen and (max-width: 767px) {
+    .immobileThumbnail {
+        border-radius: 10px 10px 10px 10px;
+        object-fit: cover;
+    }
+
+    .immobileItemColumnThumb {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+
+    .immobileItemColumn {
+        width: 100%;
+    }
+
+    .immobiliListRow {
+        height: fit-content;
+        
+        display: flex;
+        flex-direction: column;
+        border: solid 2px rgb(165, 165, 165);
+        border-width: 0 0 1px 0;
+    
+        padding: 0px;
+        margin-bottom: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 479px) {
+    .immobileItemColumnThumb {
+        width: 100%;
+        height: 200px;
+        position: relative;
+    }
 }

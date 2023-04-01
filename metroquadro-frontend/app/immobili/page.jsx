@@ -12,13 +12,14 @@ import Link from 'next/link';
 export default function Immobili() {
 
     const [searchFilter, setSearchFilter] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     return (
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.searchEngineSection}>
                     <div className={styles.seCustomContainer}>
-                        <SearchBar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
+                        <SearchBar isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
                     </div>
 
                 </section>
@@ -30,7 +31,7 @@ export default function Immobili() {
                             <h3 style={{ marginLeft: "5px", marginRight: "5px" }}>&gt;</h3>
                             <Link className={styles.navigationLinks} href={"/immobili"}><h3>Tutte le case</h3></Link>
                         </div>
-                        <ImmobiliList searchFilter={searchFilter} />
+                        <ImmobiliList isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} />
                         <div style={{ display: "flex", justifyContent: "center" }}>
                             <CustomButton
                                 text="Clicca per caricare altri immobili"

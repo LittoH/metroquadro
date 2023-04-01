@@ -67,10 +67,33 @@ div.searchBarButton2:hover {
     transition: .4s;
 }
 
+.selectsContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
 div.buttonsWrapper {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-items: right;
     align-items: right;
+}
+
+@media screen and (max-width: 991px) {
+    
+}
+
+@media screen and (max-width: 767px) {
+    
+}
+
+@media screen and (max-width: 479px) {
+    .selectsContainer {
+        display: flex;
+        flex-direction: column;
+        column-gap: 0px;
+        row-gap: 10px;
+    }
 }

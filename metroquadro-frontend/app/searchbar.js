@@ -69,7 +69,7 @@ const optionsSuperficie = [
     { value: '500', label: '500m²' },
 ];
 
-export default function SearchBar({ searchFilter, setSearchFilter }) {
+export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSearchFilter }) {
 
     const [numberActiveFilters, setNumberActiveFilters] = useState(0);
     const [selectedOptionIsSet, setSelectedOptionIsSet] = useState(false);
@@ -85,6 +85,7 @@ export default function SearchBar({ searchFilter, setSearchFilter }) {
     const [selectedOptionSuperficie, setSelectedOptionSuperficie] = useState(null);
 
     function LoadCaseWithFilter() {
+        setIsLoading(true);
         //const filter = 'comune="' + selectedOption.value + '" && contratto="' + selectedOptionContratto.value + '" && tipologia_immobile="' + selectedOptionTipologia.value + '"';
 
         let filter = '';
@@ -121,6 +122,7 @@ export default function SearchBar({ searchFilter, setSearchFilter }) {
     }
 
     function FiltersReset() {
+        setIsLoading(true);
         setSearchFilter('');
     }
 
@@ -158,7 +160,7 @@ export default function SearchBar({ searchFilter, setSearchFilter }) {
     return (
         <>
             <div className={styles.greenBarWrapper}>
-                <div style={{ display: "flex", flexDirection: "row", columnGap: "10px" }}>
+                <div className={styles.selectsContainer}>
                     <Select
                         defaultValue={selectedOption}
                         onChange={setSelectedOption}
