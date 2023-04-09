@@ -5,6 +5,7 @@ import Navbar from './navbar'
 import styles from '../styles/Navbar.module.css'
 import Footer from './footer'
 import { PageWrapper } from './page-wrapper'
+import CookiesAlert from './cookiesAlert'
 
 export default function RootLayout({ children }) {
     return (
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
 
         <body>
             <Navbar />
+            <CookiesAlert />
             <PageWrapper>
               {children}
             </PageWrapper>

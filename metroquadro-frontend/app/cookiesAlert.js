@@ -1,0 +1,35 @@
+'use client';
+
+import styles from '../styles/CookiesAlert.module.css'
+import { useState } from 'react'
+
+export default function CookiesAlert() {
+
+    const [isCookieAgreed, setIsCookieAgreed] = useState(false);
+
+    function AgreeCookies() {
+        setIsCookieAgreed(true);
+    }
+
+    return (
+        <>
+            {!isCookieAgreed &&
+                <div className={styles.cookiesLabelWrapper}>
+                    <h3>Questo sito utilizza dei cookies 🍪</h3>
+                    <p>
+                        Questo sito Web utilizza i cookie per consentirci di offrire la migliore esperienza utente possibile. I cookie sono memorizzati nel tuo browser ed eseguono funzioni come riconoscerti quando ritorni sul nostro sito e aiutare il nostro team a capire quali sezioni del sito web trovi più interessanti e utili.
+                    </p>
+                    <div className={styles.buttonsContainer}>
+                        <div className={styles.cookiesButton} onClick={() => AgreeCookies()}>
+                            Accetta tutti i cookie
+                        </div>
+                        <div className={styles.cookiesButton}>
+                            Leggi la nostra policy
+                        </div>
+                    </div>
+                </div>
+            }
+        </>
+    )
+
+}

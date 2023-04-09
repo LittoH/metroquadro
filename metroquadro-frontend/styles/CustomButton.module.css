@@ -4,8 +4,10 @@ div.featuredHouseButtonLight {
     padding: 0px 30px 0px 30px; 
     border-style: solid;
     border-radius: 30px;
-    width: fit-content;
     transition: .4s;
+    text-align: center;
+    width: fit-content;
+    min-width: 300px;
 }
 
 div.featuredHouseButtonLight:hover {
@@ -17,12 +19,15 @@ div.featuredHouseButtonLight:hover {
 }
 
 div.featuredHouseButtonDark {
+    text-align: center;
     margin-top: 20px;
     color: var(--mqBlack);
     padding: 0px 30px 0px 30px; 
     border-style: solid;
     border-radius: 30px;
     width: fit-content;
+    text-align: center;
+    min-width: 300px;
     transition: .4s;
 }
 

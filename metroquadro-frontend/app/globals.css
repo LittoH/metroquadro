@@ -1,6 +1,7 @@
 :root {
   --mqGrey: rgb(220, 220, 220);
   --mqGreen: rgb(79, 150, 104);
+  --mqLightGreen: rgb(171, 217, 188);
   --mqBlack: rgb(45, 45, 45);
   --mqWhite: rgb(255, 255, 255);
 }

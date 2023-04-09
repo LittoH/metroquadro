@@ -21,7 +21,6 @@ export default function Immobili() {
                     <div className={styles.seCustomContainer}>
                         <SearchBar isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
                     </div>
-
                 </section>
 
                 <section className={styles.postHeroContent}>

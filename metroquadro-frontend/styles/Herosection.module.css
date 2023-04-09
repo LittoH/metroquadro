@@ -2,21 +2,51 @@ div.wrapperProperties {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 80px;
 }
 
 div.customContainer {
     width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px 0 150px 0;
 }
 
 div.herocontent {
-    height: 60vh;
-
-    /* Contenuto trovato in una guida online */
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.285), rgba(255, 255, 255, 0)), url("../public/heroContentHouse.png");
+    /*height: 60vh;*/
+    /* Contenuto trovato in una guida online colore scuro 202020 */
+    background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0.75), rgb(20, 20, 20, .75)), url("../public/heroContentHouse.png");
     background-size: cover;
     background-position: center;
 }
 
+div.herocontentPrivacy {
+    /*height: 60vh;*/
+    /* Contenuto trovato in una guida online colore scuro 202020 */
+    background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0.75), rgb(20, 20, 20, .75)), url("../public/privacy.png");
+    background-size: cover;
+    background-position: center;
+}
+
+h1.heroTitle {
+    color: var(--mqWhite);
+    font-size: 60pt;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+}
 
 img.heroimage {
     width: 100%;
@@ -37,7 +67,6 @@ div.herodescription {
     padding: 10px 50px 10px 50px;
     cursor: pointer;
     transition: .4s;
-    display: none;
 }
 
 div.herodescription:hover {
@@ -49,7 +78,33 @@ div.herodescription:hover {
 }
 
 @media screen and (max-width: 991px) {
-    div.herodescription {
-        display: none;
+    div.customContainer {
+        width: 700px;
+    }
+
+    div.wrapperProperties {
+        margin-top: 20px;
+    }
+
+    h1.heroTitle {
+        font-size: 40pt;
+    }
+
+    .buttonsContainer {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div.customContainer {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    div.customContainer {
+        width: 400px;
     }
 }
