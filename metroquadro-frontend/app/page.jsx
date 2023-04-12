@@ -68,7 +68,7 @@ export default function Home() {
                                 <div className={styles.postCardsSection}>
                                     <div className={styles.postCardsContent}>
                                         <p>
-                                            La nostra copertura del territorio varia da caso a caso, ma prevalente trattiamo di case in vendita e in affitto nel territorio di Ostiglia, Revere, Correggioli, Melara, Serravalle a Po e tutte le zone limitrofe.
+                                            La nostra copertura del territorio varia da caso a caso, ma prevalentemente trattiamo di case in vendita e in affitto nel territorio di Ostiglia, Revere, Correggioli, Melara, Serravalle a Po e tutte le zone limitrofe.
                                         </p>
                                         <p>
                                             Siamo comunque sempre alla ricerca di immobili anche al di fuori delle zone indicate, sia per acquisti, vendite e affitti.
