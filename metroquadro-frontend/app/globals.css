@@ -19,7 +19,6 @@ body {
 
 main {
   width: 100vw;
-  margin-bottom: 50px;
 }
 
 div.wrapperProperties {
@@ -34,7 +33,6 @@ div.customContainer {
 
 footer {
   width: 100%;
-  margin-top: 100px;
   color: var(--mqWhite);
 }
 

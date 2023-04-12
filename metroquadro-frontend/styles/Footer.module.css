@@ -49,6 +49,6 @@ div.customContainer {
 
 @media screen and (max-width: 479px) {
     div.customContainer {
-        width: 200px;
+        width: 370px;
     }
 }

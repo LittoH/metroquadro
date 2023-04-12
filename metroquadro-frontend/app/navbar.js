@@ -61,10 +61,10 @@ export default function Navbar() {
                     </div>
                 </Link>
                 <div className={styles.navbarSection}>
-                    <Navlink theme="desktop" title="COMPRA" path="./immobili"/>
-                    <Navlink theme="desktop" title="AFFITTA" path="./immobili"/>
+                    <Navlink theme="desktop" title="IMMOBILI" path="./immobili"/>
                     <Navlink theme="desktop" title="VENDI" path="./"/>
                     <Navlink theme="desktop" title="AGENZIA" path="./"/>
+                    <Navlink theme="desktop" title="CONTATTACI" path="./"/>
                 </div>
                 <div className={styles.navbarSectionMobile}>
                     <Image

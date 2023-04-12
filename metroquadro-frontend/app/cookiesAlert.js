@@ -2,6 +2,7 @@
 
 import styles from '../styles/CookiesAlert.module.css'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function CookiesAlert() {
 
@@ -23,9 +24,11 @@ export default function CookiesAlert() {
                         <div className={styles.cookiesButton} onClick={() => AgreeCookies()}>
                             Accetta tutti i cookie
                         </div>
-                        <div className={styles.cookiesButton}>
-                            Leggi la nostra policy
-                        </div>
+                        <Link href="/privacy">
+                            <div className={styles.cookiesButton}>
+                                Leggi la nostra policy
+                            </div>
+                        </Link>
                     </div>
                 </div>
             }

@@ -1,4 +1,3 @@
-
 div.greenWrapperProperties {
     display: flex;
     align-items: center;
@@ -13,7 +12,19 @@ div.greyWrapperProperties {
     flex-direction: column;
     background: var(--mqGrey);
     padding: 100px 0 100px 0;
-    
+}
+
+div.greyWrapperPropertiesWithPattern {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--mqGrey);
+    padding: 100px 0 100px 0;
+    background: radial-gradient(circle, #4f966868 10%, transparent 11%);
+    background-size: 1em 1em;
+    background-color: rgb(220, 220, 220);
+    width: 100%;
 }
 
 div.customContainer {
@@ -32,7 +43,7 @@ section.postHeroContent {
 
 .featuredHouseSectionTitle {
     color: var(--mqBlack);
-    font-size: 30pt;
+    /*font-size: 30pt;*/
     margin-bottom: 30px;
 }
 
@@ -51,13 +62,23 @@ div.multicardContainer {
 }
 
 @keyframes hoverOnCard {
-    from {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));}
-    to {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));}
+    from {
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));
+    }
+
+    to {
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    }
 }
 
 @keyframes outHoverOnCard {
-    from {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));}
-    to {filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));}
+    from {
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    }
+
+    to {
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));
+    }
 }
 
 div.smallCard {
@@ -66,7 +87,7 @@ div.smallCard {
     border-radius: 30px;
     width: 350px;
     text-align: justify;
-    
+
     animation-name: outHoverOnCard;
     animation-duration: .3s;
     animation-fill-mode: forwards;
@@ -111,7 +132,7 @@ div.postCardsContent {
 div.postCardsButton {
     margin-top: 20px;
     color: var(--mqWhite);
-    padding: 0px 30px 0px 30px; 
+    padding: 0px 30px 0px 30px;
     border-style: solid;
     border-radius: 30px;
     width: fit-content;
@@ -129,9 +150,89 @@ div.postCardsButton:hover {
 div.greenBubble {
     background: var(--mqGreen);
     border-radius: 30px;
-    padding: 70px 200px 70px 70px;
+    padding: 70px 70px 70px 70px;
     color: var(--mqWhite);
     text-align: justify;
+}
+
+div.greenBubble {
+    background: var(--mqGreen);
+    border-radius: 30px;
+    padding: 70px 70px 70px 70px;
+    color: var(--mqWhite);
+    text-align: justify;
+}
+
+div.agenziaSectionItemContainer {
+    width: 2000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+div.agenziaSectionItemMap {
+    border-radius: 30px;
+    padding: 0;
+    color: var(--mqBlack);
+    text-align: justify;
+    width: 600px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+div.agenziaSectionItem {
+    background-color: var(--mqBlack);
+    border-radius: 30px;
+    padding: 50px 70px 70px 70px;
+    color: var(--mqWhite);
+    text-align: justify;
+    width: 600px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.agenziaSectionItemSocial {
+    background-color: var(--mqWhite);
+    border-radius: 30px;
+    padding: 50px 70px 70px 70px;
+    color: var(--mqBlack);
+    text-align: justify;
+    width: 1230px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+
+    background: radial-gradient(circle at top left, transparent 9%, #94949416 10%, #94949416 15%, transparent 16%), radial-gradient(circle at bottom left, transparent 9%, #94949416 10%, #94949416 15%, transparent 16%), radial-gradient(circle at top right, transparent 9%, #94949416 10%, #94949416 15%, transparent 16%), radial-gradient(circle at bottom right, transparent 9%, #94949416 10%, #94949416 15%, transparent 16%), radial-gradient(circle, transparent 25%, #ffffff 26%), linear-gradient(45deg, transparent 46%, #94949416 47%, #94949416 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #94949416 47%, #94949416 52%, transparent 53%);
+    background-size: 1em 1em;
+    background-color: #ffffff;
+    opacity: 1
+}
+
+div.agenziaSectionItemContainerLeftPart {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+div.agenziaSectionContainerLeftPartRow {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+}
+
+div.agenziaSectionItemContactUs {
+    background-color: var(--mqGreen);
+    border-radius: 30px;
+    padding: 50px 70px 70px 70px;
+    color: var(--mqWhite);
+    text-align: justify;
+    width: 600px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+    height: 1030px;
 }
 
 div.sedeSectionContainer {
@@ -143,14 +244,16 @@ div.sedeSectionContainer {
 div.sedeMapSection {
     object-fit: cover;
     background-image: url("/mappa_agenzia.png");
+    background-position: center;
+    border-radius: 30px;
     background-size: cover;
-    height: 300px;
-    width: 50%;
+    height: 500px;
+    width: 100%;
 }
 
 div.sedeOrariSection {
-    padding: 0 30px 0 30px;
-    width: 50%;
+    padding: 0;
+    width: 100%;
 }
 
 div.tabellaOrari {
@@ -163,6 +266,21 @@ div.orarioItem {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: solid 1px #FFF;
+}
+
+div.formsFieldContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.formsFieldColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 10px;
 }
 
 
@@ -183,6 +301,12 @@ div.greenBubble2 {
     text-align: justify;
 }
 
+div.sezioneSocial {
+    background: radial-gradient(circle, #4F9668 10%, transparent 11%);
+    background-size: 3em 3em;
+    background-color: #dcdcdc;
+    opacity: .5;
+}
 
 img.renderNostraSede {
     position: relative;
@@ -224,23 +348,63 @@ div.rightContactUsSquare {
     padding: 50px;
 }
 
-div.rightContactUsSquare > h1 {
+div.rightContactUsSquare>h1 {
     background: var(--mqGreen);
     color: var(--mqWhite);
     font-size: 30pt;
     margin-bottom: 30px;
 }
 
-div.rightContactUsSquare > p {
+div.rightContactUsSquare>p {
     margin-bottom: 30px;
 }
 
-form.formContactUs > label {
+div.consensusCheckboxContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    column-gap: 10px;
+    margin: 20px 0;
+}
+
+div.formsFieldColumn>label {
+    color: var(--mqWhite);
+    font-weight: bold;
+    padding: 0;
+
+    margin-top: 10px;
+}
+
+div.formsFieldColumn>input {
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+div.formsFieldColumn>button {
+    padding: 15px;
+    width: 100%;
+    background-color: var(--mqBlack);
+    color: var(--mqWhite);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+div.formsFieldColumn>button:hover {
+    cursor: pointer;
+    background-color: rgb(36, 36, 36);
+}
+
+form.formContactUs>label {
     color: var(--mqWhite);
     font-weight: bold;
 }
 
-form.formContactUs > input{
+form.formContactUs>input {
     border-radius: 5px;
     border: none;
     width: 100%;
@@ -249,7 +413,7 @@ form.formContactUs > input{
     margin-bottom: 10px;
 }
 
-form.formContactUs > button {
+form.formContactUs>button {
     padding: 15px;
     width: 100%;
     background-color: var(--mqBlack);
@@ -257,7 +421,7 @@ form.formContactUs > button {
     border: none;
     border-radius: 5px;
     margin-top: 40px;
-    
+
     font-weight: bold;
 }
 
@@ -296,7 +460,7 @@ form.formContactUs > button {
         height: 300px;
         width: 100%;
     }
-    
+
     div.sedeOrariSection {
         padding: 0 30px 0 30px;
         width: 100%;

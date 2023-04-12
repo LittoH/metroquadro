@@ -10,7 +10,8 @@
 
 .link:hover {
     cursor: pointer;
-    background-color: rgb(210, 210, 210);
+    background-color: rgba(210, 210, 210, 0.425);
+    border-radius: 20px;
 }
 
 div.mobileButton {

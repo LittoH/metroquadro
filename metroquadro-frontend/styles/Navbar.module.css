@@ -86,6 +86,7 @@ div.crossButtonContainer:hover {
     div.navbarSectionMobile {
         display: flex;
         justify-content: end;
+        align-items: center;
     }
 }
 
