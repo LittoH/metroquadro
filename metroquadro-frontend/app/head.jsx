@@ -10,12 +10,12 @@ export default function Head() {
             <Script src="https://www.googletagmanager.com/gtag/js?id=G-9GD5FXLWYF" strategy="afterInteractive" />
             <Script strategy="afterInteractive">
                 {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
 
-    gtag('config', 'G-9GD5FXLWYF');
-  `}
+                    gtag('config', 'G-9GD5FXLWYF');
+                `}
             </Script>
         </>
     )
