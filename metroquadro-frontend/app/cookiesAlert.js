@@ -7,12 +7,12 @@ import Link from 'next/link'
 export default function CookiesAlert() {
 
     // Usare la prima riga for debug purposes only, ossia per RESETTARE i cookies
-    //const [isCookieAgreed, setIsCookieAgreed] = useState(false);
-    const [isCookieAgreed, setIsCookieAgreed] = useState(localStorage.getItem('isCookieAgreed') === 'true');
+    const [isCookieAgreed, setIsCookieAgreed] = useState(false);
+    //const [isCookieAgreed, setIsCookieAgreed] = useState(localStorage.getItem('isCookieAgreed') === 'true');
 
     function AgreeCookies() {
         setIsCookieAgreed(true);
-        localStorage.setItem('isCookieAgreed', 'true');
+        //localStorage.setItem('isCookieAgreed', 'true');
     }
 
     return (
