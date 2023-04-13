@@ -8,22 +8,22 @@ import { PageWrapper } from './page-wrapper'
 import CookiesAlert from './cookiesAlert'
 
 export default function RootLayout({ children }) {
-    return (
-      <html lang="it">
-        {/*
+  return (
+    <html lang="it">
+      {/*
           <head /> will contain the components returned by the nearest parent
           head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
         */}
-        <head />
+      <head />
 
-        <body>
-            <Navbar />
-            <CookiesAlert />
-            <PageWrapper>
-              {children}
-            </PageWrapper>
-            <Footer />
-        </body>        
-      </html>
-    )
-  }
+      <body>
+        <Navbar />
+        <CookiesAlert />
+        <PageWrapper>
+          {children}
+        </PageWrapper>
+        <Footer />
+      </body>
+    </html>
+  )
+}

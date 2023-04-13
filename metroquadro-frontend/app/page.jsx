@@ -5,11 +5,13 @@ import CustomButton from './customButton'
 import Image from 'next/image'
 import { FadeInWhenVisible } from './fade-in-when-visible'
 import Link from 'next/link'
+import ScrollUp from './scrollUp'
 
 export default function Home() {
 
     return (
         <div className={styles.container}>
+            <ScrollUp />
             <main className={styles.main}>
                 <Herosection />
                 <section className={styles.postHeroContent}>
@@ -54,7 +56,7 @@ export default function Home() {
                                     <div className={styles.smallCard}>
                                         <h1>Vendi</h1>
                                         <p>
-                                            Affidati alla noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
+                                            Affidati a noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
                                         </p>
                                         <div className={styles.cardButton}>
                                             VENDI
@@ -149,7 +151,7 @@ export default function Home() {
                                         </div>
                                     </div>
 
-                                    <div className={styles.agenziaSectionItemContactUs}>
+                                    <div id="contattaci" className={styles.agenziaSectionItemContactUs}>
                                         <h1>Contattaci</h1>
                                         <div className={styles.sedeSectionContainer}>
                                             <div className={styles.sedeOrariSection}>

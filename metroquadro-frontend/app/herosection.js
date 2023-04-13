@@ -1,11 +1,11 @@
 import styles from '../styles/Herosection.module.css';
 import CustomButton from './customButton';
 
-export default function Herosection({ isHomePage = true }) {
+export default function Herosection({ pageName = "homepage" }) {
 
     return (
         <>
-            {isHomePage &&
+            {pageName == "homepage" &&
                 <div className={styles.herocontent}>
                     <div className={styles.wrapperProperties}>
                         <div className={styles.customContainer}>
@@ -20,7 +20,7 @@ export default function Herosection({ isHomePage = true }) {
                                 />
                                 <CustomButton
                                     text="VENDI IL TUO IMMOBILE"
-                                    path="./"
+                                    path="./vendi"
                                     theme="light"
                                 />
                             </div>
@@ -29,12 +29,24 @@ export default function Herosection({ isHomePage = true }) {
                 </div>
             }
 
-            {!isHomePage &&
+            {pageName == "privacy" &&
                 <div className={styles.herocontentPrivacy}>
                     <div className={styles.wrapperProperties}>
                         <div className={styles.customContainer}>
                             <div className={styles.textContainer}>
                                 <h1 className={styles.heroTitle}>La <em>Privacy</em> è una questione che trattiamo con <em>massima</em> cura</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            {pageName == "vendi" &&
+                <div className={styles.herocontentVendi}>
+                    <div className={styles.wrapperProperties}>
+                        <div className={styles.customContainer}>
+                            <div className={styles.textContainer}>
+                                <h1 className={styles.heroTitle}><em>Valorizzare</em> il vostro immobile è la <em>nostra missione</em></h1>
                             </div>
                         </div>
                     </div>

@@ -62,9 +62,9 @@ export default function Navbar() {
                 </Link>
                 <div className={styles.navbarSection}>
                     <Navlink theme="desktop" title="IMMOBILI" path="./immobili"/>
-                    <Navlink theme="desktop" title="VENDI" path="./"/>
+                    <Navlink theme="desktop" title="VENDI" path="./vendi"/>
                     <Navlink theme="desktop" title="AGENZIA" path="./"/>
-                    <Navlink theme="desktop" title="CONTATTACI" path="./"/>
+                    <Navlink theme="desktop" title="CONTATTACI" path="./#contattaci"/>
                 </div>
                 <div className={styles.navbarSectionMobile}>
                     <Image
@@ -88,10 +88,10 @@ export default function Navbar() {
                     onClick={() => CloseMenu()}
                 />
             </div>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="COMPRA" path="./immobili"/>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="AFFITTA" path="./immobili"/>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="VENDI" path="./"/>
+            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="IMMOBILI" path="./immobili"/>
+            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="VENDI" path="./vendi"/>
             <Navlink theme="mobile" passedDownFunction={CloseMenu} title="AGENZIA" path="./"/>
+            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="CONTATTACI" path="./"/>
         </motion.div>
         </>
     );
