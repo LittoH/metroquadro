@@ -7,7 +7,12 @@ import Footer from './footer'
 import { PageWrapper } from './page-wrapper'
 import CookiesAlert from './cookiesAlert'
 
+import { cookies } from 'next/headers';
+
 export default function RootLayout({ children }) {
+
+  const nextCookies = cookies();
+
   return (
     <html lang="it">
       {/*
@@ -18,7 +23,13 @@ export default function RootLayout({ children }) {
 
       <body>
         <Navbar />
-        <CookiesAlert />
+
+        {!nextCookies.get(
+          `cookies_preferences_agreed`
+        ) &&
+          < CookiesAlert />
+        }
+
         <PageWrapper>
           {children}
         </PageWrapper>
