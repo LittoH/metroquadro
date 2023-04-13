@@ -38,9 +38,11 @@ export default function Home() {
                                         <p>
                                             Sfoglia il catalogo degli immobili attualmente in vendita curato con immagini e planimetrie.
                                         </p>
-                                        <div className={styles.cardButton}>
-                                            COMPRA
-                                        </div>
+                                        <Link href="./immobili">
+                                            <div className={styles.cardButton}>
+                                                COMPRA
+                                            </div>
+                                        </Link>
                                     </div>
 
                                     <div className={styles.smallCard}>
@@ -48,9 +50,11 @@ export default function Home() {
                                         <p>
                                             Sfoglia il catalogo in costante aggiornamento degli immobili attualmente disponibili per l'affitto.
                                         </p>
-                                        <div className={styles.cardButton}>
-                                            AFFITTA
-                                        </div>
+                                        <Link href="./immobili">
+                                            <div className={styles.cardButton}>
+                                                AFFITTA
+                                            </div>
+                                        </Link>
                                     </div>
 
                                     <div className={styles.smallCard}>
@@ -58,9 +62,11 @@ export default function Home() {
                                         <p>
                                             Affidati a noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
                                         </p>
-                                        <div className={styles.cardButton}>
-                                            VENDI
-                                        </div>
+                                        <Link href="./vendi">
+                                            <div className={styles.cardButton}>
+                                                VENDI
+                                            </div>
+                                        </Link>
                                     </div>
 
                                 </div>
