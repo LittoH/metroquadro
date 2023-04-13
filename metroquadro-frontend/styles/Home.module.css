@@ -19,11 +19,7 @@ div.greyWrapperPropertiesWithPattern {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: var(--mqGrey);
     padding: 100px 0 100px 0;
-    background: radial-gradient(circle, #4f966868 10%, transparent 11%);
-    background-size: 1em 1em;
-    background-color: rgb(220, 220, 220);
     width: 100%;
 }
 
@@ -161,6 +157,16 @@ div.greenBubble {
     text-align: justify;
 }
 
+section.aboutUsSection {
+    clear: both;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle, #4f966868 10%, transparent 11%);
+    background-size: 1em 1em;
+    background-color: rgb(220, 220, 220);
+}
+
 div.agenziaSectionItemContainer {
     width: 2000px;
     display: flex;
@@ -174,7 +180,7 @@ div.agenziaSectionItemMap {
     padding: 0;
     color: var(--mqBlack);
     text-align: justify;
-    width: 600px;
+    width: 500px;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
 
@@ -184,7 +190,7 @@ div.agenziaSectionItem {
     padding: 50px 70px 70px 70px;
     color: var(--mqWhite);
     text-align: justify;
-    width: 600px;
+    width: 500px;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
     height: 500px;
     display: flex;
@@ -203,7 +209,7 @@ div.agenziaSectionItemSocial {
     padding: 50px 70px 70px 70px;
     color: var(--mqBlack);
     text-align: justify;
-    width: 1230px;
+    width: 1030px;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
     height: 500px;
     display: flex;
@@ -233,7 +239,7 @@ div.agenziaSectionItemContactUs {
     padding: 50px 70px 70px 70px;
     color: var(--mqWhite);
     text-align: justify;
-    width: 600px;
+    width: 500px;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
     height: 1030px;
 
@@ -500,6 +506,57 @@ form.formContactUs>button {
     div.leftContactUsSquare {
         display: none;
     }
+
+    section.aboutUsSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.agenziaSectionItemContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 30px;
+    }
+
+    div.agenziaSectionItemContainerLeftPart {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    div.agenziaSectionContainerLeftPartRow {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    div.agenziaSectionItemMap {
+        width: 90vw;
+    }
+
+    div.sedeMapSection {
+        height: 500px;
+    }
+    
+    div.agenziaSectionItem {
+        width: 90vw;
+        height: fit-content;
+    }
+
+    div.sedeOrariSection {
+        padding: 0;
+    }
+    
+    div.agenziaSectionItemSocial {
+        width: 90vw;
+    }
+    
+    div.agenziaSectionItemContactUs {
+        width: 90vw;
+        height: fit-content;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -511,5 +568,26 @@ form.formContactUs>button {
 @media screen and (max-width: 479px) {
     div.customContainer {
         width: 300px;
+    }
+    
+    div.agenziaSectionItem {
+        width: 90vw;
+        height: fit-content;
+        padding: 70px 30px;
+    }
+
+    div.sedeOrariSection {
+        padding: 0;
+    }
+    
+    div.agenziaSectionItemSocial {
+        width: 90vw;
+        padding: 70px 30px;
+    }
+    
+    div.agenziaSectionItemContactUs {
+        width: 90vw;
+        height: fit-content;
+        padding: 70px 30px;
     }
 }

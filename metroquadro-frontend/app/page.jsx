@@ -94,7 +94,7 @@ export default function Home() {
                 </section>
 
                 <section className={styles.aboutUsSection}>
-                    <div className={styles.customContainer} style={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "center" }}>
+                    <div className={styles.customContainer} style={{ width: "90%" }}>
                         <div className={`${styles.greyWrapperPropertiesWithPattern}`}>
                             <FadeInWhenVisible>
                                 <div className={styles.agenziaSectionItemContainer}>
@@ -188,48 +188,9 @@ export default function Home() {
                                     </div>
                                 </div>
                             </FadeInWhenVisible>
-                            {/* <img src="/ill_3.png" className={styles.ditone} /> */}
                         </div>
                     </div>
                 </section>
-
-                {/* 
-                <section>
-                    <div className={styles.contactUsTwoSquaresWrapper}>
-                        <div className={`${styles.squareContainer} ${styles.leftContactUsSquare}`}></div>
-
-                        <div className={`${styles.squareContainer} ${styles.rightContactUsSquare}`}>
-                            <h1>Contattaci</h1>
-                            <p>Usa il form che segue per contattarci. Risponderemo in tempo record!</p>
-                            <form className={styles.formContactUs} name="contactUs" data-netlify="true" method="POST">
-                                <label for="mail">Mail</label><br />
-                                <input type="text" id="mail" name="mail" /><br />
-                                <label for="nome">Nome</label><br />
-                                <input type="text" id="nome" name="nome" /><br />
-                                <label for="cognome">Cognome</label><br />
-                                <input type="text" id="cognome" name="cognome" /><br />
-                                <label for="messaggio">Inserisci qui il tuo messaggio</label><br />
-                                <input type="text" id="messaggio" name="messaggio" style={{ height: "200px" }} /><br />
-                                <button type="submit">Invia</button>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <div className={`${styles.greyWrapperPropertiesWithPattern}`}>
-                        <div className={styles.customContainer} style={{ opacity: "1" }}>
-                            <div className={styles.greenBubble2}>
-                                <h1>Resta aggiornato con i nostri Social</h1>
-                                <p>
-                                    Per rimanere aggiornato con gli ultimi arrivi di immobili in vendita e in affitto abbiamo da poco lanciato i nostri spazi social ricchi di contenuti audiovisivi per poter fare tour virtuale degli immobili a catalogo.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                */}
             </main>
         </div>
     )
