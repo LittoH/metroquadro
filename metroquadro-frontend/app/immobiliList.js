@@ -66,6 +66,7 @@ export default function ImmobiliList({ isLoading, setIsLoading, searchFilter }) 
             }
             {!isLoading &&
                 <div className={styles.immobiliList}>
+                    <h3>La ricerca ha trovato {houses.length} risultati.</h3>
                     {houses && houses.filter(house => house.attivo).map((house) => (
                         <>
                             <Link href={parsedPath + house.id}>
