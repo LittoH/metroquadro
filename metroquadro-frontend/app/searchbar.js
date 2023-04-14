@@ -86,7 +86,6 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
 
     function LoadCaseWithFilter() {
         setIsLoading(true);
-        //const filter = 'comune="' + selectedOption.value + '" && contratto="' + selectedOptionContratto.value + '" && tipologia_immobile="' + selectedOptionTipologia.value + '"';
 
         let filter = '';
         if (selectedOptionIsSet) {
@@ -193,12 +192,10 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
                     />
                     <div className={styles.searchBarButton2} onClick={() => LoadCaseWithFilter()}>Cerca</div>
                     <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Reset filtri</div>
+                    <div className={styles.searchBarButton2} onClick={() => CloseFiltersMenu()}>Chiudi menù</div>
                 </div>
 
             </div>
         </>
     )
 }
-
-// <input className={styles.searchBar} type="search" id="searchbar" placeholder="Inserisci qua le parole chiave"></input>
-// <div className={styles.buttonsWrapper}></div>
