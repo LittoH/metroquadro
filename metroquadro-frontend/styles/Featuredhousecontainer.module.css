@@ -1,3 +1,7 @@
+div.multiFeaturedHouseWrapper {
+    position: relative;
+}
+
 div.multiFeaturedHouseContainer {
     display: flex;
     flex-direction: row;
@@ -5,4 +9,41 @@ div.multiFeaturedHouseContainer {
     margin-bottom: 50px;
     overflow: auto;
     padding-bottom: 30px;
+    position: relative;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.multiFeaturedHouseContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.rightArrow {
+    border-radius: 50px;
+    background-color: var(--mqWhite);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translate(0, -50%);
+    z-index: 10;
+}
+
+.rightArrow:hover {
+    cursor: pointer;
+}
+
+.leftArrow {
+    border-radius: 50px;
+    background-color: var(--mqWhite);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translate(0, -50%);
+    z-index: 10;
+}
+
+.leftArrow:hover {
+    cursor: pointer;
 }
