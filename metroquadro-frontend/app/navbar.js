@@ -13,6 +13,7 @@ export default function Navbar() {
     const router = useRouter();
     const controls = useAnimationControls()
 
+    /*
     // Parte necessaria per il cambio di sfondo della navbar
     const debounce = (fn) => {
         let frame;
@@ -34,6 +35,7 @@ export default function Navbar() {
         document.addEventListener('scroll', debounce(storeScroll), { passive: true });
         storeScroll();
     });
+    */
 
     // Fine parte necessaria per il cambio di sfondo della navbar
 
@@ -63,7 +65,7 @@ export default function Navbar() {
                 <div className={styles.navbarSection}>
                     <Navlink theme="desktop" title="IMMOBILI" path="./immobili"/>
                     <Navlink theme="desktop" title="VENDI" path="./vendi"/>
-                    <Navlink theme="desktop" title="AGENZIA" path="./"/>
+                    <Navlink theme="desktop" title="AGENZIA" path="./#agenzia"/>
                     <Navlink theme="desktop" title="CONTATTACI" path="./#contattaci"/>
                 </div>
                 <div className={styles.navbarSectionMobile}>
@@ -90,8 +92,8 @@ export default function Navbar() {
             </div>
             <Navlink theme="mobile" passedDownFunction={CloseMenu} title="IMMOBILI" path="./immobili"/>
             <Navlink theme="mobile" passedDownFunction={CloseMenu} title="VENDI" path="./vendi"/>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="AGENZIA" path="./"/>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="CONTATTACI" path="./"/>
+            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="AGENZIA" path="./#agenzia"/>
+            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="CONTATTACI" path="./#contattaci"/>
         </motion.div>
         </>
     );

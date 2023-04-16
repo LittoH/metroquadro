@@ -1,5 +1,6 @@
 import styles from '../styles/Featuredhousecontainer.module.css'
 import FeaturedHouseCard from './featuredhousecard'
+import Image from 'next/image';
 
 export default async function FeaturedHouseContainer() {
     
@@ -10,8 +11,17 @@ export default async function FeaturedHouseContainer() {
     
     let houses = data.items;
 
+    function ScrollRight() {
+        console.log("Scrolled to the right");
+    }
+
     return (
         <div className={styles.multiFeaturedHouseContainer}>
+            {/* 
+            <div className={styles.rightArrow} onClick={() => ScrollRight()}> 
+            <Image className={styles.rightArrowImage} src="/nav-arrow-right.svg" width={10} height={10} alt="Right arrow" />
+            </div>
+            */}
             {houses.filter(house => house.attivo && house.in_evidenza).map((house) => (
                 <>
                     <FeaturedHouseCard 
