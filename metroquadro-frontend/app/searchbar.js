@@ -84,6 +84,8 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     const [selectedOptionPrezzo, setSelectedOptionPrezzo] = useState(null);
     const [selectedOptionSuperficie, setSelectedOptionSuperficie] = useState(null);
 
+    const [isMobileSearchBarOpen, setIsMobileSearchBarOpen] = useState(false);
+
     function LoadCaseWithFilter() {
         setIsLoading(true);
 
@@ -160,39 +162,50 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
         <>
             <div className={styles.greenBarWrapper}>
                 <div className={styles.selectsContainer}>
-                    <Select
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
-                        options={optionsComuni}
-                        placeholder={"Comune"}
-                    />
-                    <Select
-                        defaultValue={selectedOptionContratto}
-                        onChange={setSelectedOptionContratto}
-                        options={optionsContratto}
-                        placeholder={"Contratto"}
-                    />
-                    <Select
-                        defaultValue={selectedOptionTipologia}
-                        onChange={setSelectedOptionTipologia}
-                        options={optionsTipologia}
-                        placeholder={"Tipologia immobile"}
-                    />
-                    <Select
-                        defaultValue={selectedOptionPrezzo}
-                        onChange={setSelectedOptionPrezzo}
-                        options={optionsPrezzo}
-                        placeholder={"Prezzo"}
-                    />
-                    <Select
-                        defaultValue={selectedOptionSuperficie}
-                        onChange={setSelectedOptionSuperficie}
-                        options={optionsSuperficie}
-                        placeholder={"Superficie"}
-                    />
+                    <div className={styles.selectItemContainerShort}>
+                        <Select
+                            defaultValue={selectedOption}
+                            onChange={setSelectedOption}
+                            options={optionsComuni}
+                            placeholder={"Comune"}
+                        />
+                    </div>
+                    <div className={styles.selectItemContainerShort}>
+                        <Select
+                            defaultValue={selectedOptionContratto}
+                            onChange={setSelectedOptionContratto}
+                            options={optionsContratto}
+                            placeholder={"Contratto"}
+                        />
+                    </div>
+                    <div className={styles.selectItemContainerLong}>
+                        <Select
+                            defaultValue={selectedOptionTipologia}
+                            onChange={setSelectedOptionTipologia}
+                            options={optionsTipologia}
+                            placeholder={"Tipologia"}
+                        />
+                    </div>
+                    <div className={styles.selectItemContainerMedium}>
+                        <Select
+                            defaultValue={selectedOptionPrezzo}
+                            onChange={setSelectedOptionPrezzo}
+                            options={optionsPrezzo}
+                            placeholder={"Prezzo MAX"}
+                        />
+                    </div>
+                    <div className={styles.selectItemContainerLong}>
+                        <Select
+                            defaultValue={selectedOptionSuperficie}
+                            onChange={setSelectedOptionSuperficie}
+                            options={optionsSuperficie}
+                            placeholder={"Superficie MAX"}
+                        />
+                    </div>
+                    <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => OpenFiltersMenu()}>Filtri</div>
                     <div className={styles.searchBarButton2} onClick={() => LoadCaseWithFilter()}>Cerca</div>
                     <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Reset filtri</div>
-                    <div className={styles.searchBarButton2} onClick={() => CloseFiltersMenu()}>Chiudi menù</div>
+                    <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => CloseFiltersMenu()}>Chiudi menù</div>
                 </div>
 
             </div>

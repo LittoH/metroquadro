@@ -81,6 +81,22 @@ div.buttonsWrapper {
     align-items: right;
 }
 
+div.selectItemContainerLong {
+    width: 170px;
+}
+
+.selectItemContainerMedium {
+    width: 150px;
+}
+
+.selectItemContainerShort {
+    width: 130px;
+}
+
+.mobileButtonOnly {
+    display: none;
+}
+
 @media screen and (max-width: 991px) {
     
 }
@@ -90,6 +106,18 @@ div.buttonsWrapper {
 }
 
 @media screen and (max-width: 479px) {
+    div.selectItemContainerLong {
+        width: 100%;
+    }
+    
+    .selectItemContainerMedium {
+        width: 100%;
+    }
+    
+    .selectItemContainerShort {
+        width: 100%;
+    }
+
     .selectsContainer {
         display: flex;
         flex-direction: column;
@@ -100,5 +128,9 @@ div.buttonsWrapper {
     div.searchBarButton2 {
         text-align: center;
         width: 100%;
+    }
+
+    .mobileButtonOnly {
+        display: inline-block;
     }
 }
