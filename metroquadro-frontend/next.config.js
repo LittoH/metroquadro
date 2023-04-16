@@ -14,11 +14,6 @@ const nextConfig = {
             },
         ],
     },
-
-    env: {
-        NETLIFY_NEXT_PLUGIN_SKIP: true,
-      },
-
 }
 
 module.exports = nextConfig
