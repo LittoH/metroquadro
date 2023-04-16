@@ -163,25 +163,26 @@ export default function Home() {
                                             <div className={styles.sedeOrariSection}>
                                                 <p>Usa il form che segue per contattarci, oppure scrivici a <a style={{ textDecoration: "underline" }} href="mailto:info@metroquadroimmobili.it">info@metroquadroimmobili.it</a>. Sarai ricontattato al più presto.</p>
                                                 <form className={styles.formContactUs} name="contact" data-netlify="true" method="post" onSubmit="submit">
-                                                    <div className={styles.formsFieldContainer}>
-                                                        <div className={styles.formsFieldColumn}>
-                                                            <label for="mail">Mail</label>
-                                                            <input required type="email" id="email" name="email" placeholder='Email' />
-                                                            <label for="numTelefono">Telefono</label>
-                                                            <input required type="text" id="numTelefono" name="numTelefono" placeholder='Telefono' />
-                                                            <label for="nome">Nome</label>
-                                                            <input required type="text" id="nome" name="nome" placeholder='Nome' />
-                                                            <label for="cognome">Cognome</label>
-                                                            <input required type="text" id="cognome" name="cognome" placeholder='Cognome' />
-                                                            <label for="messaggio">Inserisci qui il tuo messaggio</label>
-                                                            <textarea required id="messaggio" name="messaggio" rows="20" style={{ resize: "none", borderRadius: "5px", marginTop: "10px" }}></textarea>
-                                                            <div className={styles.consensusCheckboxContainer}>
-                                                                <input required type="checkbox" id="consenso" name="consenso" />
-                                                                <label style={{ fontSize: "12pt" }} for="consenso">Ho preso visione dell'<Link style={{ textDecoration: "underline" }} href="/privacy">informativa sul trattamento dei dati</Link>.</label>
+                                                    <input type="hidden" name="form-name" value="contact" />
+                                                        <div className={styles.formsFieldContainer}>
+                                                            <div className={styles.formsFieldColumn}>
+                                                                <label for="mail">Mail</label>
+                                                                <input required type="email" id="email" name="email" placeholder='Email' />
+                                                                <label for="numTelefono">Telefono</label>
+                                                                <input required type="text" id="numTelefono" name="numTelefono" placeholder='Telefono' />
+                                                                <label for="nome">Nome</label>
+                                                                <input required type="text" id="nome" name="nome" placeholder='Nome' />
+                                                                <label for="cognome">Cognome</label>
+                                                                <input required type="text" id="cognome" name="cognome" placeholder='Cognome' />
+                                                                <label for="messaggio">Inserisci qui il tuo messaggio</label>
+                                                                <textarea required id="messaggio" name="messaggio" rows="20" style={{ resize: "none", borderRadius: "5px", marginTop: "10px" }}></textarea>
+                                                                <div className={styles.consensusCheckboxContainer}>
+                                                                    <input required type="checkbox" id="consenso" name="consenso" />
+                                                                    <label style={{ fontSize: "12pt" }} for="consenso">Ho preso visione dell'<Link style={{ textDecoration: "underline" }} href="/privacy">informativa sul trattamento dei dati</Link>.</label>
+                                                                </div>
+                                                                <button type="submit">Invia</button>
                                                             </div>
-                                                            <button type="submit">Invia</button>
                                                         </div>
-                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
