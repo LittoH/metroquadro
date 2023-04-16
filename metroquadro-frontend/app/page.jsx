@@ -133,7 +133,7 @@ export default function Home() {
                                                                 <p>Venerdì</p>
                                                                 <p>09:00 - 12:30 | 15:30 - 18:30</p>
                                                             </div>
-                                                            <div className={styles.orarioItem}>
+                                                            <div className={styles.orarioItem} style={{ border: "0" }}>
                                                                 <p>Sabato</p>
                                                                 <p>09:00 - 12:30 | 15:30 - 18:30</p>
                                                             </div>
@@ -143,27 +143,30 @@ export default function Home() {
                                             </div>
                                         </div>
                                         <div className={styles.agenziaSectionContainerLeftPartRow}>
-                                            <div className={styles.agenziaSectionItemSocial}>
-                                                <h1>Social</h1>
-                                                <div className={styles.sedeSectionContainerSocial}>
-                                                    <div className={styles.sedeSocialSection}>
+                                            <div id="contattaci" className={styles.agenziaSectionItemContactUs}>
+                                                <h1>Contattaci</h1>
+                                                <div className={styles.sedeSectionContainer}>
+                                                    <div className={styles.sedeOrariSection}>
                                                         <p>
-                                                            Seguici sui nostri social per essere tra i primi a scoprire i nuovi immobili a catalogo e per fare tour virtuali con video approfonditi.
+                                                            Usa uno dei metodi che segue per contattarci, risponderemo quanto prima.<br />
                                                         </p>
-                                                        <h4>Torna a breve.</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div id="contattaci" className={styles.agenziaSectionItemContactUs}>
-                                        <h1>Contattaci</h1>
-                                        <div className={styles.sedeSectionContainer}>
-                                            <div className={styles.sedeOrariSection}>
+                                                        <p style={{ marginBottom: "90px"}} >
+                                                            <em>Per favore abbi cura di rispettare gli orari di apertura dell'agenzia qualora decidessi di contattarci telefonicamente.</em>
+                                                        </p>
+                                                        <a href="mailto:info@metroquadroimmobili.it">
+                                                            <div className={styles.contactsMethodRow} style={{ borderBottom: "solid #fff 1px" }}>
+                                                                <Image className={styles.contactMethodIcon} src="/send-mail.svg" width={25} height={25} />
+                                                                <h1 className={styles.contactMethodItem}>info@metroquadroimmobili.it</h1>
+                                                            </div>
+                                                        </a>
+                                                        <a href="tel:+393408960518">
+                                                            <div className={styles.contactsMethodRowBgVariant}>
+                                                                <Image className={styles.contactMethodIcon} src="/phone.svg" width={25} height={25} />
+                                                                <h1 className={styles.contactMethodItem}>+39 3408960518</h1>
+                                                            </div>
+                                                        </a>
+                                                        {/* UTILIZZO TEMPORANEAMENTE SOSPESO
                                                 <p>Usa il form che segue per contattarci, oppure scrivici a <a style={{ textDecoration: "underline" }} href="mailto:info@metroquadroimmobili.it">info@metroquadroimmobili.it</a>. Sarai ricontattato al più presto.</p>
-
-                                                {/*
                                                 <form className={styles.formContactUs} name="contact" data-netlify="true" method="POST" onSubmit="submit">
                                                     <input type="hidden" name="form-name" value="contact" />
                                                         <div className={styles.formsFieldContainer}>
@@ -187,6 +190,20 @@ export default function Home() {
                                                         </div>
                                                 </form>
                                                 */}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className={styles.agenziaSectionItemSocial}>
+                                                <h1>Social</h1>
+                                                <div className={styles.sedeSectionContainerSocial}>
+                                                    <div className={styles.sedeSocialSection}>
+                                                        <p>
+                                                            Seguici sui nostri social per essere tra i primi a scoprire i nuovi immobili a catalogo e per fare tour virtuali con video approfonditi.
+                                                        </p>
+                                                        <h4>Torna a breve.</h4>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -4,6 +4,8 @@
   --mqLightGreen: rgb(171, 217, 188);
   --mqBlack: rgb(45, 45, 45);
   --mqWhite: rgb(255, 255, 255);
+
+  --mqHomepageSquaresWidth: 600px; 
 }
 
 html,
