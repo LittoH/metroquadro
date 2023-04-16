@@ -162,7 +162,7 @@ export default function Home() {
                                         <div className={styles.sedeSectionContainer}>
                                             <div className={styles.sedeOrariSection}>
                                                 <p>Usa il form che segue per contattarci, oppure scrivici a <a style={{ textDecoration: "underline" }} href="mailto:info@metroquadroimmobili.it">info@metroquadroimmobili.it</a>. Sarai ricontattato al più presto.</p>
-                                                <form className={styles.formContactUs} name="contact" netlify>
+                                                <form className={styles.formContactUs} name="contact" data-netlify="true" method="post" onSubmit="submit">
                                                     <div className={styles.formsFieldContainer}>
                                                         <div className={styles.formsFieldColumn}>
                                                             <label for="mail">Mail</label>
