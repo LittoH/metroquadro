@@ -10,7 +10,7 @@ import { motion, useAnimationControls } from "framer-motion";
 
 export default function Navbar() {
 
-    const router = useRouter();
+    //const router = useRouter();
     const controls = useAnimationControls()
 
     /*
