@@ -47,3 +47,31 @@ div.multiFeaturedHouseContainer {
 .leftArrow:hover {
     cursor: pointer;
 }
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    .rightArrow {
+        border-radius: 50px;
+        background-color: var(--mqWhite);
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translate(0, -50%);
+        z-index: 10;
+    }
+    
+    .leftArrow {
+        border-radius: 50px;
+        background-color: var(--mqWhite);
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        transform: translate(0, -50%);
+        z-index: 10;
+    }
+}
+
+@media screen and (max-width: 479px) {}
