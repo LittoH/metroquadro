@@ -123,7 +123,9 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
 
         console.log("Filtro completo di ricerca: " + filter);
         setSearchFilter(filter);
-        CloseFiltersMenu();
+        if (isMobile) {
+            CloseFiltersMenu();
+        }
     }
 
     useEffect(() => {
@@ -173,11 +175,11 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     }
 
     useEffect(() => {
-        if(isMobile && !firstMobileCheckCompleted) {
+        if (isMobile && !firstMobileCheckCompleted) {
             console.log("First mobile check: " + firstMobileCheckCompleted);
             setIsMobileSearchBarOpen(false);
             setFirstMobileCheckCompleted(true);
-        } else if(!isMobile && !firstMobileCheckCompleted) {
+        } else if (!isMobile && !firstMobileCheckCompleted) {
             console.log("FALSE First mobile check: " + firstMobileCheckCompleted);
             setIsMobileSearchBarOpen(true);
             setFirstMobileCheckCompleted(true);
