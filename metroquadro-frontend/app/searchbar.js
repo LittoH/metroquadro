@@ -87,6 +87,7 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     const [selectedOptionSuperficie, setSelectedOptionSuperficie] = useState(null);
 
     const [isMobileSearchBarOpen, setIsMobileSearchBarOpen] = useState(false);
+    const [firstMobileCheckCompleted, setFirstMobileCheckCompleted] = useState(false);
 
     function LoadCaseWithFilter() {
         setIsLoading(true);
@@ -172,10 +173,14 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     }
 
     useEffect(() => {
-        if(isMobile) {
+        if(isMobile && !firstMobileCheckCompleted) {
+            console.log("First mobile check: " + firstMobileCheckCompleted);
             setIsMobileSearchBarOpen(false);
-        } else {
+            setFirstMobileCheckCompleted(true);
+        } else if(!isMobile && !firstMobileCheckCompleted) {
+            console.log("FALSE First mobile check: " + firstMobileCheckCompleted);
             setIsMobileSearchBarOpen(true);
+            setFirstMobileCheckCompleted(true);
         }
     })
 
