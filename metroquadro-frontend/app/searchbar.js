@@ -1,6 +1,8 @@
 import styles from '../styles/Searchbar.module.css';
+import ScrollUp from './scrollUp';
 import { useEffect, useState } from 'react';
 import Select from 'react-select';
+import { useMediaQuery } from 'react-responsive';
 
 const optionsComuni = [
     { value: 'Ostiglia', label: 'Ostiglia' },
@@ -120,11 +122,7 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
 
         console.log("Filtro completo di ricerca: " + filter);
         setSearchFilter(filter);
-    }
-
-    function FiltersReset() {
-        setIsLoading(true);
-        setSearchFilter('');
+        CloseFiltersMenu();
     }
 
     useEffect(() => {
@@ -132,7 +130,6 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
             setSelectedOptionIsSet(true);
         }
     }, [selectedOption])
-
 
     useEffect(() => {
         if (selectedOptionContratto) {
@@ -158,54 +155,91 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
         }
     }, [selectedOptionSuperficie])
 
+
+    const isMobile = useMediaQuery({ maxWidth: '767px' });
+
+    function FiltersReset() {
+        setIsLoading(true);
+        setSearchFilter('');
+    }
+
+    function OpenFiltersMenu() {
+        setIsMobileSearchBarOpen(true);
+    }
+
+    function CloseFiltersMenu() {
+        setIsMobileSearchBarOpen(false);
+    }
+
+    useEffect(() => {
+        if(isMobile) {
+            setIsMobileSearchBarOpen(false);
+        } else {
+            setIsMobileSearchBarOpen(true);
+        }
+    })
+
     return (
         <>
+            <ScrollUp />
             <div className={styles.greenBarWrapper}>
                 <div className={styles.selectsContainer}>
-                    <div className={styles.selectItemContainerShort}>
-                        <Select
-                            defaultValue={selectedOption}
-                            onChange={setSelectedOption}
-                            options={optionsComuni}
-                            placeholder={"Comune"}
-                        />
-                    </div>
-                    <div className={styles.selectItemContainerShort}>
-                        <Select
-                            defaultValue={selectedOptionContratto}
-                            onChange={setSelectedOptionContratto}
-                            options={optionsContratto}
-                            placeholder={"Contratto"}
-                        />
-                    </div>
-                    <div className={styles.selectItemContainerLong}>
-                        <Select
-                            defaultValue={selectedOptionTipologia}
-                            onChange={setSelectedOptionTipologia}
-                            options={optionsTipologia}
-                            placeholder={"Tipologia"}
-                        />
-                    </div>
-                    <div className={styles.selectItemContainerMedium}>
-                        <Select
-                            defaultValue={selectedOptionPrezzo}
-                            onChange={setSelectedOptionPrezzo}
-                            options={optionsPrezzo}
-                            placeholder={"Prezzo MAX"}
-                        />
-                    </div>
-                    <div className={styles.selectItemContainerLong}>
-                        <Select
-                            defaultValue={selectedOptionSuperficie}
-                            onChange={setSelectedOptionSuperficie}
-                            options={optionsSuperficie}
-                            placeholder={"Superficie MAX"}
-                        />
-                    </div>
-                    <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => OpenFiltersMenu()}>Filtri</div>
-                    <div className={styles.searchBarButton2} onClick={() => LoadCaseWithFilter()}>Cerca</div>
-                    <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Reset filtri</div>
-                    <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => CloseFiltersMenu()}>Chiudi menù</div>
+                    {isMobileSearchBarOpen &&
+                        <>
+                            <div className={styles.selectItemContainerShort}>
+                                <Select
+                                    defaultValue={selectedOption}
+                                    onChange={setSelectedOption}
+                                    options={optionsComuni}
+                                    placeholder={"Comune"}
+                                />
+                            </div>
+                            <div className={styles.selectItemContainerShort}>
+                                <Select
+                                    defaultValue={selectedOptionContratto}
+                                    onChange={setSelectedOptionContratto}
+                                    options={optionsContratto}
+                                    placeholder={"Contratto"}
+                                />
+                            </div>
+                            <div className={styles.selectItemContainerLong}>
+                                <Select
+                                    defaultValue={selectedOptionTipologia}
+                                    onChange={setSelectedOptionTipologia}
+                                    options={optionsTipologia}
+                                    placeholder={"Tipologia"}
+                                />
+                            </div>
+                            <div className={styles.selectItemContainerMedium}>
+                                <Select
+                                    defaultValue={selectedOptionPrezzo}
+                                    onChange={setSelectedOptionPrezzo}
+                                    options={optionsPrezzo}
+                                    placeholder={"Prezzo MAX"}
+                                />
+                            </div>
+                            <div className={styles.selectItemContainerLong}>
+                                <Select
+                                    defaultValue={selectedOptionSuperficie}
+                                    onChange={setSelectedOptionSuperficie}
+                                    options={optionsSuperficie}
+                                    placeholder={"Superficie MAX"}
+                                />
+                            </div>
+                        </>
+                    }
+                    {isMobile && !isMobileSearchBarOpen &&
+                        <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => OpenFiltersMenu()}>Filtri</div>
+                    }
+                    {isMobileSearchBarOpen &&
+                        <div className={styles.searchBarButton2} onClick={() => LoadCaseWithFilter()}>Cerca</div>
+                    }
+                    {isMobileSearchBarOpen &&
+                        <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Reset filtri</div>
+                    }
+                    {isMobile && isMobileSearchBarOpen &&
+                        <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => CloseFiltersMenu()}>Chiudi</div>
+                    }
                 </div>
 
             </div>
