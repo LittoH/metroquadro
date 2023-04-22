@@ -108,6 +108,10 @@ p.featuredHouseBriefDescriptionV2 {
         padding: 0px;
         margin-bottom: 50px;
     }
+
+    h1.houseTitleV2 {
+        margin: 20px 0 0 0;
+    }
     
 }
 
