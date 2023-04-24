@@ -13,13 +13,14 @@ export default function Immobili() {
 
     const [searchFilter, setSearchFilter] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [canReset, setCanReset] = useState(false);
 
     return (
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.searchEngineSection}>
                     <div className={styles.seCustomContainer}>
-                        <SearchBar isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
+                        <SearchBar isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} setSearchFilter={setSearchFilter} canReset={canReset} setCanReset={setCanReset} />
                     </div>
                 </section>
 

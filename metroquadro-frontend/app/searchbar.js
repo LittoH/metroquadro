@@ -71,7 +71,9 @@ const optionsSuperficie = [
     { value: '500', label: '500m²' },
 ];
 
-export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSearchFilter }) {
+export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSearchFilter, canReset, setCanReset }) {
+
+    const [lastFilter, setLastFilter] = useState('unfiltered');
 
     const [numberActiveFilters, setNumberActiveFilters] = useState(0);
     const [selectedOptionIsSet, setSelectedOptionIsSet] = useState(false);
@@ -90,7 +92,6 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     const [firstMobileCheckCompleted, setFirstMobileCheckCompleted] = useState(false);
 
     function LoadCaseWithFilter() {
-        setIsLoading(true);
 
         let filter = '';
         if (selectedOptionIsSet) {
@@ -121,8 +122,18 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
             filter += 'metriquadri<=' + selectedOptionSuperficie.value + '';
         }
 
-        console.log("Filtro completo di ricerca: " + filter);
-        setSearchFilter(filter);
+        //console.log("Filtro completo di ricerca: " + filter);
+
+        console.log("Search filter is: " + filter);
+        console.log("Last searched filter is : " + lastFilter);
+
+        if (filter != lastFilter) {
+            setIsLoading(true);
+            setSearchFilter(filter);
+            setLastFilter(filter);
+            setCanReset(true);
+        }
+
         if (isMobile) {
             CloseFiltersMenu();
         }
@@ -164,6 +175,8 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     function FiltersReset() {
         setIsLoading(true);
         setSearchFilter('');
+        setLastFilter('');
+        setCanReset(false);
     }
 
     function OpenFiltersMenu() {
@@ -241,8 +254,8 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
                     {isMobileSearchBarOpen &&
                         <div className={styles.searchBarButton2} onClick={() => LoadCaseWithFilter()}>Cerca</div>
                     }
-                    {isMobileSearchBarOpen &&
-                        <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Reset filtri</div>
+                    {isMobileSearchBarOpen && canReset &&
+                        <div className={styles.searchBarButton2} onClick={() => FiltersReset()}>Elimina filtro</div>
                     }
                     {isMobile && isMobileSearchBarOpen &&
                         <div className={`${styles.searchBarButton2} ${styles.mobileButtonOnly}`} onClick={() => CloseFiltersMenu()}>Chiudi</div>
