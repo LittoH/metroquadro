@@ -119,7 +119,7 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
             if (filter !== '') {
                 filter += ' && ';
             }
-            filter += 'metriquadri<=' + selectedOptionSuperficie.value + '';
+            filter += 'metriquadri_nf<=' + selectedOptionSuperficie.value + '';
         }
 
         //console.log("Filtro completo di ricerca: " + filter);
@@ -189,11 +189,9 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
 
     useEffect(() => {
         if (isMobile && !firstMobileCheckCompleted) {
-            console.log("First mobile check: " + firstMobileCheckCompleted);
             setIsMobileSearchBarOpen(false);
             setFirstMobileCheckCompleted(true);
         } else if (!isMobile && !firstMobileCheckCompleted) {
-            console.log("FALSE First mobile check: " + firstMobileCheckCompleted);
             setIsMobileSearchBarOpen(true);
             setFirstMobileCheckCompleted(true);
         }
