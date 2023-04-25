@@ -53,6 +53,24 @@ export default function Navbar() {
         });
     }
 
+    function NavigateToContacts() {
+        document.getElementById('contattaci').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function NavigateToAgenzia() {
+        document.getElementById('agenzia').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function NavigateToContactsMobile() {
+        CloseMenu();
+        document.getElementById('contattaci').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function NavigateToAgenziaMobile() {
+        CloseMenu();
+        document.getElementById('agenzia').scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
         <>
         <div id="navbarContainer" className={styles.container}>
@@ -65,8 +83,8 @@ export default function Navbar() {
                 <div className={styles.navbarSection}>
                     <Navlink theme="desktop" title="IMMOBILI" path="./immobili"/>
                     <Navlink theme="desktop" title="VENDI" path="./vendi"/>
-                    <Navlink theme="desktop" title="AGENZIA" path="./#agenzia"/>
-                    <Navlink theme="desktop" title="CONTATTACI" path="./#contattaci"/>
+                    <Navlink theme="desktop" passedDownFunction={NavigateToAgenzia} title="AGENZIA" path="./"/>
+                    <Navlink theme="desktop" passedDownFunction={NavigateToContacts} title="CONTATTACI" path="./"/>
                 </div>
                 <div className={styles.navbarSectionMobile}>
                     <Image
@@ -92,8 +110,8 @@ export default function Navbar() {
             </div>
             <Navlink theme="mobile" passedDownFunction={CloseMenu} title="IMMOBILI" path="./immobili"/>
             <Navlink theme="mobile" passedDownFunction={CloseMenu} title="VENDI" path="./vendi"/>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="AGENZIA" path="./#agenzia"/>
-            <Navlink theme="mobile" passedDownFunction={CloseMenu} title="CONTATTACI" path="./#contattaci"/>
+            <Navlink theme="mobile" passedDownFunction={NavigateToAgenziaMobile} title="AGENZIA" path="./"/>
+            <Navlink theme="mobile" passedDownFunction={NavigateToContactsMobile} title="CONTATTACI" path="./"/>
         </motion.div>
         </>
     );
