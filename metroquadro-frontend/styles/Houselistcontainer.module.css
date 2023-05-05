@@ -3,10 +3,11 @@ div.houseListContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: left;
+    justify-content: center;
     margin-bottom: 50px;
-    overflow: auto;
+    
     padding-bottom: 30px;
+    /*overflow: auto;*/
 }
 
 /*

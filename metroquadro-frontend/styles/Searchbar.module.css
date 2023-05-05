@@ -85,6 +85,10 @@ div.selectItemContainerLong {
     width: 170px;
 }
 
+div.selectItemContainerLonger {
+    width: 180px;
+}
+
 .selectItemContainerMedium {
     width: 150px;
 }
@@ -107,6 +111,10 @@ div.selectItemContainerLong {
 
 @media screen and (max-width: 479px) {
     div.selectItemContainerLong {
+        width: 100%;
+    }
+
+    div.selectItemContainerLonger {
         width: 100%;
     }
     

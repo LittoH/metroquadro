@@ -17,6 +17,7 @@ const optionsContratto = [
 
 const optionsTipologia = [
     { value: 'Casa', label: 'Casa' },
+    { value: 'Casa indipendente', label: 'Casa indipendente' },
     { value: 'Appartamento', label: 'Appartamento' },
 ];
 
@@ -236,7 +237,7 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
                                     placeholder={"Prezzo MAX"}
                                 />
                             </div>
-                            <div className={styles.selectItemContainerLong}>
+                            <div className={styles.selectItemContainerLonger}>
                                 <Select
                                     defaultValue={selectedOptionSuperficie}
                                     onChange={setSelectedOptionSuperficie}

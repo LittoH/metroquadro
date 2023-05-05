@@ -86,6 +86,7 @@ export default function Home() {
                                         text="Contattaci per altre zone"
                                         path="./"
                                         theme="light"
+                                        passedDownFunction={"navigate-to-contacts"}
                                     />
                                 </div>
                             </FadeInWhenVisible>
