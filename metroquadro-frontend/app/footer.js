@@ -14,7 +14,7 @@ export default function Footer() {
                         <Link href="/">
                             <Image className={styles.social} src="/tik-tok.svg" width={20} height={20} alt="Tik-Tok logo" />
                         </Link>
-                        <Link href="/">
+                        <Link href="https://www.instagram.com/agenziametroquadro/">
                             <Image style={{marginTop: "15px"}} className={styles.social} src="/instagram.svg" width={20} height={20} alt="Instagram logo" />
                         </Link>
                     </div>
