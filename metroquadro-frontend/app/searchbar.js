@@ -6,8 +6,9 @@ import { useMediaQuery } from 'react-responsive';
 
 const optionsComuni = [
     { value: 'Ostiglia', label: 'Ostiglia' },
-    { value: 'Mantova', label: 'Mantova' },
-    { value: 'Cittadella', label: 'Cittadella' },
+    { value: 'Revere', label: 'Revere' },
+    { value: 'Serravalle A Po', label: 'Serravalle A Po' },
+    { value: 'Correggioli', label: 'Correggioli' },
 ];
 
 const optionsContratto = [
