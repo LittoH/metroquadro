@@ -17,7 +17,6 @@ const optionsContratto = [
 ];
 
 const optionsTipologia = [
-    { value: 'Casa', label: 'Casa' },
     { value: 'Casa indipendente', label: 'Casa indipendente' },
     { value: 'Appartamento', label: 'Appartamento' },
 ];
