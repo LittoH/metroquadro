@@ -86,7 +86,8 @@ export default async function ImmobilePage({ params }) {
     const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";
     const imgPath = "url(" + imgSrcFromServer + imgSrc + ")";
 
-    const relatedContentFilter = "&filter=(titolo!='" + immobile.titolo + "')&filter=(comune='" + immobile.comune + "')";
+    //const relatedContentFilter = "&filter=(titolo!='" + immobile.titolo + "')&filter=(comune='" + immobile.comune + "')";
+    const relatedContentFilter = "&filter=(id!='" + immobile.id + "')";
 
     let openCarouselTrigger = false;
 

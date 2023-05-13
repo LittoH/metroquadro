@@ -23,11 +23,3 @@ export default function Footer() {
         </footer>
     );
 }
-
-/* 
-<p>Via Vittorio Veneto, 6, 46035 Ostiglia MN</p>
-<p>+393408960518</p>
-<p>info@metroquadroostiglia.it</p>
-<p>Agenzia Immobiliare Metroquadro Ostiglia</p>
-<p>P.IVA 00000000000000000000000000</p>
-*/
