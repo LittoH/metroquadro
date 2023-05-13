@@ -32,6 +32,7 @@ export default function Immobili() {
                             <Link className={styles.navigationLinks} href={"/immobili"}><h3>Tutte le case</h3></Link>
                         </div>
                         <ImmobiliList isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} />
+                        {/*
                         <div style={{ display: "flex", justifyContent: "center" }}>
                             <CustomButton
                                 text="Clicca per caricare altri immobili"
@@ -39,6 +40,7 @@ export default function Immobili() {
                                 theme="dark"
                             />
                         </div>
+                        */}
                     </div>
                 </section>
             </main>
