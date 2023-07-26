@@ -9,6 +9,8 @@ const optionsComuni = [
     { value: 'Revere', label: 'Revere' },
     { value: 'Serravalle A Po', label: 'Serravalle A Po' },
     { value: 'Correggioli', label: 'Correggioli' },
+    { value: 'Pieve di Coriano', label: 'Pieve di Coriano' },
+    { value: 'Magnacavallo', label: 'Magnacavallo' },
 ];
 
 const optionsContratto = [
@@ -174,11 +176,31 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     const isMobile = useMediaQuery({ maxWidth: '767px' });
 
     function FiltersReset() {
+
+        //console.log("Entrato qua per fare il reset");
+        setSelectedOption(null);
+        setSelectedOptionContratto(null);
+        setSelectedOptionTipologia(null);
+        setSelectedOptionPrezzo(null);
+        setSelectedOptionSuperficie(null);
+
         setIsLoading(true);
         setSearchFilter('');
         setLastFilter('');
         setCanReset(false);
     }
+
+    //debug
+    useEffect(() => {
+        /*
+        console.log("selectedOption: " + selectedOption);
+        console.log("selectedOptionContratto: " + selectedOptionContratto);
+        console.log("selectedOptionTipologia: " + selectedOptionTipologia);
+        console.log("selectedOptionPrezzo: " + selectedOptionPrezzo);
+        console.log("selectedOptionSuperficie: " + selectedOptionSuperficie);
+        */
+    }, [selectedOption, selectedOptionContratto, selectedOptionTipologia, selectedOptionPrezzo, selectedOptionSuperficie]);
+    // fine debug
 
     function OpenFiltersMenu() {
         setIsMobileSearchBarOpen(true);
