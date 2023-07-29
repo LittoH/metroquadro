@@ -24,6 +24,7 @@ export default function FeaturedHouseContainer() {
     const fetchFilteredImmobili = async () => {
         const response = await client.collection('immobili_vendita').getList(1, 50, {
             filter: '' + searchFilter,
+            sort: '-created',
         });
         setHouses(response.items);
         setIsLoading(false);
