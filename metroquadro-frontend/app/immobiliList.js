@@ -31,7 +31,10 @@ export default function ImmobiliList({ isLoading, setIsLoading, searchFilter }) 
         fetchFilteredImmobili();
     }, [searchFilter])
 
-    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/";
+
+    
+    //const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/";//      OLD
+    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/557r95q0bzdn30v/";//        NEW
     const parsedPath = "/immobili/";
 
     return (
