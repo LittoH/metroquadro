@@ -58,7 +58,8 @@ export default async function ImmobilePage({ params }) {
         // ciclo ogni oggetto di photosItem e lo passo nell'array photosToRender, prima di passarlo al component, nel return
         photosItems.forEach((photo) => {
             photosList = photo.immagini;
-            imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + photo.id + "/";
+            //imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + photo.id + "/";//          OLD
+            imagesPath = "https://metroquadro-backend-production.up.railway.app/api/files/lx41tpvwmpods2q/" + photo.id + "/";//            NEW
         });
     }
 
@@ -75,16 +76,17 @@ export default async function ImmobilePage({ params }) {
         // ciclo ogni oggetto di photosItem e lo passo nell'array photosToRender, prima di passarlo al component, nel return
         planimetrieItems.forEach((planimetria) => {
             planimetrieList = planimetria.planimetrie;
-            planimetriePath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + planimetria.id + "/";
+            //planimetriePath = "https://metroquadro-backend-production.up.railway.app/api/files/4btbzzwztley8ay/" + planimetria.id + "/";//  OLD
+            planimetriePath = "https://metroquadro-backend-production.up.railway.app/api/files/lx41tpvwmpods2q/" + planimetria.id + "/";//    NEW
         });
     }
 
-    // Fine parte legata alle planimetrie 
+    // Fine parte legata alle planimetrie lx41tpvwmpods2q
 
 
     const imgSrc = immobile.immagine;
-    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";//     OLD
-    //const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/557r95q0bzdn30v/" + params.id + "/";     NEW
+    //const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";//     OLD
+    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/557r95q0bzdn30v/" + params.id + "/";//       NEW
     const imgPath = "url(" + imgSrcFromServer + imgSrc + ")";
 
     //const relatedContentFilter = "&filter=(titolo!='" + immobile.titolo + "')&filter=(comune='" + immobile.comune + "')";
@@ -134,7 +136,7 @@ export default async function ImmobilePage({ params }) {
                         </div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
-                        {/*nelleVicinanze && (
+                        {nelleVicinanze && (
                             <div className={styles.houseInfoOuterBriefDetailsContainer}>
 
                                 <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
@@ -223,7 +225,7 @@ export default async function ImmobilePage({ params }) {
                                     </div>
                                 </div>
                             </div>
-                                        )*/}
+                                        )}
                     </div>
                 </section>
 
