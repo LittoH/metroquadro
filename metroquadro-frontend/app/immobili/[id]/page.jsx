@@ -134,7 +134,7 @@ export default async function ImmobilePage({ params }) {
                         </div>
 
                         <div className={styles.houseBigDetailItem} style={{ marginTop: "50px" }}><h3>Nelle vicinanze</h3></div>
-                        {nelleVicinanze && (
+                        {/*nelleVicinanze && (
                             <div className={styles.houseInfoOuterBriefDetailsContainer}>
 
                                 <div className={styles.houseInfoInnerBriefDetailsContainer} style={{ paddingRight: "30px" }}>
@@ -223,7 +223,7 @@ export default async function ImmobilePage({ params }) {
                                     </div>
                                 </div>
                             </div>
-                        )}
+                                        )*/}
                     </div>
                 </section>
 
