@@ -79,11 +79,12 @@ export default async function ImmobilePage({ params }) {
         });
     }
 
-    // Fine parte legata alle planimetrie
+    // Fine parte legata alle planimetrie 
 
 
     const imgSrc = immobile.immagine;
-    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";
+    const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/izz8qgmd4pz2olq/" + params.id + "/";//     OLD
+    //const imgSrcFromServer = "https://metroquadro-backend-production.up.railway.app/api/files/557r95q0bzdn30v/" + params.id + "/";     NEW
     const imgPath = "url(" + imgSrcFromServer + imgSrc + ")";
 
     //const relatedContentFilter = "&filter=(titolo!='" + immobile.titolo + "')&filter=(comune='" + immobile.comune + "')";
