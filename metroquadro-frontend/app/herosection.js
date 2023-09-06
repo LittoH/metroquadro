@@ -52,6 +52,18 @@ export default function Herosection({ pageName = "homepage" }) {
                     </div>
                 </div>
             }
+
+            {pageName == "consulenze" &&
+                <div className={styles.herocontentConsulenze}>
+                    <div className={styles.wrapperProperties}>
+                        <div className={styles.customContainerTextOnly}>
+                            <div className={styles.textContainer}>
+                                <h1 className={styles.heroTitle}><em>Consulenze gratuite</em> per eliminare le <em>paranoie</em></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </>
     );
 };

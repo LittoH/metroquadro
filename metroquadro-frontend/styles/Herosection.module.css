@@ -47,6 +47,14 @@ div.herocontentVendi {
     background-position: center;
 }
 
+div.herocontentConsulenze {
+    /*height: 60vh;*/
+    /* Contenuto trovato in una guida online colore scuro 202020 */
+    background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0.75), rgb(20, 20, 20, .75)), url("../public/consulenze.png");
+    background-size: cover;
+    background-position: center;
+}
+
 h1.heroTitle {
     color: var(--mqWhite);
     font-size: 60pt;
