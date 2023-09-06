@@ -18,6 +18,10 @@
     width: 800px;
 }
 
+.justifiedText {
+    text-align: justify;
+}
+
 @media screen and (max-width: 991px) {
     .contentItemsContainer {
         width: 700px;
