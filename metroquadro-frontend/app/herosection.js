@@ -58,7 +58,7 @@ export default function Herosection({ pageName = "homepage" }) {
                     <div className={styles.wrapperProperties}>
                         <div className={styles.customContainerTextOnly}>
                             <div className={styles.textContainer}>
-                                <h1 className={styles.heroTitle}><em>Consulenze gratuite</em> per eliminare le <em>paranoie</em></h1>
+                                <h1 className={styles.heroTitle}><em>Consulenze gratuite</em> per eliminare le <em>insicurezze</em></h1>
                             </div>
                         </div>
                     </div>
