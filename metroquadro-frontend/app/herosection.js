@@ -23,6 +23,11 @@ export default function Herosection({ pageName = "homepage" }) {
                                     path="./vendi"
                                     theme="light"
                                 />
+                                <CustomButton
+                                    text="CONSULENZE PER MUTUI"
+                                    path="./consulenze"
+                                    theme="light"
+                                />
                             </div>
                         </div>
                     </div>

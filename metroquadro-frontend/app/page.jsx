@@ -34,37 +34,37 @@ export default function Home() {
                             <FadeInWhenVisible>
                                 <div className={styles.multicardContainer}>
                                     <div className={styles.smallCard}>
-                                        <h1>Compra</h1>
+                                        <h1 style={{ textAlign: "center" }}>Compra e Affitta</h1>
                                         <p>
-                                            Sfoglia il catalogo degli immobili attualmente in vendita curato con immagini e planimetrie.
+                                            Sfoglia il catalogo degli immobili attualmente in vendita e in affitto, curato con immagini e planimetrie.
                                         </p>
                                         <Link href="./immobili">
                                             <div className={styles.cardButton}>
-                                                COMPRA
+                                                Sfoglia
                                             </div>
                                         </Link>
                                     </div>
 
                                     <div className={styles.smallCard}>
-                                        <h1>Affitta</h1>
-                                        <p>
-                                            Sfoglia il catalogo in costante aggiornamento degli immobili attualmente disponibili per l'affitto.
-                                        </p>
-                                        <Link href="./immobili">
-                                            <div className={styles.cardButton}>
-                                                AFFITTA
-                                            </div>
-                                        </Link>
-                                    </div>
-
-                                    <div className={styles.smallCard}>
-                                        <h1>Vendi</h1>
+                                        <h1 style={{ textAlign: "center" }}>Vendi</h1>
                                         <p>
                                             Affidati a noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
                                         </p>
                                         <Link href="./vendi">
                                             <div className={styles.cardButton}>
-                                                VENDI
+                                                Contattaci
+                                            </div>
+                                        </Link>
+                                    </div>
+
+                                    <div className={styles.smallCard}>
+                                        <h1 style={{ textAlign: "center" }}>Consulenze</h1>
+                                        <p>
+                                            Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all'acquisto di un immobile. 
+                                        </p>
+                                        <Link href="./consulenze">
+                                            <div className={styles.cardButton}>
+                                                Prenota
                                             </div>
                                         </Link>
                                     </div>
