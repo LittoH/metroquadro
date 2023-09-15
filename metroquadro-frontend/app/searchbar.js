@@ -11,6 +11,7 @@ const optionsComuni = [
     { value: 'Correggioli', label: 'Correggioli' },
     { value: 'Pieve di Coriano', label: 'Pieve di Coriano' },
     { value: 'Magnacavallo', label: 'Magnacavallo' },
+    { value: 'Libiola', label: 'Libiola' },
 ];
 
 const optionsContratto = [
