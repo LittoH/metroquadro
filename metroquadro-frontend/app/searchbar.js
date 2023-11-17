@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { useMediaQuery } from 'react-responsive';
 
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 const optionsComuni = [
     { value: 'Ostiglia', label: 'Ostiglia' },
     { value: 'Revere', label: 'Revere' },
@@ -75,6 +78,14 @@ const optionsSuperficie = [
     { value: '500', label: '500m²' },
 ];
 
+// Funzione UTILITY per pushare un link nel router
+export const createUrl = (pathname, params) => {
+    const paramsString = params.toString();
+    const queryString = `${paramsString.length ? '?' : ''}${paramsString}`;
+
+    return `${pathname}${queryString}`;
+};
+
 export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSearchFilter, canReset, setCanReset }) {
 
     const [lastFilter, setLastFilter] = useState('unfiltered');
@@ -95,7 +106,19 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
     const [isMobileSearchBarOpen, setIsMobileSearchBarOpen] = useState(false);
     const [firstMobileCheckCompleted, setFirstMobileCheckCompleted] = useState(false);
 
+    // Parte relativa allo scrivere lo stato nell'URL
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+
     function LoadCaseWithFilter() {
+
+         // Parte relativa allo scrivere lo stato nell'URL
+         /*
+         const newParams = new URLSearchParams(searchParams.toString());
+         newParams.set('filter', searchFilter.toString());
+         router.push(createUrl('/immobili', newParams));
+        */
 
         let filter = '';
         if (selectedOptionIsSet) {
@@ -126,10 +149,12 @@ export default function SearchBar({ isLoading, setIsLoading, searchFilter, setSe
             filter += 'metriquadri_nf<=' + selectedOptionSuperficie.value + '';
         }
 
-        //console.log("Filtro completo di ricerca: " + filter);
 
         console.log("Search filter is: " + filter);
         console.log("Last searched filter is : " + lastFilter);
+
+
+
 
         if (filter != lastFilter) {
             setIsLoading(true);

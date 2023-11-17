@@ -69,7 +69,7 @@ export default function ImmobiliList({ isLoading, setIsLoading, searchFilter }) 
             }
             {!isLoading &&
                 <div className={styles.immobiliList}>
-                    <h3>La ricerca ha prodotto {houses.length} risultati.</h3>
+                    <h3>La ricerca ha prodotto {houses.filter(house => house.attivo).length} risultati.</h3>
                     {houses.length < 1 &&
                         <p>Prova a modificare i parametri di ricerca nella barra verde in alto per trovare gli immobili che cerchi.</p>
                     }
