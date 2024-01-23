@@ -64,6 +64,9 @@ div.planimetriaContainer {
     justify-content: center;
     position: relative;
     background-color: var(--mqBlack);
+
+    box-shadow: 0 0 0 100vmax black;
+    clip-path: inset(0 -100vmax);
 }
 
 section.linkedFeaturedHouses {
