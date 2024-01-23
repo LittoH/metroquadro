@@ -102,7 +102,7 @@ export default async function ImmobilePage({ params }) {
         <div className={styles.container}>
             <main className={styles.main}>
                 <section className={styles.houseInfoSection}>
-                    <div className={styles.customContainer}>
+                    <div className={styles.planimetriaContainer}>
                         {photosList && (
                             <PhotoCarouselLightbox carouselImages={photosList} carouselImagePath={imagesPath} carouselWidth="100%" carouselMaxHeight="75vh" carouselAspectRatio="4 / 3" />
                         )}
