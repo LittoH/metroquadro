@@ -94,6 +94,10 @@ div.smallCard:hover {
     animation-fill-mode: forwards;
 }
 
+p.smallCardParagraph {
+    margin-top: 50px;
+}
+
 div.cardButton {
     background: var(--mqBlack);
     color: var(--mqWhite);

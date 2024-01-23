@@ -35,7 +35,7 @@ export default function Home() {
                                 <div className={styles.multicardContainer}>
                                     <div className={styles.smallCard}>
                                         <h1 style={{ textAlign: "center" }}>Compra e Affitta</h1>
-                                        <p>
+                                        <p className={styles.smallCardParagraph}>
                                             Sfoglia il catalogo degli immobili attualmente in vendita e in affitto, curato con immagini e planimetrie.
                                         </p>
                                         <Link href="./immobili">
@@ -47,7 +47,7 @@ export default function Home() {
 
                                     <div className={styles.smallCard}>
                                         <h1 style={{ textAlign: "center" }}>Vendi</h1>
-                                        <p>
+                                        <p className={styles.smallCardParagraph}>
                                             Affidati a noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
                                         </p>
                                         <Link href="./vendi">
@@ -59,7 +59,7 @@ export default function Home() {
 
                                     <div className={styles.smallCard}>
                                         <h1 style={{ textAlign: "center" }}>Consulenze</h1>
-                                        <p>
+                                        <p className={styles.smallCardParagraph}>
                                             Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all'acquisto di un immobile. 
                                         </p>
                                         <Link href="./consulenze">
