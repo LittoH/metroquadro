@@ -35,6 +35,9 @@ export default function Home() {
                                 <div className={styles.multicardContainer}>
                                     <div className={styles.smallCard}>
                                         <h1 style={{ textAlign: "center" }}>Compra e Affitta</h1>
+                                        <div className={styles.horizontalCenteringContainer}>
+                                            <div className={styles.decorativeGreenRhombus}></div>
+                                        </div>
                                         <p className={styles.smallCardParagraph}>
                                             Sfoglia il catalogo degli immobili attualmente in vendita e in affitto, curato con immagini e planimetrie.
                                         </p>
@@ -47,6 +50,9 @@ export default function Home() {
 
                                     <div className={styles.smallCard}>
                                         <h1 style={{ textAlign: "center" }}>Vendi</h1>
+                                        <div className={styles.horizontalCenteringContainer}>
+                                            <div className={styles.decorativeGreenRhombus}></div>
+                                        </div>
                                         <p className={styles.smallCardParagraph}>
                                             Affidati a noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
                                         </p>
@@ -59,6 +65,9 @@ export default function Home() {
 
                                     <div className={styles.smallCard}>
                                         <h1 style={{ textAlign: "center" }}>Consulenze</h1>
+                                        <div className={styles.horizontalCenteringContainer}>
+                                            <div className={styles.decorativeGreenRhombus}></div>
+                                        </div>
                                         <p className={styles.smallCardParagraph}>
                                             Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all'acquisto di un immobile. 
                                         </p>

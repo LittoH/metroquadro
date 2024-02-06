@@ -94,8 +94,23 @@ div.smallCard:hover {
     animation-fill-mode: forwards;
 }
 
+div.horizontalCenteringContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+div.decorativeGreenRhombus {
+    background-color: var(--mqGreen);
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
 p.smallCardParagraph {
-    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 div.cardButton {
