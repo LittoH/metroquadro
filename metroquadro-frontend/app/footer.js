@@ -8,7 +8,7 @@ export default function Footer() {
             <div className={styles.greenWrapperProperties}>
                 <div className={styles.customContainer}>
                     <div className={styles.footerColumnItem}>
-                        <p>© 2023 MetroquadroImmobili.it | P. IVA 02636330207 | <Link className={styles.footerTextLink} href="/privacy">Condizioni Generali, Regole della Privacy e Uso dei Cookie</Link></p>
+                        <p>© 2024 MetroquadroImmobili.it | P. IVA 02636330207 | <Link className={styles.footerTextLink} href="/privacy">Condizioni Generali, Regole della Privacy e Uso dei Cookie</Link></p>
                     </div>
                     <div className={styles.footerColumnItem}>
                         <Link href="/">
