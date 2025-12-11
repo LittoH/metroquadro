@@ -1,0 +1,120 @@
+.sidebarContainer {
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.filterTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--mqBlack);
+    border-bottom: 2px solid var(--mqGreen);
+    padding-bottom: 10px;
+}
+
+.filterGroup {
+    margin-bottom: 15px;
+}
+
+.filterLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.searchButton {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--mqGreen);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.searchButton:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.resetButton {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resetButton:hover {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.mobileToggle {
+    display: none;
+    width: 100%;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--mqBlack);
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.mobileToggleIcon {
+    transition: transform 0.3s ease;
+}
+
+.mobileToggleIcon.open {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 991px) {
+    .sidebarContainer {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .mobileToggle {
+        display: flex;
+    }
+
+    .filterContent {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+
+    .filterContentInner {
+        padding: 20px;
+    }
+}

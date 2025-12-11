@@ -1,8 +1,7 @@
 'use client';
 
 import styles from '../../styles/Immobili.module.css'
-import CustomButton from '../customButton';
-import SearchBar from '../searchbar';
+import SidebarFilter from '../components/SidebarFilter';
 import ImmobiliList from '../immobiliList';
 
 import { useState } from 'react';
@@ -18,30 +17,29 @@ export default function Immobili() {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-                <section className={styles.searchEngineSection}>
-                    <div className={styles.seCustomContainer}>
-                        <SearchBar isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} setSearchFilter={setSearchFilter} canReset={canReset} setCanReset={setCanReset} />
-                    </div>
-                </section>
+                <aside className={styles.sidebarSection}>
+                    <SidebarFilter 
+                        isLoading={isLoading} 
+                        setIsLoading={setIsLoading} 
+                        searchFilter={searchFilter} 
+                        setSearchFilter={setSearchFilter} 
+                        canReset={canReset} 
+                        setCanReset={setCanReset} 
+                    />
+                </aside>
 
-                <section className={styles.postHeroContent}>
-                    <div className={styles.customContainer}>
-                        <div style={{ display: "flex", flexDirection: "row" }}>
-                            <Link className={styles.navigationLinks} href={"/immobili"}><h3>Immobili</h3></Link>
-                            <h3 style={{ marginLeft: "5px", marginRight: "5px" }}>&gt;</h3>
-                            <Link className={styles.navigationLinks} href={"/immobili"}><h3>Tutte le case</h3></Link>
-                        </div>
-                        <ImmobiliList isLoading={isLoading} setIsLoading={setIsLoading} searchFilter={searchFilter} />
-                        {/*
-                        <div style={{ display: "flex", justifyContent: "center" }}>
-                            <CustomButton
-                                text="Clicca per caricare altri immobili"
-                                path="./"
-                                theme="dark"
-                            />
-                        </div>
-                        */}
+                <section className={styles.contentSection}>
+                    <div className={styles.breadcrumbs}>
+                        <Link className={styles.navigationLinks} href={"/"}>Home</Link>
+                        <span className={styles.separator}>&gt;</span>
+                        <Link className={styles.navigationLinks} href={"/immobili"}>Immobili</Link>
                     </div>
+                    
+                    <ImmobiliList 
+                        isLoading={isLoading} 
+                        setIsLoading={setIsLoading} 
+                        searchFilter={searchFilter} 
+                    />
                 </section>
             </main>
         </div>
