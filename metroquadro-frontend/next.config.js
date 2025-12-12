@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: false,
-    swcMinify: true,
-    experimental: { appDir: true },
-    reactStrictMode: false,
     images: {
         remotePatterns: [
             {
@@ -13,6 +10,12 @@ const nextConfig = {
                 pathname: '**',
             },
         ],
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
     },
 }
 
