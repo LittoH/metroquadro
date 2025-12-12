@@ -237,7 +237,7 @@ export default async function ImmobilePage({ params }) {
                         <div className={styles.customContainer}>
                             <div className={styles.pageNotFoundContainer}>
                                 <div style={{ marginTop: "200px" }}>
-                                    <h1>L'immobile che stai cercando non è attualmente più disponibile.</h1>
+                                    <h1>L&apos;immobile che stai cercando non è attualmente più disponibile.</h1>
                                 </div>
                                 <div style={{ marginTop: "50px" }}>
                                     <CustomButton text="TORNA AGLI IMMOBILI" path="./immobili" theme="dark" />
