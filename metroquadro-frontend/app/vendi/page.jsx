@@ -14,8 +14,8 @@ export default function VendiPage() {
                             <div className={styles.contentItem} style={{ marginBottom: "100px" }}>
                                 <h1>Vendi o metti in affitto il tuo immobile attraverso la nostra agenzia</h1>
                                 <p>
-                                    Se sei interessato a vendere o mettere il tuo immobile in affitto attraverso la nostra agenzia, contattaci alla mail che segue. Ti preghiamo di inserire nell'oggetto della mail [VENDITA] o [AFFITTO] seguito dalla tipologia dell'immobile.<br></br>
-                                    Ti chiediamo inoltre di segnalare nel corpo della mail quanti più dettagli possibile per aiutarci nel processo di identificazione dell'immobile.<br></br>
+                                    Se sei interessato a vendere o mettere il tuo immobile in affitto attraverso la nostra agenzia, contattaci alla mail che segue. Ti preghiamo di inserire nell&apos;oggetto della mail [VENDITA] o [AFFITTO] seguito dalla tipologia dell&apos;immobile.<br></br>
+                                    Ti chiediamo inoltre di segnalare nel corpo della mail quanti più dettagli possibile per aiutarci nel processo di identificazione dell&apos;immobile.<br></br>
                                     Sarai successivamente ricontattato direttamente alla mail che hai utilizzato per contattarci o al numero di telefono che lascerai. <br></br> <br></br><br></br>
                                     <a style={{ textDecoration: "underline" }} href="mailto:info@metroquadroimmobili.it">info@metroquadroimmobili.it</a>
                                 </p>
@@ -23,7 +23,7 @@ export default function VendiPage() {
                             <div className={styles.contentItem} >
                                 <h1>Contattaci al numero di telefono</h1>
                                 <p>
-                                    Per contattarci telefonicamente, puoi farlo al numero che segue. Ti chiediamo solamente la cortesia di sfruttare i momenti di apertura dell'agenzia.<br></br> <br></br><br></br>
+                                    Per contattarci telefonicamente, puoi farlo al numero che segue. Ti chiediamo solamente la cortesia di sfruttare i momenti di apertura dell&apos;agenzia.<br></br> <br></br><br></br>
                                     <a style={{ textDecoration: "underline" }} href="tel:+393408960518">+39 3408960518</a>
                                 </p>
                             </div>

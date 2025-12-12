@@ -69,7 +69,7 @@ export default function Home() {
                                             <div className={styles.decorativeGreenRhombus}></div>
                                         </div>
                                         <p className={styles.smallCardParagraph}>
-                                            Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all'acquisto di un immobile. 
+                                            Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all&apos;acquisto di un immobile. 
                                         </p>
                                         <Link href="./consulenze">
                                             <div className={styles.cardButton}>
@@ -161,7 +161,7 @@ export default function Home() {
                                                             Usa uno dei metodi che segue per contattarci, risponderemo quanto prima.<br />
                                                         </p>
                                                         <p style={{ marginBottom: "90px"}} >
-                                                            <em>Per favore abbi cura di rispettare gli orari di apertura dell'agenzia qualora decidessi di contattarci telefonicamente.</em>
+                                                            <em>Per favore abbi cura di rispettare gli orari di apertura dell&apos;agenzia qualora decidessi di contattarci telefonicamente.</em>
                                                         </p>
                                                         <a href="mailto:info@metroquadroimmobili.it">
                                                             <div className={styles.contactsMethodRow} style={{ borderBottom: "solid #fff 1px" }}>

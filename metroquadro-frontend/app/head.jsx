@@ -8,7 +8,7 @@ export default function Head() {
             <link rel="icon" href="/favicon.ico" />
 
             <Script src="https://www.googletagmanager.com/gtag/js?id=G-9GD5FXLWYF" strategy="afterInteractive" />
-            <Script strategy="afterInteractive">
+            <Script id="google-analytics" strategy="afterInteractive">
                 {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
