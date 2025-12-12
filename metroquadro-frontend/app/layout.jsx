@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Abyssinica } from 'next/font/google'
+import { Abyssinica_SIL } from 'next/font/google'
 import Navbar from './navbar'
 import Footer from './footer'
 import { PageWrapper } from './page-wrapper'
