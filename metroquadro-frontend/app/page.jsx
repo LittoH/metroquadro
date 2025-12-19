@@ -16,7 +16,10 @@ export default function Home() {
                 <Herosection />
                 <section className={styles.postHeroContent}>
                     <div className={styles.customContainer} style={{ width: "90%" }}>
-                        <h1 className={styles.featuredHouseSectionTitle}>Novità</h1>
+                        <div className={styles.sectionTitleContainer}>
+                            <h2 className={`${styles.servicesTitle} ${styles.darkTitle}`}>Novità</h2>
+                            <div className={`${styles.titleUnderline} ${styles.darkUnderline}`}></div>
+                        </div>
                         <FeaturedHouseContainer />
                         <div className={styles.featuredHouseButtonContainer}>
                             <CustomButton
@@ -29,51 +32,77 @@ export default function Home() {
                 </section>
 
                 <section>
-                    <div className={styles.greenWrapperProperties} style={{ backgroundImage: "linear-gradient(to top, rgb(55, 103, 72), var(--mqGreen))" }}>
+                    <div className={styles.greenWrapperProperties} style={{ backgroundImage: "linear-gradient(135deg, rgb(55, 103, 72) 0%, var(--mqGreen) 50%, rgb(65, 115, 82) 100%)" }}>
                         <div className={styles.customContainer}>
+                            <div className={styles.sectionTitleContainer}>
+                                <h2 className={styles.servicesTitle}>I Nostri Servizi</h2>
+                                <div className={styles.titleUnderline}></div>
+                            </div>
                             <FadeInWhenVisible>
                                 <div className={styles.multicardContainer}>
-                                    <div className={styles.smallCard}>
-                                        <h1 style={{ textAlign: "center" }}>Compra e Affitta</h1>
-                                        <div className={styles.horizontalCenteringContainer}>
-                                            <div className={styles.decorativeGreenRhombus}></div>
+                                    <div className={`${styles.smallCard} ${styles.cardDelay1}`}>
+                                        <div className={styles.cardIconContainer}>
+                                            <svg className={styles.cardIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M9 22V12H15V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
                                         </div>
+                                        <h1 className={styles.cardTitle}>Compra e Affitta</h1>
+                                        <div className={styles.cardDivider}></div>
                                         <p className={styles.smallCardParagraph}>
                                             Sfoglia il catalogo degli immobili attualmente in vendita e in affitto, curato con immagini e planimetrie.
                                         </p>
                                         <Link href="./immobili">
                                             <div className={styles.cardButton}>
-                                                Sfoglia
+                                                <span>Sfoglia</span>
+                                                <svg className={styles.buttonArrow} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
                                             </div>
                                         </Link>
                                     </div>
 
-                                    <div className={styles.smallCard}>
-                                        <h1 style={{ textAlign: "center" }}>Vendi</h1>
-                                        <div className={styles.horizontalCenteringContainer}>
-                                            <div className={styles.decorativeGreenRhombus}></div>
+                                    <div className={`${styles.smallCard} ${styles.cardDelay2}`}>
+                                        <div className={styles.cardIconContainer}>
+                                            <svg className={styles.cardIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
                                         </div>
+                                        <h1 className={styles.cardTitle}>Vendi</h1>
+                                        <div className={styles.cardDivider}></div>
                                         <p className={styles.smallCardParagraph}>
                                             Affidati a noi per vendere il tuo immobile con la migliore esposizione che possiamo garantire.
                                         </p>
                                         <Link href="./vendi">
                                             <div className={styles.cardButton}>
-                                                Contattaci
+                                                <span>Contattaci</span>
+                                                <svg className={styles.buttonArrow} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
                                             </div>
                                         </Link>
                                     </div>
 
-                                    <div className={styles.smallCard}>
-                                        <h1 style={{ textAlign: "center" }}>Consulenze</h1>
-                                        <div className={styles.horizontalCenteringContainer}>
-                                            <div className={styles.decorativeGreenRhombus}></div>
+                                    <div className={`${styles.smallCard} ${styles.cardDelay3}`}>
+                                        <div className={styles.cardIconContainer}>
+                                            <svg className={styles.cardIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M9 9H15M9 13H12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
                                         </div>
+                                        <h1 className={styles.cardTitle}>Consulenze</h1>
+                                        <div className={styles.cardDivider}></div>
                                         <p className={styles.smallCardParagraph}>
-                                            Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all&apos;acquisto di un immobile. 
+                                            Ricevi gratuitamente una consulenza finanziaria gratuita per accedere all&apos;acquisto di un immobile.
                                         </p>
                                         <Link href="./consulenze">
                                             <div className={styles.cardButton}>
-                                                Prenota
+                                                <span>Prenota</span>
+                                                <svg className={styles.buttonArrow} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
                                             </div>
                                         </Link>
                                     </div>
@@ -143,7 +172,7 @@ export default function Home() {
                                                                 <p>Venerdì</p>
                                                                 <p>09:00 - 12:30 | 15:30 - 18:30</p>
                                                             </div>
-                                                            <div className={styles.orarioItem} style={{ border: "0" }}>
+                                                            <div className={styles.orarioItem}>
                                                                 <p>Sabato</p>
                                                                 <p>09:00 - 12:30 | 15:30 - 18:30</p>
                                                             </div>
@@ -160,7 +189,7 @@ export default function Home() {
                                                         <p>
                                                             Usa uno dei metodi che segue per contattarci, risponderemo quanto prima.<br />
                                                         </p>
-                                                        <p style={{ marginBottom: "90px"}} >
+                                                        <p style={{ marginBottom: "90px" }} >
                                                             <em>Per favore abbi cura di rispettare gli orari di apertura dell&apos;agenzia qualora decidessi di contattarci telefonicamente.</em>
                                                         </p>
                                                         <a href="mailto:info@metroquadroimmobili.it">
@@ -204,17 +233,29 @@ export default function Home() {
                                                 </div>
                                             </div>
 
-                                            <div className={styles.agenziaSectionItemSocial}>
-                                                <h1>Social</h1>
-                                                <div className={styles.sedeSectionContainerSocial}>
-                                                    <div className={styles.sedeSocialSection}>
-                                                        <p>
-                                                            Seguici sui nostri social per essere tra i primi a scoprire i nuovi immobili a catalogo e per fare tour virtuali con video approfonditi.
-                                                        </p>
-                                                        <h4>Torna a breve.</h4>
+                                            <Link href="https://www.instagram.com/agenziametroquadro" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                                <div className={styles.agenziaSectionItemSocial}>
+                                                    <h1>Social</h1>
+                                                    <div className={styles.sedeSectionContainerSocial}>
+                                                        <div className={styles.sedeSocialSection}>
+                                                            <p>
+                                                                Siamo presenti su Instagram con i <strong>Tour di 90 secondi</strong>, un formato di video in cui in 90 secondi presentiamo le case in vendita e in affitto in maniera approfondita.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div className={styles.socialScreenshotsWrapper}>
+                                                        <div className={`${styles.socialScreenshotItem} ${styles.screen1}`}>
+                                                            <Image src="/screen_1.png" alt="Instagram Tour 1" width={160} height={320} className={styles.socialScreenshot} />
+                                                        </div>
+                                                        <div className={`${styles.socialScreenshotItem} ${styles.screen2}`}>
+                                                            <Image src="/screen_2.png" alt="Instagram Tour 2" width={160} height={320} className={styles.socialScreenshot} />
+                                                        </div>
+                                                        <div className={`${styles.socialScreenshotItem} ${styles.screen3}`}>
+                                                            <Image src="/screen_3.png" alt="Instagram Tour 3" width={160} height={320} className={styles.socialScreenshot} />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

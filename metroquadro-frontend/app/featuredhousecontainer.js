@@ -9,9 +9,10 @@ import { useRef } from 'react';
 
 export default function FeaturedHouseContainer() {
 
-    const [houses, setHouses] = useState('');
+    const [houses, setHouses] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [hasScrolled, setHasScrolled] = useState(false);
+    const [showLeftArrow, setShowLeftArrow] = useState(false);
+    const [showRightArrow, setShowRightArrow] = useState(true);
 
     // Questo ci serve per ottenere la reference del div da scrollare orizzontalmente quando
     // clicchiamo sull'icona della freccia
@@ -22,13 +23,17 @@ export default function FeaturedHouseContainer() {
     let searchFilter = "";
 
     const fetchFilteredImmobili = async () => {
-        const response = await client.collection('immobili_vendita').getList(1, 50, {
-            filter: '' + searchFilter,
-            sort: '-created',
-        });
-        setHouses(response.items);
-        setIsLoading(false);
-        return response.items;
+        try {
+            const response = await client.collection('immobili_vendita').getList(1, 50, {
+                filter: 'attivo=true && in_evidenza=true',
+                sort: '-created',
+            });
+            setHouses(response.items);
+        } catch (error) {
+            console.error("Error fetching houses:", error);
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     useEffect(() => {
@@ -37,47 +42,55 @@ export default function FeaturedHouseContainer() {
 
     // Fine parte relativa al fetch dal lato client 
 
-    // Aggiungo degli event listeners per capire se ho scrollato orizzontalmente lo slider
+    const handleScroll = () => {
+        if (divRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = divRef.current;
+            setShowLeftArrow(scrollLeft > 0);
+            // Allow a small buffer (e.g. 10px) for float precision issues
+            setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+        }
+    };
+
     useEffect(() => {
-        const scrollableDiv = document.querySelector('#scrollableDiv');
-        const handleScroll = () => {
-            if (scrollableDiv.scrollLeft > 0) {
-                setHasScrolled(true);
-            } else {
-                setHasScrolled(false);
-            }
-        };
-        scrollableDiv.addEventListener('scroll', handleScroll);
-        return () => {
-            scrollableDiv.removeEventListener('scroll', handleScroll);
-        };
-    }, [hasScrolled]);
+        const scrollableDiv = divRef.current;
+        if (scrollableDiv) {
+            scrollableDiv.addEventListener('scroll', handleScroll);
+            // Check initial state
+            handleScroll();
+            return () => {
+                scrollableDiv.removeEventListener('scroll', handleScroll);
+            };
+        }
+    }, [houses]);
 
 
-    function ScrollRight() {
-        divRef.current.scrollLeft += 600;
-    }
-
-    function ScrollLeft() {
-        divRef.current.scrollLeft -= 600;
+    function scroll(direction) {
+        if (divRef.current) {
+            const scrollAmount = 430; // Card width + margin
+            divRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     }
 
     return (
         <div className={styles.multiFeaturedHouseWrapper}>
-            <div className={styles.rightArrow} onClick={() => ScrollRight()}>
-                <Image className={styles.rightArrowImage} src="/nav-arrow-right.svg" width={50} height={50} alt="Right arrow" />
-            </div>
-
-            {hasScrolled && 
-                <div className={styles.leftArrow} onClick={() => ScrollLeft()}>
-                    <Image className={styles.rightArrowImage} src="/nav-arrow-left.svg" width={50} height={50} alt="Right arrow" />
+            {showLeftArrow && 
+                <div className={`${styles.arrowButton} ${styles.leftArrow}`} onClick={() => scroll('left')}>
+                    <Image className={styles.arrowImage} src="/nav-arrow-left.svg" width={24} height={24} alt="Previous" />
                 </div>
             }
 
-            <div id="scrollableDiv" ref={divRef} className={styles.multiFeaturedHouseContainer}>
-                {!isLoading && houses.filter(house => house.attivo && house.in_evidenza).map((house) => (
-                    <>
+            <div ref={divRef} className={styles.multiFeaturedHouseContainer}>
+                {isLoading ? (
+                    <div style={{width: '100%', textAlign: 'center', padding: '50px', color: '#888'}}>
+                        Caricamento immobili in evidenza...
+                    </div>
+                ) : (
+                    houses.map((house) => (
                         <FeaturedHouseCard
+                            key={house.id}
                             id={house.id}
                             imgSrc={house.immagine}
                             price={house.prezzo}
@@ -88,9 +101,15 @@ export default function FeaturedHouseContainer() {
                             floors={house.piani}
                             description={house.annuncio}
                         />
-                    </>
-                ))}
+                    ))
+                )}
             </div>
+
+            {showRightArrow && houses.length > 0 &&
+                <div className={`${styles.arrowButton} ${styles.rightArrow}`} onClick={() => scroll('right')}>
+                    <Image className={styles.arrowImage} src="/nav-arrow-right.svg" width={24} height={24} alt="Next" />
+                </div>
+            }
         </div>
     );
 };

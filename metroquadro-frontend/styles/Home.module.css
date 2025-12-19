@@ -49,49 +49,218 @@ div.featuredHouseButtonContainer {
     justify-content: space-between;
 }
 
+/* Services Section Title */
+div.sectionTitleContainer {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h2.servicesTitle {
+    color: var(--mqWhite);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+h2.darkTitle {
+    color: var(--mqBlack);
+}
+
+div.titleUnderline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--mqWhite), transparent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+div.darkUnderline {
+    background: linear-gradient(90deg, transparent, var(--mqBlack), transparent);
+}
+
 div.multicardContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
+    gap: 30px;
+    perspective: 1000px;
 }
 
-@keyframes hoverOnCard {
+/* Animazioni Card */
+@keyframes fadeInUp {
     from {
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
     }
-
     to {
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-@keyframes outHoverOnCard {
-    from {
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
     }
-
-    to {
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.0));
+    100% {
+        background-position: 200% center;
     }
 }
 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Card Styling */
 div.smallCard {
-    background-color: var(--mqWhite);
-    padding: 40px;
-    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    /* Removed backdrop-filter for performance */
+    padding: 45px 35px;
+    border-radius: 24px;
     width: 350px;
-    text-align: justify;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    
+    /* Optimized transition properties */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
+    
+    animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+}
 
-    animation-name: outHoverOnCard;
-    animation-duration: .3s;
-    animation-fill-mode: forwards;
+div.cardDelay1 {
+    animation-delay: 0.1s;
+}
+
+div.cardDelay2 {
+    animation-delay: 0.2s;
+}
+
+div.cardDelay3 {
+    animation-delay: 0.3s;
+}
+
+/* Glassmorphism effect on hover - Optimized */
+div.smallCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+div.smallCard:hover::before {
+    transform: translateX(100%);
 }
 
 div.smallCard:hover {
-    animation-name: hoverOnCard;
-    animation-duration: .3s;
-    animation-fill-mode: forwards;
+    transform: translateY(-8px);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.15),
+        0 5px 10px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Card Icon Container */
+div.cardIconContainer {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--mqGreen), #5aa876);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 24px rgba(79, 150, 104, 0.3);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+div.cardIconContainer::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+div.smallCard:hover div.cardIconContainer {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 12px 32px rgba(79, 150, 104, 0.4);
+}
+
+div.smallCard:hover div.cardIconContainer::after {
+    opacity: 1;
+}
+
+svg.cardIcon {
+    width: 36px;
+    height: 36px;
+    color: white;
+    transition: transform 0.3s ease-out;
+}
+
+div.smallCard:hover svg.cardIcon {
+    transform: scale(1.1);
+}
+
+/* Card Title */
+h1.cardTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--mqBlack);
+    margin-bottom: 15px;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Card Divider */
+div.cardDivider {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--mqGreen), transparent);
+    margin-bottom: 20px;
+    border-radius: 2px;
+    transition: transform 0.3s ease-out;
+    transform-origin: left;
+}
+
+div.smallCard:hover div.cardDivider {
+    transform: scaleX(1.6);
 }
 
 div.horizontalCenteringContainer{
@@ -110,22 +279,75 @@ div.decorativeGreenRhombus {
 }
 
 p.smallCardParagraph {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    position: relative;
+    z-index: 2;
 }
 
+/* Card Button */
 div.cardButton {
-    background: var(--mqBlack);
+    background: linear-gradient(135deg, var(--mqBlack), #2d2d2d);
     color: var(--mqWhite);
-    padding: 10px 30px 10px 30px;
-    border-radius: 10px;
+    padding: 14px 28px;
+    border-radius: 12px;
     width: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+div.cardButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out;
+}
+
+div.cardButton:hover::before {
+    transform: translateX(100%);
+}
+
+svg.buttonArrow {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease-out;
 }
 
 .cardButton:hover {
     cursor: pointer;
-    background-color: black;
+    background: linear-gradient(135deg, #1a1a1a, var(--mqBlack));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cardButton:hover svg.buttonArrow {
+    transform: translateX(4px);
+}
+
+.cardButton:active {
+    transform: translateY(0) scale(0.98);
 }
 
 div.postCardsSection {
@@ -226,7 +448,7 @@ div.agenziaSectionItem {
 div.agenziaSectionItemSocial {
     background-color: var(--mqWhite);
     border-radius: 30px;
-    padding: 50px 70px 70px 70px;
+    padding: 40px 40px 0px 40px;
     color: var(--mqBlack);
     text-align: justify;
     width: var(--mqHomepageSquaresWidth);
@@ -234,11 +456,19 @@ div.agenziaSectionItemSocial {
     height: 500px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     background: linear-gradient(135deg, #f9f9f980 50%, transparent 0), linear-gradient(-135deg, #f9f9f980 50%, transparent 0);
     background-size: 3em 3em;
     background-color: #ffffff;
     opacity: 1;
+}
+
+div.agenziaSectionItemSocial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 div.agenziaSectionItemContainerLeftPart {
@@ -299,23 +529,39 @@ div.sedeOrariSection {
 div.tabellaOrari {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
 }
 
 div.orarioItem {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    background-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 0 100vmax rgba(255, 255, 255, 0.05);
-    clip-path: inset(0 -100vmax);
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-div.orarioItem:nth-child(2n) {
-    background-color: rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 100vmax rgba(255, 255, 255, 0);
-    clip-path: inset(0 -100vmax);
+div.orarioItem:last-child {
+    border-bottom: none;
+}
+
+div.orarioItem p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+div.orarioItem p:first-child {
+    font-weight: 600;
+    color: var(--mqLightGreen);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+div.orarioItem p:last-child {
+    color: rgba(255, 255, 255, 0.9);
+    font-variant-numeric: tabular-nums;
 }
 
 div.formsFieldContainer {
@@ -495,6 +741,76 @@ h1.contactMethodItem {
     font-size: 15pt;
 }
 
+/* Social Screenshots Section */
+div.socialScreenshotsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: auto;
+    position: relative;
+    height: 320px;
+    width: 100%;
+    perspective: 1000px;
+    padding-right: 130px;
+    padding-bottom: 0;
+    margin-bottom: -50px;
+}
+
+div.socialScreenshotItem {
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15));
+    will-change: transform;
+}
+
+.socialScreenshot {
+    border-radius: 16px;
+    border: 4px solid white;
+    object-fit: cover;
+    background-color: white;
+}
+
+div.screen1 {
+    transform: translateX(-120px) translateY(30px) rotate(-12deg) scale(0.9);
+    z-index: 1;
+}
+
+div.screen1 img {
+    animation: float 5s ease-in-out infinite;
+}
+
+div.screen2 {
+    transform: translateY(15px) scale(1);
+    z-index: 10;
+}
+
+div.screen2 img {
+    animation: float 5s ease-in-out infinite 1.5s;
+}
+
+div.screen3 {
+    transform: translateX(120px) translateY(30px) rotate(12deg) scale(0.9);
+    z-index: 1;
+}
+
+div.screen3 img {
+    animation: float 5s ease-in-out infinite 3s;
+}
+
+/* Hover Interaction */
+div.socialScreenshotsWrapper:hover div.screen1 {
+    transform: translateX(-150px) translateY(0px) rotate(-15deg) scale(0.95);
+}
+
+div.socialScreenshotsWrapper:hover div.screen2 {
+    transform: translateY(-10px) scale(1.05);
+}
+
+div.socialScreenshotsWrapper:hover div.screen3 {
+    transform: translateX(150px) translateY(0px) rotate(15deg) scale(0.95);
+}
+
 @media screen and (max-width: 991px) {
     div.customContainer {
         width: 700px;
@@ -502,10 +818,19 @@ h1.contactMethodItem {
 
     div.multicardContainer {
         flex-direction: column;
+        gap: 25px;
     }
 
     div.smallCard {
-        margin-bottom: 30px;
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    h2.servicesTitle {
+        font-size: 2rem;
     }
 
     div.postCardsSection {
@@ -633,7 +958,8 @@ h1.contactMethodItem {
 
     div.agenziaSectionItemSocial {
         width: 90vw;
-        padding: 70px 30px;
+        padding: 70px 30px 0 30px;
+        height: fit-content;
     }
 
     div.agenziaSectionItemContactUs {
@@ -644,5 +970,36 @@ h1.contactMethodItem {
 
     h1.contactMethodItem {
         font-size: 12pt;
+    }
+
+    div.socialScreenshotsWrapper {
+        height: 250px;
+        transform: scale(0.85);
+        justify-content: center;
+        padding-right: 0;
+        margin-bottom: -30px;
+        margin-top: 20px;
+    }
+    
+    div.screen1 {
+        transform: translateX(-80px) translateY(40px) rotate(-12deg) scale(0.9);
+    }
+
+    div.screen2 {
+        transform: translateY(20px) scale(1);
+    }
+
+    div.screen3 {
+        transform: translateX(80px) translateY(40px) rotate(12deg) scale(0.9);
+    }
+
+    div.orarioItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    div.orarioItem p:last-child {
+        text-align: left;
     }
 }

@@ -1,77 +1,83 @@
 div.multiFeaturedHouseWrapper {
     position: relative;
+    width: 100%;
+    padding: 20px 0;
 }
 
 div.multiFeaturedHouseContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin-bottom: 50px;
-    overflow: auto;
-    padding-bottom: 30px;
-    position: relative;
+    align-items: stretch;
+    overflow-x: auto;
+    padding: 20px 10px 40px 10px; /* Extra padding for shadows */
     scroll-behavior: smooth;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    gap: 0; /* Margin is handled by card */
 }
 
 .multiFeaturedHouseContainer::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome/Safari/Webkit */
+}
+
+.arrowButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.arrowButton:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transform: translateY(-50%) scale(1.1);
+    background-color: var(--mqGreen);
+}
+
+.arrowButton:hover img {
+    filter: brightness(0) invert(1);
 }
 
 .rightArrow {
-    border-radius: 50px;
-    background-color: var(--mqWhite);
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-    position: absolute;
-    top: 50%;
-    right: -30px;
-    transform: translate(0, -50%);
-    z-index: 10;
-}
-
-.rightArrow:hover {
-    cursor: pointer;
+    right: -20px;
 }
 
 .leftArrow {
-    border-radius: 50px;
-    background-color: var(--mqWhite);
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-    position: absolute;
-    top: 50%;
-    left: -30px;
-    transform: translate(0, -50%);
-    z-index: 10;
+    left: -20px;
 }
 
-.leftArrow:hover {
-    cursor: pointer;
+.arrowImage {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s;
+}
+
+/* Loading state */
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
 }
 
 @media screen and (max-width: 991px) {}
 
 @media screen and (max-width: 767px) {
-    .rightArrow {
-        border-radius: 50px;
-        background-color: var(--mqWhite);
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-        position: absolute;
-        top: 50%;
-        right: -10px;
-        transform: translate(0, -50%);
-        z-index: 10;
+    .arrowButton {
+        width: 40px;
+        height: 40px;
     }
-    
-    .leftArrow {
-        border-radius: 50px;
-        background-color: var(--mqWhite);
-        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-        position: absolute;
-        top: 50%;
-        left: -10px;
-        transform: translate(0, -50%);
-        z-index: 10;
-    }
+    .rightArrow { right: 0; }
+    .leftArrow { left: 0; }
 }
 
 @media screen and (max-width: 479px) {}
